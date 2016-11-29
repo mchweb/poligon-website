@@ -1,24 +1,19 @@
 var gulp = require('gulp');
-//var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
+var compass = require('gulp-compass');
+//var path = require('path');
 
-// Gulp Sass Task 
-gulp.task('sass', function() {
+// Gulp Sass(Compass) Task 
+gulp.task('compass', function() {
   gulp.src('./scss/{,*/}*.{scss,sass}')
-    .pipe(sourcemaps.init())
-//    .pipe(sass({
-//      errLogToConsole: true
-//    }))
     .pipe(compass({
       config_file: './config.rb',
-      css: 'stylesheets',
-      sass: 'sass'
+      sass: './scss',      
+      css: './assets/css'
     }))  
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./assets/css'));
 });
 
-gulp.task('default', ['sass'], function () {
+gulp.task('default', ['compass'], function () {
   gulp.watch('./scss/{,*/}*.{scss,sass}', ['sass'])
 });
 
