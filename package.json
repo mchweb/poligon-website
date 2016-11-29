@@ -1,0 +1,13 @@
+{
+  "name": "Site-Poligon-IP-TPU",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
