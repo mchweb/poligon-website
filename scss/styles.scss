@@ -1,15 +1,11 @@
+// Normalize style ------- //
 @import "../vendor/normalize-scss/sass/normalize";
+// Reset style ----------- //
 @import "../vendor/reset-scss/_reset-src.scss";
 
-@import "variables";
-@import "grids";
-@import "basic/buttons";
-@import "basic/forms";
-@import "basic/lists";
-@import "basic/typography";
-@import "components/navigation";
-@import "layouts/footer";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "pages/home";
-@import "pages/contact";
+
+@import "base/index";
+@import "utilites/index";
+@import "components/index";
+@import "modules/index";
+@import "layout/index";
