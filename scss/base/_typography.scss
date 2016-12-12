@@ -2,11 +2,14 @@
 // Typography style ------ //
 // ----------------------- //
 
+
 body {
     font-size: $font_size_base;
     line-height: $line_height_base;
     color: $color_gray;
+    font-family: $font_clear_sans;  
 }
+
 h1,h2,h3,h4 {
     font-family: $font_clear_sans;
     color: $color_gray_dark;

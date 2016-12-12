@@ -74,7 +74,6 @@ table {
 /* Forms ----------*/
 /* Breadcrumbs ----*/
 /* Modals ---------*/
-/* Colors ---------*/
 /****************************
  Layout styles
 ****************************/
@@ -86,10 +85,61 @@ table {
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYjNiM2ZmIiBzdG9wLW9wYWNpdHk9IjAuMjUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(102, 102, 255, 0.25)), color-stop(100%, rgba(179, 179, 255, 0.25)));
+  background-image: -moz-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25));
+  background-size: 8.33333%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+}
+.container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
 /****************************
  Base styles
 ****************************/
 /* Buttons *****************/
+.c-btn {
+  height: 48px;
+  line-height: 48px;
+  -moz-border-radius: 24px / 24px;
+  -webkit-border-radius: 24px 24px;
+  border-radius: 24px / 24px;
+  padding: 0 24px;
+  font-size: 16px;
+  display: inline-block;
+  text-decoration: none;
+}
+.c-btn.bg--orange {
+  color: #ffffff;
+  background-color: #f7941e;
+}
+.c-btn.bg--orange:hover {
+  text-decoration: none;
+  background-color: #eb8913;
+}
+
+.c-btn--small {
+  height: 24px;
+  line-height: 24px;
+  -moz-border-radius: 12px / 12px;
+  -webkit-border-radius: 12px 12px;
+  border-radius: 12px / 12px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
 /* Forms *******************/
 /* Lists *******************/
 /* Typography **************/
@@ -97,10 +147,11 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: #6e6e6e;
+  font-family: "ClearSans", sans-serif;
 }
 
 h1, h2, h3, h4 {
-  font-family: "ClearSans";
+  font-family: "ClearSans", sans-serif;
   color: #373737;
 }
 
@@ -126,11 +177,11 @@ h4 {
 }
 
 p {
-  font-family: "ClearSans";
+  font-family: "ClearSans", sans-serif;
 }
 
 strong {
-  font-family: "ClearSans";
+  font-family: "ClearSans", sans-serif;
 }
 
 a {
@@ -141,11 +192,104 @@ a {
  Components styles
 ****************************/
 /* Navigation **************/
+.c-nav {
+  list-style: none;
+}
+
+.c-nav__item {
+  display: inline-block;
+  margin-right: 36px;
+}
+.c-nav__item.is-active .c-nav__link {
+  font-weight: bold;
+  color: #80bf44;
+}
+
+.c-nav__link {
+  text-transform: uppercase;
+  color: #373737;
+}
+.c-nav__link:visited {
+  color: #373737;
+}
+.c-nav__link:focus {
+  color: #80bf44;
+}
+.c-nav__link:hover {
+  color: #80bf44;
+}
+.c-nav__link:active {
+  color: #80bf44;
+}
+
+/* Infoblock ***************/
 /****************************
  Modules styles
 ****************************/
 /* Header ******************/
+/* Logo main ------*/
+.l-header__logo {
+  width: 33.33333%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 12px;
+}
+
+.c-logo__link {
+  background-image: url("../temp/images/icons+logo.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 254px;
+  height: 64px;
+  display: inline-block;
+}
+
+/* Banner ---------*/
+.l-header__banner {
+  width: 41.66667%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.c-banner__text {
+  font-size: 14px;
+  color: #373737;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+/* Logo small -----*/
+.l-header__logo--small {
+  width: 16.66667%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 48px;
+}
+
+/* Navigtion ------*/
+.l-header__nav {
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .l-header {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 /* Footer ******************/
 /* Sidebar *****************/
 /* Home ********************/
 /* Contact *****************/
+img {
+  max-width: 100%;
+}

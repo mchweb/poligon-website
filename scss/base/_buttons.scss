@@ -1,3 +1,28 @@
 // ----------------------- //
 // Buttons style --------- //
 // ----------------------- //
+
+.c-btn {
+    height: $btn_height;
+    line-height: $btn_height;
+    @include border-radius($btn_border_radius, $btn_border_radius);
+    padding: 0 $btn_padding;
+    font-size: $btn_font_size;
+    display: inline-block;
+    text-decoration: none;
+    &.bg--orange {
+        color: $color_white;
+        background-color: $color_orange;
+        &:hover {
+            text-decoration: none;
+            background-color: $color_orange_accent;
+        }
+    }
+}
+.c-btn--small {
+    height: $btn_height_small;
+    line-height: $btn_height_small;
+    @include border-radius($btn_border_radius_small, $btn_border_radius_small);
+    padding: 0 $btn_padding_small;
+    font-size: $btn_font_size_small;    
+}

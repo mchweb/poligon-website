@@ -9,8 +9,16 @@ $susy: (
   gutters: 30px/70px,
   column-width: 70px,
   gutter-position: inside-static,
-  
   global-box-sizing: border-box,
-  debug: (image: show-columns)
+  debug: (
+      image: show-columns,
+      color: rgba(#66f, .25),
+      output: background
+  )
 );
+
 @include border-box-sizing;
+
+.container {
+    @include container;
+}

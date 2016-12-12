@@ -3,9 +3,16 @@
 // Reset style ----------- //
 @import "../vendor/reset-scss/_reset-src.scss";
 
+@import "compass/css3";
+@import "compass/typography/vertical_rhythm";
+@import "compass/typography/links/link-colors";
+
 @import "utilites/index";
 @import "layout/index";
 @import "base/index";
 @import "components/index";
 @import "modules/index";
 
+img {
+    max-width: 100%;
+}

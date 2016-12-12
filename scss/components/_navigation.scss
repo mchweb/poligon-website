@@ -1,3 +1,21 @@
 // ----------------------- //
 // Navigation style ------ //
 // ----------------------- //
+
+.c-nav {
+    list-style: none;
+}
+.c-nav__item {
+    display: inline-block;
+    margin-right: $padding_base+($padding_base/2);
+    &.is-active {
+        .c-nav__link {
+            font-weight: bold;
+            color: $color_green;
+        }
+    }
+}
+.c-nav__link {
+    text-transform: uppercase;
+    @include link-colors($color_gray_dark, $color_green, $color_green, $color_gray_dark, $color_green);
+}

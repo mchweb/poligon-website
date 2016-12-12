@@ -1,3 +1,45 @@
 // ----------------------- //
 // Header style ---------- //
 // ----------------------- //
+
+/* Logo main ------*/
+.l-header__logo {
+    @include span(4);
+    padding-top: $padding_base/2;
+}
+.c-logo__link {
+    background-image: url('../temp/images/icons+logo.png'); //TEMP
+    background-repeat: no-repeat; //TEMP
+    background-position: 0 0; //TEMP
+    width: 254px; //TEMP
+	height: 64px;   //TEMP  
+    display: inline-block;
+}
+/* Banner ---------*/
+.l-header__banner {
+    @include span(5);
+}
+.c-banner__text {
+    font-size: $font_size_base - 2;
+    color: $color_gray_dark;
+    margin-top: $padding_base;
+    margin-bottom: $padding_base/2;
+}
+
+/* Logo small -----*/
+.l-header__logo--small {
+    @include span(2);
+    padding-top: $padding_base*2;
+}
+
+/* Navigtion ------*/
+.l-header__nav {
+    @include span(12);
+}
+
+
+.l-header {
+    @media screen and (max-width: 992px) {
+        @include span(12);
+    }        
+}
