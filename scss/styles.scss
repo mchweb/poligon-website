@@ -3,9 +3,9 @@
 // Reset style ----------- //
 @import "../vendor/reset-scss/_reset-src.scss";
 
-
-@import "base/index";
 @import "utilites/index";
+@import "layout/index";
+@import "base/index";
 @import "components/index";
 @import "modules/index";
-@import "layout/index";
+

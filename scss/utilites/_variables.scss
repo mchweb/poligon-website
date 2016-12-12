@@ -3,13 +3,67 @@
 // ----------------------- //
 
 /* Base -----------*/
-$images: "../img";
+$url_images: "../img";
+$url_fonts: "../fonts";
 /* Colors ---------*/
-$color_theme: #000000;
-$color_theme_white: #ffffff;
+$color_gray_dark: #373737;
+$color_gray: #6e6e6e;
+$colo_gray_light: #9c9c9c;
+$color_gray_light2: #949494;
+$color_white: #ffffff;
+$color_red: #f04e23;
+$color_red_accent: #df4118;
+$color_red_light: #ed7c5d;
+$color_blue: #0072bc;
+$color_blue_accent: #0067a9;
+$color_green: #80bf44;
+$color_green_accent: #7cb843;
+$color_green_light: #9dcc71;
+$color_orange: #f7941e;
+$color_orange_accent: #eb8913;
+$color_white_dark: #f1f1f1;
 /* Fonts ----------*/
+@font-face {
+    font-family: 'ClearSans';
+    src: url('#{$url_fonts}/ClearSansBold/ClearSansBold.eot');
+    src: url('#{$url_fonts}/ClearSansBold/ClearSansBold.eot?#iefix') format('embedded-opentype'),
+         url('#{$url_fonts}/ClearSansBold/ClearSansBold.woff2') format('woff2'),
+         url('#{$url_fonts}/ClearSansBold/ClearSansBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ClearSans';
+    src: url('#{$url_fonts}/ClearSansRegular/ClearSansRegular.eot');
+    src: url('#{$url_fonts}/ClearSansRegular/ClearSansRegular.eot?#iefix') format('embedded-opentype'),
+         url('#{$url_fonts}/ClearSansRegular/ClearSansRegular.woff2') format('woff2'),
+         url('#{$url_fonts}/ClearSansRegular/ClearSansRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+$font_clear_sans: 'ClearSans';
+/* Indents --------*/
+$padding_base: 24px;
 /* Typography -----*/
+$font_size_base: 16px;
+$line_height_base: 24px;
+$font_size_h1: $font_size_base * 2.5; //40pt
+$line_height_h1: $line_height_base * 2; //48pt
+$font_size_h2: $font_size_base * 2.1875; //35pt
+$line_height_h2: $line_height_base * 1.75; //42pt
+$font_size_h3: $font_size_base * 1.875; //30pt
+$line_height_h3: $line_height_base * 1.5; //36pt
+$font_size_h4: $font_size_base * 1.375; //22pt
+$line_height_h4: $line_height_base * 1.25; //30pt
 /* Buttons --------*/
+$btn_height: 48px;
+$btn_border_radius: 24px;
+$btn_padding: 24px;
+$btn_font_size: 16px;
+$btn_height_small: 24px;
+$btn_border_radius_small: 12px;
+$btn_padding_small: 18px;
+$btn_font_size_small: 14px;
 /* Forms ----------*/
 /* Breadcrumbs ----*/
 /* Modals ---------*/

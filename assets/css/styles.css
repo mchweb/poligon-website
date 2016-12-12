@@ -48,25 +48,95 @@ table {
 }
 
 /****************************
- Base styles
-****************************/
-/* Buttons *****************/
-/* Forms *******************/
-/* Lists *******************/
-/* Typography **************/
-/****************************
  Utilites styles
 ****************************/
 /* Variables ***************/
 /* Base -----------*/
 /* Colors ---------*/
 /* Fonts ----------*/
+@font-face {
+  font-family: 'ClearSans';
+  src: url("../fonts/ClearSansBold/ClearSansBold.eot");
+  src: url("../fonts/ClearSansBold/ClearSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/ClearSansBold/ClearSansBold.woff2") format("woff2"), url("../fonts/ClearSansBold/ClearSansBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ClearSans';
+  src: url("../fonts/ClearSansRegular/ClearSansRegular.eot");
+  src: url("../fonts/ClearSansRegular/ClearSansRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/ClearSansRegular/ClearSansRegular.woff2") format("woff2"), url("../fonts/ClearSansRegular/ClearSansRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Indents --------*/
 /* Typography -----*/
 /* Buttons --------*/
 /* Forms ----------*/
 /* Breadcrumbs ----*/
 /* Modals ---------*/
 /* Colors ---------*/
+/****************************
+ Layout styles
+****************************/
+/* Grids *******************/
+/* Susy Grids -----*/
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/****************************
+ Base styles
+****************************/
+/* Buttons *****************/
+/* Forms *******************/
+/* Lists *******************/
+/* Typography **************/
+body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #6e6e6e;
+}
+
+h1, h2, h3, h4 {
+  font-family: "ClearSans";
+  color: #373737;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 35px;
+  line-height: 42px;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+p {
+  font-family: "ClearSans";
+}
+
+strong {
+  font-family: "ClearSans";
+}
+
+a {
+  text-decoration: underline;
+}
+
 /****************************
  Components styles
 ****************************/
@@ -79,13 +149,3 @@ table {
 /* Sidebar *****************/
 /* Home ********************/
 /* Contact *****************/
-/****************************
- Layout styles
-****************************/
-/* Grids *******************/
-/* Susy Grids -----*/
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
