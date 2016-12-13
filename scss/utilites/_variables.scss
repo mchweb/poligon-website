@@ -22,6 +22,10 @@ $color_green_light: #9dcc71;
 $color_orange: #f7941e;
 $color_orange_accent: #eb8913;
 $color_white_dark: #f1f1f1;
+.bg--green {
+    background-color: $color_green;
+    color: $color_white;
+}
 /* Fonts ----------*/
 @font-face {
     font-family: 'ClearSans';

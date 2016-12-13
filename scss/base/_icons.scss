@@ -1,0 +1,23 @@
+// ----------------------- //
+// Icons style ----------- //
+// ----------------------- //
+
+.c-icon {
+    background-image: url('../temp/images/icons+logo.png'); //TEMP
+    background-repeat: no-repeat; //TEMP 
+    display: inline-block;    
+}
+.c-icon--calendar {
+    background-position: 0px -246px; //TEMP
+    width: 78px; //TEMP
+	height: 82px;   //TEMP    
+    float: left;
+    margin-right: 20px; //TEMP    
+}
+.c-icon--mapmaker {
+    background-position: -101px -240px; //TEMP
+    width: 61px; //TEMP
+	height: 92px;   //TEMP    
+    float: left;
+    margin-right: 20px; //TEMP
+}
