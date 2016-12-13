@@ -40,3 +40,8 @@ strong {
 a {
     text-decoration: underline;
 }
+
+.c-content__title--block {
+    padding-top: $padding_base * 3;
+    padding-bottom: $padding_base;    
+}

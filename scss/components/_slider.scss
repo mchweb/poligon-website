@@ -4,10 +4,6 @@
 
 .l-content__slider {   
     @extend .container;
-    .c-content__title {
-        padding-top: $padding_base * 3;
-        padding-bottom: $padding_base;
-    } 
 }
 .c-slider {
 }

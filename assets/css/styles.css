@@ -90,7 +90,7 @@ table {
   box-sizing: border-box;
 }
 
-.container, .l-content__slider {
+.container, .l-content__slider, .l-content__text {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -105,7 +105,7 @@ table {
   background-clip: content-box;
   background-position: left top;
 }
-.container:after, .l-content__slider:after {
+.container:after, .l-content__slider:after, .l-content__text:after {
   content: " ";
   display: block;
   clear: both;
@@ -199,6 +199,11 @@ strong {
 
 a {
   text-decoration: underline;
+}
+
+.c-content__title--block {
+  padding-top: 72px;
+  padding-bottom: 24px;
 }
 
 /* Icons *******************/
@@ -297,11 +302,6 @@ a {
 }
 
 /* Slider ******************/
-.l-content__slider .c-content__title {
-  padding-top: 72px;
-  padding-bottom: 24px;
-}
-
 .c-slider__item {
   width: 100%;
   float: left;
@@ -479,6 +479,24 @@ a {
 /* Footer ******************/
 /* Sidebar *****************/
 /* Home ********************/
+.l-content__grid--four .l-content__col {
+  width: 25%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.l-content__col .c-content__text {
+  margin-top: 15px;
+  color: #6e6e6e;
+}
+
+.c-content__title.bg--green {
+  font-weight: bold;
+  padding: 8px 13px;
+  display: inline;
+}
+
 /* Contact *****************/
 img {
   max-width: 100%;

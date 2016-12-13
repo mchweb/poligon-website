@@ -1,3 +1,25 @@
 // ----------------------- //
 // Home style ------------ //
 // ----------------------- //
+
+.l-content__text {
+    @extend .container;
+}
+.l-content__grid--four {
+    .l-content__col {
+        @include span(3);
+    }
+}
+.l-content__col {
+    .c-content__text {
+        margin-top: 15px;
+        color: $color_gray;
+    }
+}
+.c-content__title {
+    &.bg--green {
+        font-weight: bold;
+        padding: 8px 13px;
+        display: inline;
+    }
+}
