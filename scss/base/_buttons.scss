@@ -18,6 +18,14 @@
             background-color: $color_orange_accent;
         }
     }
+    &.bg--blue {
+        color: $color_white;
+        background-color: $color_blue;
+        &:hover {
+            text-decoration: none;
+            background-color: $color_blue_accent;
+        }        
+    }
 }
 .c-btn--small {
     height: $btn_height_small;

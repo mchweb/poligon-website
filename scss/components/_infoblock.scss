@@ -1,0 +1,32 @@
+// ----------------------- //
+// Infoblock style ------- //
+// ----------------------- //
+
+.c-infoblock {
+    position: relative;    
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80%;
+        height: 100%;
+        background-color: $color_green;
+        z-index: 1;
+    }
+}
+.c-infoblock__text {
+    padding-top: 92px;
+    padding-bottom: 115px;
+    @include span(7);
+    z-index: 2;
+    position: relative;
+}
+.c-infoblock__title {
+    margin-bottom: $padding_base; //question
+    color: $color_white;
+}
+.c-infoblock__description {
+     color: $color_white;   
+    margin-bottom: $padding_base * 2;
+}

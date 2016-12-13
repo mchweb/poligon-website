@@ -4,6 +4,8 @@
 
 .c-nav {
     list-style: none;
+    margin-top: $padding_base + 6; //question
+    margin-bottom: $padding_base - 4; //question
 }
 .c-nav__item {
     display: inline-block;
