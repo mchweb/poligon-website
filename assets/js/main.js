@@ -22,6 +22,8 @@ backgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail');
 var elem = document.querySelector('.c-slider');
 var flkty = new Flickity();
 
+/*-------------  Features  --------------*/
+backgroundImageBlocks('.c-feature','.c-feature__thumbnail');
 /*==================   Images    =====================*/    
 /*==================   Navigation menu    ============*/
 /*==================   Animations   ==================*/
