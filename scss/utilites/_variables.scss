@@ -1,5 +1,5 @@
 // ----------------------- //
-// Grids style ----------- //
+// Variables ------------- //
 // ----------------------- //
 
 /* Base -----------*/
@@ -11,6 +11,7 @@ $color_gray: #6e6e6e;
 $color_gray_light: #9c9c9c;
 $color_gray_light2: #949494;
 $color_white: #ffffff;
+$color_black_light: #1d1d1d;
 $color_red: #f04e23;
 $color_red_accent: #df4118;
 $color_red_light: #ed7c5d;
@@ -30,6 +31,12 @@ $color_white_dark: #f1f1f1;
 }
 .color--red {
     color: $color_red;
+}
+.color--gray__light {
+    color: $color_gray_light !important;
+    a {
+       color: $color_gray_light !important; 
+    }
 }
 /* Fonts ----------*/
 @font-face {

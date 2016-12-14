@@ -74,12 +74,12 @@
                       </hgroup>                              
                       <footer class="c-infoblock__footer">
                           <div class="c-infoblock__date">
-                              <div class="c-icon c-icon--calendar"></div>
+                              <div class="c-icon c-icon__calendar"></div>
                               12-13 декабря 2016<br>
                               (проводится 2 раза в месяц)
                           </div>
                           <a href="#" class="c-infoblock__map">
-                              <div class="c-icon c-icon--mapmaker"></div>
+                              <div class="c-icon c-icon__mapmaker"></div>
                               Белинского 51, 309
                           </a>
                       </footer>
@@ -97,12 +97,12 @@
                       </hgroup>   
                       <footer class="c-infoblock__footer">
                           <div class="c-infoblock__date">
-                              <div class="c-icon c-icon--calendar"></div>
+                              <div class="c-icon c-icon__calendar"></div>
                               TEST!12-13 декабря 2016<br>
                               (проводится 2 раза в месяц)
                           </div>
                           <a href="#" class="c-infoblock__map">
-                              <div class="c-icon c-icon--mapmaker"></div>
+                              <div class="c-icon c-icon__mapmaker"></div>
                               TEST!Белинского 51, 309
                           </a>
                       </footer>
@@ -120,12 +120,12 @@
                       </hgroup>   
                       <footer class="c-infoblock__footer">
                           <div class="c-infoblock__date">
-                              <div class="c-icon c-icon--calendar"></div>
+                              <div class="c-icon c-icon__calendar"></div>
                               TEST!12-13 декабря 2016<br>
                               (проводится 2 раза в месяц)
                           </div>
                           <a href="#" class="c-infoblock__map">
-                             <div class="c-icon c-icon--mapmaker"></div>
+                             <div class="c-icon c-icon__mapmaker"></div>
                               TEST!Белинского 51, 309
                           </a>
                       </footer>
@@ -343,77 +343,82 @@
 
 
   <footer id="footer">
-      <section class="l-content__grid cols--three">
-          <article class="l-content__col">
-              <header>
-                  <h3 class="c-content__title">Регистрируйтесь</h3>
-              </header>     
-              <p class="c-content__text">
-                  на ближайшие программы:<br>
-                  <a href="#">Кафе предпринимателей</a><br>
-                  <a href="#">Предпринимательский вызов</a><br>
-              </p>             
-          </article>
-          <article class="l-content__col">
-              <header>
-                  <h3 class="c-content__title">Присоединяйтесь</h3>
-              </header>     
-              <p class="c-content__text">
-                  к <a href="#">каналу Полигона</a> в Телеграме<br>
-                  <a href="#"><div class="icon icon__telegram"></div></a>
-              </p>             
-          </article>   
-          <article class="l-content__col is-double">
-              <header>
-                  <h3 class="c-content__title">Подписывайтесь</h3>
-              </header>     
-              <p class="c-content__text">на дайджест самых интересных программ Полигона ИП</p> 
-              <form action="" class="c-form is-footer" accept-charset="utf-8" method="" name="form--test" target="">
-                  <input type="text" name="form--test__name" placeholder="Введите свое имя" required>
-                  <input type="mail" name="form--test__mail" placeholder="Введите свой e-mail" required>
-                  <input type="checkbox" name="form--test__datepersona" checked> даю согласие на обработку своих персональных данных
-                  <button class="c-btn bg--orange">Пройти тест</button>
-              </form>                              
-          </article> 
-      </section>
-      <section class="l-content__grid cols--three">              
-          <section class="l-content__col">
-              <a href="#" class="c-logo__link"></a>
-          </section> 
-          <section class="l-content__col">
-              <ul class="c-list-contact">
-                  <li class="c-list-contact__item">
-                      <a href="#"><div class="icon icon__vk"></div></a>
-                  </li>
-                  <li class="c-list-contact__item">
-                      <a href="#"><div class="icon icon__instagram"></div></a>
-                  </li>                      
-              </ul>
-          </section>   
-      </section>
-      <section class="l-content__grid cols--three">  
-          <section class="l-content__col is-double">
-              <p class="c-content__text">Усова 9/4, 201 (7 корпус ТПУ) Тел.: 701-777, внутренний: 1808</p>
-          </section>  
-          <section class="l-content__col">
-              <p class="c-content__text">Полигон на связи в мессендежарх:</p>
-              <ul class="c-list-contact">
-                  <li class="c-list-contact__item">
-                      <a href="#"><div class="icon icon__phone"></div></a>
-                  </li>
-                  <li class="c-list-contact__item">
-                      <a href="#"><div class="icon icon__viber"></div></a>
-                  </li>  
-                  <li class="c-list-contact__item">
-                      <a href="#"><div class="icon icon__telegram"></div></a>
-                  </li>                                           
-              </ul>     
-              <p class="c-content__text"><a href="tel:79234223922">+7 923 422-39-22</a></p>             
-          </section>  
-          <section class="l-content__col">
-              <p class="c-content__text">Разработано в <br>Провокации</p> 
-          </section>                        
-      </section>
+      <div class="container">
+          <section class="l-content__grid--three">
+              <article class="l-contact__register l-content__col">
+                  <header>
+                      <h4 class="c-content__title">Регистрируйтесь</h4>
+                  </header>     
+                  <p class="c-content__text">
+                      на ближайшие программы:<br>
+                      <a href="#">Кафе предпринимателей</a><br>
+                      <a href="#">Предпринимательский вызов</a><br>
+                  </p>             
+              </article>
+              <article class="l-contact__follow l-content__col">
+                  <header>
+                      <h4 class="c-content__title">Присоединяйтесь</h4>
+                  </header>     
+                  <p class="c-content__text">
+                      к <a href="#">каналу Полигона</a> в Телеграме<br>
+                      <a href="#" class="c-icon c-icon__telegram"></a>
+                  </p>             
+              </article>   
+              <article class="l-contact__sign l-content__col">
+                  <header>
+                      <h4 class="c-content__title">Подписывайтесь</h4>
+                  </header>     
+                  <p class="c-content__text">на дайджест самых интересных программ Полигона ИП</p> 
+                  <form action="" class="c-form c-form--horizontal" accept-charset="utf-8" method="" name="form--sign" target="">
+                      <div class="l-form__col">
+                          <input type="text" class="c-form__item c-form__input" name="form--sign__name" placeholder="Введите свое имя" required>
+                          <input type="mail" class="c-form__item c-form__input" name="form--sign__mail" placeholder="Введите свой e-mail" required>
+                          <div class="c-form__item c-form__checkbox">
+                              <input type="checkbox" name="form--sign__datepersona" id="form--sign__datepersona" checked> 
+                              <label for="form--sign__datepersona">даю согласие на обработку своих персональных данных</label>                          
+                          </div> 
+                      </div>
+                      <div class="l-form__col">
+                          <button class="c-btn bg--orange c-form__item c-form__btn">Подписаться</button>
+                      </div>
+                  </form>                                             
+              </article> 
+          </section>
+          <section class="l-content__grid--three">              
+              <section class="l-contact__address l-content__col">
+                  <div class="l-contact__logo">
+                      <a href="#" class="c-logo__link"></a>
+                  </div>
+                  <ul class="c-list-contact">
+                      <li class="c-list-contact__item">
+                          <a href="#" class="c-icon c-icon__vk"></a>
+                      </li>
+                      <li class="c-list-contact__item">
+                          <a href="#" class="c-icon c-icon__instagram"></a>
+                      </li>                      
+                  </ul>
+                  <p class="c-content__text color--gray__light">Усова 9/4, 201 (7 корпус ТПУ) Тел.: 701-777, внутренний: 1808</p>                  
+              </section>   
+              <section class="l-contact__phone l-content__col">
+                  <p class="c-content__text color--gray__light ">Полигон на связи в мессендежарх:</p>
+                  <ul class="c-list-contact">
+                      <li class="c-list-contact__item">
+                          <a href="#" class="c-icon c-icon__phone"></a>
+                      </li>
+                      <li class="c-list-contact__item">
+                          <a href="#" class="c-icon c-icon__viber"></a>
+                      </li>  
+                      <li class="c-list-contact__item">
+                          <a href="#" class="c-icon c-icon__telegram"></a>
+                      </li>                                           
+                  </ul>     
+                  <p class="c-content__text color--gray__light"><a href="tel:79234223922">+7 923 422-39-22</a></p>             
+              </section>  
+              <section class="l-contact__dev l-content__col">
+                  <p class="c-content__text color--gray__light"><a href="">Разработано в <br>Провокации</a></p> 
+              </section>                        
+          </section>
+      </div>
   </footer>
   <script src="vendor/flickity/dist/flickity.pkgd.js"></script>
   <script src="assets/js/main.js"></script>

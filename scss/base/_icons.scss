@@ -7,17 +7,52 @@
     background-repeat: no-repeat; //TEMP 
     display: inline-block;    
 }
-.c-icon--calendar {
+.c-icon__calendar {
     background-position: 0px -246px; //TEMP
     width: 78px; //TEMP
 	height: 82px;   //TEMP    
     float: left;
     margin-right: 20px; //TEMP    
 }
-.c-icon--mapmaker {
+.c-icon__mapmaker {
     background-position: -101px -240px; //TEMP
     width: 61px; //TEMP
 	height: 92px;   //TEMP    
     float: left;
     margin-right: 20px; //TEMP
+}
+.c-icon__telegram {
+    background-position: -586px -229px; //TEMP
+    width: 64px; //TEMP
+	height: 64px;   //TEMP    
+    float: left;
+    margin-top: $padding_base / 2;
+}
+.c-icon__vk {
+    background-position: -299px -229px; //TEMP
+    width: 63px; //TEMP
+	height: 63px;   //TEMP    
+    float: left;
+    margin-top: $padding_base / 2;
+}
+.c-icon__instagram {
+    background-position: -443px -228px; //TEMP
+    width: 65px; //TEMP
+	height: 65px;   //TEMP    
+    float: left;
+    margin-top: $padding_base / 2;
+}
+.c-icon__viber {
+    background-position: -667px -226px; //TEMP
+    width: 64px; //TEMP
+	height: 64px;   //TEMP    
+    float: left;
+    margin-top: $padding_base / 2;
+}
+.c-icon__phone {
+    background-position: -516px -227px; //TEMP
+    width: 68px; //TEMP
+	height: 68px;   //TEMP    
+    float: left;
+    margin-top: $padding_base / 2;
 }

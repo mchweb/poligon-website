@@ -1,3 +1,69 @@
 // ----------------------- //
 // Footer style ---------- //
 // ----------------------- //
+
+#footer {
+    background-color: $color_black_light;
+    padding-top: $padding_base * 1.5;
+    padding-bottom: $padding_base * 2;
+    .c-content__title {
+        color: $color_white;
+        font-weight: bold;
+    }
+    .c-content__text {
+        color: $color_white;
+        a {
+           color: $color_white; 
+        }
+    }   
+    .c-form__input {
+        border-bottom: 1px solid $color_gray_light;
+    }
+}
+.l-content__col.l-contact__register {
+    @include span(3);
+}
+.l-content__col.l-contact__follow {
+    @include span(3);
+}
+.l-content__col.l-contact__sign {
+    @include span(6);
+}
+.l-content__col.l-contact__address {
+    @include span(6);
+    .l-contact__logo {
+        @include span(7);
+    }
+    .c-list-contact {
+        @include span(5);
+    }
+    .c-content__text {
+        @include span(12);
+        margin-top: $padding_base * 1.5; 
+    }
+}
+.l-content__col.l-contact__phone {
+    @include span(4);
+    margin-top: $padding_base * 2;  
+    .c-list-contact {
+        float: left;
+    }
+    .c-content__text {
+        float: left;
+        a {
+            margin-top: $padding_base * 1.5; 
+            text-decoration: none;
+            display: inline-block;
+            //margin-left: $padding_base; 
+        }
+    }
+}
+.l-content__col.l-contact__dev {
+    @include span(2);
+    margin-top: $padding_base * 2; 
+    .c-content__text {
+        a {
+            text-decoration: none;
+        }        
+    }
+}  

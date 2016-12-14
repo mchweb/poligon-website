@@ -28,6 +28,11 @@ $susy: (
         @include span(3);
     }
 }
+.l-content__grid--three {
+    .l-content__col {
+        @include span(4);
+    }    
+}
 .l-content__grid--two {
     .l-content__col {
         @include span(6);

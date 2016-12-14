@@ -64,6 +64,13 @@ table {
   color: #f04e23;
 }
 
+.color--gray__light {
+  color: #9c9c9c !important;
+}
+.color--gray__light a {
+  color: #9c9c9c !important;
+}
+
 /* Fonts ----------*/
 @font-face {
   font-family: 'ClearSans';
@@ -119,6 +126,13 @@ table {
 
 .l-content__grid--four .l-content__col {
   width: 25%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.l-content__grid--three .l-content__col {
+  width: 33.33333%;
   float: left;
   padding-left: 15px;
   padding-right: 15px;
@@ -242,8 +256,21 @@ table {
 .c-form__checkbox {
   margin-top: 12px;
 }
+.c-form__checkbox label {
+  color: #ffffff;
+  font-size: 14px;
+}
 
 /* Lists *******************/
+.c-list-contact {
+  list-style: none;
+}
+
+.c-list-contact__item {
+  display: inline-block;
+  margin-right: 8px;
+}
+
 /* Typography **************/
 body {
   font-size: 16px;
@@ -302,7 +329,7 @@ a {
   display: inline-block;
 }
 
-.c-icon--calendar {
+.c-icon__calendar {
   background-position: 0px -246px;
   width: 78px;
   height: 82px;
@@ -310,12 +337,52 @@ a {
   margin-right: 20px;
 }
 
-.c-icon--mapmaker {
+.c-icon__mapmaker {
   background-position: -101px -240px;
   width: 61px;
   height: 92px;
   float: left;
   margin-right: 20px;
+}
+
+.c-icon__telegram {
+  background-position: -586px -229px;
+  width: 64px;
+  height: 64px;
+  float: left;
+  margin-top: 12px;
+}
+
+.c-icon__vk {
+  background-position: -299px -229px;
+  width: 63px;
+  height: 63px;
+  float: left;
+  margin-top: 12px;
+}
+
+.c-icon__instagram {
+  background-position: -443px -228px;
+  width: 65px;
+  height: 65px;
+  float: left;
+  margin-top: 12px;
+}
+
+.c-icon__viber {
+  background-position: -667px -226px;
+  width: 64px;
+  height: 64px;
+  float: left;
+  margin-top: 12px;
+}
+
+.c-icon__phone {
+  background-position: -516px -227px;
+  width: 68px;
+  height: 68px;
+  float: left;
+  margin-top: 12px;
 }
 
 /****************************
@@ -633,12 +700,108 @@ a {
 }
 
 /* Footer ******************/
+#footer {
+  background-color: #1d1d1d;
+  padding-top: 36px;
+  padding-bottom: 48px;
+}
+#footer .c-content__title {
+  color: #ffffff;
+  font-weight: bold;
+}
+#footer .c-content__text {
+  color: #ffffff;
+}
+#footer .c-content__text a {
+  color: #ffffff;
+}
+#footer .c-form__input {
+  border-bottom: 1px solid #9c9c9c;
+}
+
+.l-content__col.l-contact__register {
+  width: 25%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.l-content__col.l-contact__follow {
+  width: 25%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.l-content__col.l-contact__sign {
+  width: 50%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.l-content__col.l-contact__address {
+  width: 50%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.l-content__col.l-contact__address .l-contact__logo {
+  width: 58.33333%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.l-content__col.l-contact__address .c-list-contact {
+  width: 41.66667%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.l-content__col.l-contact__address .c-content__text {
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 36px;
+}
+
+.l-content__col.l-contact__phone {
+  width: 33.33333%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 48px;
+}
+.l-content__col.l-contact__phone .c-list-contact {
+  float: left;
+}
+.l-content__col.l-contact__phone .c-content__text {
+  float: left;
+}
+.l-content__col.l-contact__phone .c-content__text a {
+  margin-top: 36px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.l-content__col.l-contact__dev {
+  width: 16.66667%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 48px;
+}
+.l-content__col.l-contact__dev .c-content__text a {
+  text-decoration: none;
+}
+
 /* Sidebar *****************/
 /* Home ********************/
-.l-content__col {
+.l-content__text .l-content__col {
   margin-bottom: 48px;
 }
-.l-content__col .c-content__text {
+.l-content__text .l-content__col .c-content__text {
   margin-top: 15px;
   color: #6e6e6e;
 }

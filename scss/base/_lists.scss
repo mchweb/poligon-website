@@ -1,3 +1,11 @@
 // ----------------------- //
 // Lists style ----------- //
 // ----------------------- //
+
+.c-list-contact {
+    list-style: none;
+}
+.c-list-contact__item {
+    display: inline-block;
+    margin-right: $padding_base / 3;
+}
