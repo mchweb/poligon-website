@@ -1,5 +1,7 @@
-/*==================   Basic    ======================*/
 /*==================   Functions    ==================*/
+function hasClass(el, cls) {
+  return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
+}
 var backgroundImageBlocks = function (blockName,imgName) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
@@ -11,6 +13,20 @@ var backgroundImageBlocks = function (blockName,imgName) {
         block[i].style.backgroundSize = 'cover';   
     }   
 };
+/*==================   Basic    ======================*/
+var classActive = '.is-active';
+var classNotActive = 'is-notactive';
+var disableLink = function (blockName) {
+    var block =  document.querySelectorAll(blockName);
+    for (var i = 0; i < block.length; i++) {
+        if (block[i].classList.contains(classNotActive)){
+            var blockLink = block[i].querySelector('a');
+            blockLink.onclick=function(){return false}
+        }
+        
+    }
+};
+disableLink('.c-program__item');
 /*==================   Home page    ==================*/
 /*-------------  Infoblock  -------------*/
 backgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail');

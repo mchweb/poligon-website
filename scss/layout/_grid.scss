@@ -22,3 +22,14 @@ $susy: (
 .container {
     @include container;
 }
+
+.l-content__grid--four {
+    .l-content__col {
+        @include span(3);
+    }
+}
+.l-content__grid--two {
+    .l-content__col {
+        @include span(6);
+    }
+}

@@ -1,0 +1,28 @@
+// ----------------------- //
+// Program style --------- //
+// ----------------------- //
+
+.c-program {
+    @extend .container;
+    .l-content__col {
+        margin-bottom: 0px;
+    }
+}
+
+.c-program__item {
+    margin-bottom: $padding_base * 1.5;
+    &.is-notactive {
+        .c-program__title, .c-program__info, .c-program__description {
+            color: $color_gray_light;
+        }
+        a {
+            pointer-events: none;
+            cursor: default;
+        }
+    }
+}
+.c-program__title {
+    a {
+        color: inherit;
+    }
+}

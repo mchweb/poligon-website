@@ -5,11 +5,6 @@
 .l-content__text {
     @extend .container;
 }
-.l-content__grid--four {
-    .l-content__col {
-        @include span(3);
-    }
-}
 .l-content__col {
     .c-content__text {
         margin-top: 15px;

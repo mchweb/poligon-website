@@ -8,7 +8,7 @@ $url_fonts: "../fonts";
 /* Colors ---------*/
 $color_gray_dark: #373737;
 $color_gray: #6e6e6e;
-$colo_gray_light: #9c9c9c;
+$color_gray_light: #9c9c9c;
 $color_gray_light2: #949494;
 $color_white: #ffffff;
 $color_red: #f04e23;
@@ -25,6 +25,9 @@ $color_white_dark: #f1f1f1;
 .bg--green {
     background-color: $color_green;
     color: $color_white;
+}
+.color--red {
+    color: $color_red;
 }
 /* Fonts ----------*/
 @font-face {

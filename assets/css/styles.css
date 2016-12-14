@@ -59,6 +59,10 @@ table {
   color: #ffffff;
 }
 
+.color--red {
+  color: #f04e23;
+}
+
 /* Fonts ----------*/
 @font-face {
   font-family: 'ClearSans';
@@ -91,7 +95,7 @@ table {
   box-sizing: border-box;
 }
 
-.container, .l-content__slider, .l-content__text {
+.container, .l-content__slider, .c-program, .l-content__text {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -106,10 +110,24 @@ table {
   background-clip: content-box;
   background-position: left top;
 }
-.container:after, .l-content__slider:after, .l-content__text:after {
+.container:after, .l-content__slider:after, .c-program:after, .l-content__text:after {
   content: " ";
   display: block;
   clear: both;
+}
+
+.l-content__grid--four .l-content__col {
+  width: 25%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.l-content__grid--two .l-content__col {
+  width: 50%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /****************************
@@ -461,6 +479,26 @@ a {
   z-index: 3;
 }
 
+/* Program *****************/
+.c-program .l-content__col {
+  margin-bottom: 0px;
+}
+
+.c-program__item {
+  margin-bottom: 36px;
+}
+.c-program__item.is-notactive .c-program__title, .c-program__item.is-notactive .c-program__info, .c-program__item.is-notactive .c-program__description {
+  color: #9c9c9c;
+}
+.c-program__item.is-notactive a {
+  pointer-events: none;
+  cursor: default;
+}
+
+.c-program__title a {
+  color: inherit;
+}
+
 /****************************
  Modules styles
 ****************************/
@@ -527,13 +565,6 @@ a {
 /* Footer ******************/
 /* Sidebar *****************/
 /* Home ********************/
-.l-content__grid--four .l-content__col {
-  width: 25%;
-  float: left;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 .l-content__col {
   margin-bottom: 48px;
 }
