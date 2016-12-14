@@ -1,7 +1,4 @@
 /*==================   Functions    ==================*/
-function hasClass(el, cls) {
-  return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
-}
 var backgroundImageBlocks = function (blockName,imgName) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
@@ -13,6 +10,8 @@ var backgroundImageBlocks = function (blockName,imgName) {
         block[i].style.backgroundSize = 'cover';   
     }   
 };
+/*==================   Breakpoints    ================*/
+var screen_md = 992;
 /*==================   Basic    ======================*/
 var classActive = '.is-active';
 var classNotActive = 'is-notactive';
@@ -21,7 +20,7 @@ var disableLink = function (blockName) {
     for (var i = 0; i < block.length; i++) {
         if (block[i].classList.contains(classNotActive)){
             var blockLink = block[i].querySelector('a');
-            blockLink.onclick=function(){return false}
+            blockLink.onclick=function(){return false};
         }
         
     }
@@ -42,6 +41,27 @@ var flkty = new Flickity();
 backgroundImageBlocks('.c-feature','.c-feature__thumbnail');
 /*==================   Images    =====================*/    
 /*==================   Navigation menu    ============*/
+if(window.innerWidth < screen_md){
+    var navItems =  document.querySelectorAll('.c-nav__item');
+    for (var i = 0; i < navItems.length; i++) {
+        
+        if (navItems[i].classList.contains('is-dropdown')){ 
+            var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
+            navDropdown.style.display = 'none';
+            navItems[i].onclick=function(){
+                console.log(this.classList.contains('is-active'));
+                if(this.classList.contains('is-active')){
+                    navDropdown.style.display = 'none';
+                    this.classList.remove('is-active');    
+                    console.log(1);
+                }else {
+                    navDropdown.style.display = 'block';
+                    this.className += ' is-active';                      
+                }
+            };
+        }
+    }
+}
 /*==================   Animations   ==================*/
 
 

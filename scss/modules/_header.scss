@@ -7,13 +7,14 @@
     @include span(4);
     padding-top: $padding_base/2;
 }
-.c-logo__link {
-    background-image: url('../temp/images/icons+logo.png'); //TEMP
-    background-repeat: no-repeat; //TEMP
-    background-position: -299px -4px; //TEMP
-    width: 285px; //TEMP
-	height: 72px;   //TEMP     
-    display: inline-block;
+.c-logo__link {    
+     display: block;
+     text-indent: -9999px;
+     width: 100%;
+     height: 90px;
+     background: url('#{$url_images}/logo-dark.svg');
+     background-size: contain;
+     background-repeat: no-repeat;
 }
 /* Banner ---------*/
 .l-header__banner {
@@ -39,7 +40,7 @@
 
 
 .l-header {
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: $screen_md) {
         @include span(12);
     }        
 }

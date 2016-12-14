@@ -4,20 +4,47 @@
 
 .c-nav {
     list-style: none;
-    margin-top: $padding_base + 6; //question
-    margin-bottom: $padding_base - 4; //question
+    margin-top: $padding_base * 1.25;
+    margin-bottom: $padding_base / 1.2; 
 }
 .c-nav__item {
     display: inline-block;
     margin-right: $padding_base+($padding_base/2);
     &.is-active {
         .c-nav__link {
-            font-weight: bold;
+            //font-weight: bold; 
             color: $color_green;
         }
+    }
+    &.is-dropdown {
+        &:hover {
+            .c-nav__dropdown {
+                left: 0;
+                opacity: 1;
+            }
+        }
+    }
+    @media screen and (max-width: $screen_md) {
+        display: block;
     }
 }
 .c-nav__link {
     text-transform: uppercase;
     @include link-colors($color_gray_dark, $color_green, $color_green, $color_gray_dark, $color_green);
+}
+.c-nav__dropdown {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 999;
+    background-color: $color_white;
+    padding-top: 28px;   
+	left:-9999px; 
+	opacity:0;
+	-webkit-transition:0.25s linear opacity;    
+    @media screen and (max-width: $screen_md) {
+        left: 0;
+        opacity: 1;
+        position: relative;
+    }      
 }
