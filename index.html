@@ -309,24 +309,36 @@
               </div>                                                                 
           </div>
       </section>
-
+      
       <article class="c-infoblock">
-          <header>
-              <h2 class="c-infoblock__title">Тест: насколько вы готовы стать предпринимателем?</h2>
-          </header>
-          <p class="c-infoblock__description">
-              Пройдите тест и узнайте, какие компетенции у вас уже есть, а что нужно подтянуть. Мы подберем программу под ваш уровень. 
-          </p>
-          <form action="" class="c-form" accept-charset="utf-8" method="" name="form--test" target="">
-              <input type="text" name="form--test__name" placeholder="Введите свое имя" required>
-              <input type="mail" name="form--test__mail" placeholder="Введите свой e-mail" required>
-              <input type="checkbox" name="form--test__datepersona" checked> даю согласие на обработку своих персональных данных
-              <button class="c-btn bg--blue">Пройти тест</button>
-          </form>
-          <figure>
-              <img src="temp/images/index_test.jpg" alt="" class="c-infoblock__thumbnail">
-          </figure>
+          <div class="container">
+              <div class="c-infoblock__text">
+                  <hgroup>
+                      <h2 class="c-infoblock__title">Тест: насколько вы готовы стать предпринимателем?</h2>
+                      <h3 class="c-infoblock__description">
+                          Пройдите тест и узнайте, какие компетенции у вас уже есть, а что нужно подтянуть. Мы подберем программу под ваш уровень. 
+                      </h3>                      
+                  </hgroup> 
+                  <form action="" class="c-form c-form--horizontal" accept-charset="utf-8" method="" name="form--test" target="">
+                      <div class="l-form__col">
+                          <input type="text" class="c-form__item c-form__input" name="form--test__name" placeholder="Введите свое имя" required>
+                          <input type="mail" class="c-form__item c-form__input" name="form--test__mail" placeholder="Введите свой e-mail" required>
+                          <div class="c-form__item c-form__checkbox">
+                              <input type="checkbox" name="form--test__datepersona" id="form--test__datepersona" checked> 
+                              <label for="form--test__datepersona">даю согласие на обработку своих персональных данных</label>                          
+                          </div> 
+                      </div>
+                      <div class="l-form__col">
+                          <button class="c-btn bg--blue c-form__item c-form__btn">Пройти тест</button>
+                      </div>
+                  </form>
+              </div>
+              <figure>
+                  <img src="temp/images/index_test.jpg" alt="" class="c-infoblock__thumbnail">
+              </figure>
+          </div>          
       </article>
+      
   </main>
 
 

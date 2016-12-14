@@ -23,6 +23,7 @@
     position: relative;
 }
 .c-infoblock__title {
+    @extend h1;
     margin-bottom: $padding_base; //question
     color: $color_white;
 }

@@ -1,3 +1,55 @@
 // ----------------------- //
 // Forms style ----------- //
 // ----------------------- //
+.c-form--horizontal {
+    @include span(10);
+    padding: 0px;
+    .l-form__col:first-child {
+       @include span(7);   
+        padding-left: 0px;
+    }
+    .l-form__col:last-child {
+        @include span(5);      
+    }
+}
+.c-form {
+    
+}
+.c-form__item {
+    display: block;
+    width: 100%;
+    margin-top: $padding_base;
+}
+.c-form__input {
+    border: none;
+    background: transparent;
+    padding: 5px 0px;
+    border-bottom: 1px solid $color_green_light2;
+    color: $color_white;
+    font-size: $font_size_base;  
+    @include input-placeholder {
+       color: $color_white;
+       font-size: $font_size_base;
+    } 
+    &:focus {
+       border: none;
+       outline: none;
+       border-bottom: 1px solid $color_green_light3;
+    }  
+    &:first-child {
+        margin-top: 0px;
+    }   
+}    
+.c-form__btn {
+    border: none;
+    width: auto;
+}
+.c-form__checkbox {
+    margin-top: $padding_base / 2;
+    input[type='checkbox'] {
+        
+    }
+    label {
+        
+    }
+}

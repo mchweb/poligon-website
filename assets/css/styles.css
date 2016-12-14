@@ -1,5 +1,6 @@
 html, body, div, span, applet, object, iframe,
 h1,
+.c-infoblock__title,
 .c-feature__title, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -173,6 +174,75 @@ table {
 }
 
 /* Forms *******************/
+.c-form--horizontal {
+  width: 83.33333%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 0px;
+}
+.c-form--horizontal .l-form__col:first-child {
+  width: 58.33333%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 0px;
+}
+.c-form--horizontal .l-form__col:last-child {
+  width: 41.66667%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.c-form__item {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.c-form__input {
+  border: none;
+  background: transparent;
+  padding: 5px 0px;
+  border-bottom: 1px solid #b3d98f;
+  color: #ffffff;
+  font-size: 16px;
+}
+.c-form__input:-moz-placeholder {
+  color: #ffffff;
+  font-size: 16px;
+}
+.c-form__input::-moz-placeholder {
+  color: #ffffff;
+  font-size: 16px;
+}
+.c-form__input:-ms-input-placeholder {
+  color: #ffffff;
+  font-size: 16px;
+}
+.c-form__input::-webkit-input-placeholder {
+  color: #ffffff;
+  font-size: 16px;
+}
+.c-form__input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #cee6b7;
+}
+.c-form__input:first-child {
+  margin-top: 0px;
+}
+
+.c-form__btn {
+  border: none;
+  width: auto;
+}
+
+.c-form__checkbox {
+  margin-top: 12px;
+}
+
 /* Lists *******************/
 /* Typography **************/
 body {
@@ -182,12 +252,12 @@ body {
   font-family: "ClearSans", sans-serif;
 }
 
-h1, .c-feature__title, h2, h3, h4 {
+h1, .c-infoblock__title, .c-feature__title, h2, h3, h4 {
   font-family: "ClearSans", sans-serif;
   color: #373737;
 }
 
-h1, .c-feature__title {
+h1, .c-infoblock__title, .c-feature__title {
   font-size: 40px;
   line-height: 48px;
   font-weight: bold;
