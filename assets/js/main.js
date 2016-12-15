@@ -56,7 +56,9 @@ funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','cent
 funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center');
 
 var elem = document.querySelector('.c-slider');
-var flkty = new Flickity();
+var flkty = new Flickity( elem, {
+  wrapAround: 'true'
+});
 funcMaxHeightElement('.c-slider__item');
 /*-------------  Features  --------------*/
 funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
