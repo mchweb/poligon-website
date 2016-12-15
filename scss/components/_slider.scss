@@ -6,6 +6,8 @@
     @extend .container;
 }
 .c-slider {
+    @include span(12);
+    padding: 0px;
     .flickity-prev-next-button.next, .flickity-prev-next-button.previous {
         opacity: 1;
         background: transparent;

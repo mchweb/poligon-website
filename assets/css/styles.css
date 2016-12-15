@@ -345,6 +345,11 @@ a {
 .c-content__title--block {
   padding-top: 72px;
   padding-bottom: 24px;
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: inline-block;
 }
 
 /* Icons *******************/
@@ -539,6 +544,13 @@ a {
 }
 
 /* Slider ******************/
+.c-slider {
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 0px;
+}
 .c-slider .flickity-prev-next-button.next, .c-slider .flickity-prev-next-button.previous {
   opacity: 1;
   background: transparent;

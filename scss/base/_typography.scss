@@ -43,5 +43,7 @@ a {
 
 .c-content__title--block {
     padding-top: $padding_base * 3;
-    padding-bottom: $padding_base;    
+    padding-bottom: $padding_base;   
+    @include span(12);
+    display: inline-block;
 }
