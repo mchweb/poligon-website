@@ -44,6 +44,9 @@
     @include span(7);
     z-index: 2;
     position: relative;
+    @media screen and (max-width: $screen_md) {
+      @include span(12);  
+    }    
 }
 .c-infoblock__title {
     @extend h1;
