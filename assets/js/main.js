@@ -1,29 +1,9 @@
-/*==================   Functions    ==================*/
-var backgroundImageBlocks = function (blockName,imgName,blockNameBackground) {
-    var block =  document.querySelectorAll(blockName);
-    for (var i = 0; i < block.length; i++) {
-        var blockThumbnail = block[i].querySelector(imgName);
-        blockThumbnail.style.display = 'none';
-        if(block[i].querySelector(blockNameBackground) != null){
-            var blockNameBack = block[i].querySelector(blockNameBackground);
-            blockNameBack.style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
-            blockNameBack.style.backgroundPosition = 'right center';
-            blockNameBack.style.backgroundRepeat = 'no-repeat';
-            blockNameBack.style.backgroundSize = 'cover';               
-        }else {
-            block[i].style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
-            block[i].style.backgroundPosition = 'right center';
-            block[i].style.backgroundRepeat = 'no-repeat';
-            block[i].style.backgroundSize = 'cover';              
-        } 
-    }   
-};
-/*==================   Breakpoints    ================*/
-var screen_md = 992;
 /*==================   Basic    ======================*/
+var screen_md = 992;
 var classActive = '.is-active';
 var classNotActive = 'is-notactive';
-var disableLink = function (blockName) {
+/*==================   Functions    ==================*/
+var funcDisableLink = function (blockName) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
         if (block[i].classList.contains(classNotActive)){
@@ -33,10 +13,38 @@ var disableLink = function (blockName) {
         
     }
 };
-disableLink('.c-program__item');
+var funcBackgroundImageBlocks = function (blockName,imgName,backPositionHoriz,backPositionVertical,blockNameBackground) {
+    var block =  document.querySelectorAll(blockName);
+    for (var i = 0; i < block.length; i++) {
+        var blockThumbnail = block[i].querySelector(imgName);
+        blockThumbnail.style.display = 'none';
+        if(block[i].querySelector(blockNameBackground) != null){
+            var blockNameBack = block[i].querySelector(blockNameBackground);
+            blockNameBack.style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
+            blockNameBack.style.backgroundPosition = backPositionHoriz+' '+backPositionVertical;
+            blockNameBack.style.backgroundRepeat = 'no-repeat';
+            blockNameBack.style.backgroundSize = 'cover';               
+        }else {
+            block[i].style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
+            block[i].style.backgroundPosition = backPositionHoriz+' '+backPositionVertical;
+            block[i].style.backgroundRepeat = 'no-repeat';
+            block[i].style.backgroundSize = 'cover';              
+        } 
+    }   
+};
+var funcMaxHeightElement = function(blockName) {
+    var blockItems =  document.querySelectorAll(blockName);
+    var blockItemsHeight = [];
+    for (var i = 0; i < blockItems.length; i++) {
+        blockItemsHeight.push(blockItems[i].offsetHeight);
+    }
+    for (var i = 0; i < blockItems.length; i++) {
+        blockItems[i].style.height = Math.max.apply(null, blockItemsHeight)+'px';
+    }    
+};
 /*==================   Home page    ==================*/
 /*-------------  Infoblock  -------------*/
-backgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','.c-infoblock__image');
+funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
 var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
 for (var i = 0; i < blockInfoblocks.length; i++) {
     var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
@@ -44,21 +52,15 @@ for (var i = 0; i < blockInfoblocks.length; i++) {
 }
 
 /*-------------  Slider  ----------------*/
-backgroundImageBlocks('.c-slider__item','.c-slider__thumbnail');
-backgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail');
+funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','center');
+funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center');
 
 var elem = document.querySelector('.c-slider');
 var flkty = new Flickity();
-var sliderItems =  document.querySelectorAll('.c-slider__item');
-var sliderItemsHeight = [];
-for (var i = 0; i < sliderItems.length; i++) {
-    sliderItemsHeight.push(sliderItems[i].offsetHeight);
-}
-for (var i = 0; i < sliderItems.length; i++) {
-    sliderItems[i].style.height = Math.max.apply(null, sliderItemsHeight)+'px';
-}
+funcMaxHeightElement('.c-slider__item');
 /*-------------  Features  --------------*/
-backgroundImageBlocks('.c-feature','.c-feature__thumbnail');
+funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
+funcMaxHeightElement('.c-feature__content');
 /*==================   Images    =====================*/    
 /*==================   Navigation menu    ============*/
 if(window.innerWidth < screen_md){
@@ -81,6 +83,8 @@ if(window.innerWidth < screen_md){
         }
     }
 }
+/*==================   Program    ====================*/   
+funcDisableLink('.c-program__item');
 /*==================   Animations   ==================*/
 
 
