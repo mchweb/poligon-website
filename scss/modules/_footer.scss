@@ -22,17 +22,30 @@
 }
 .l-content__col.l-contact__register {
     @include span(3);
+    @media screen and (max-width: $screen_md) {
+        @include span(12);
+        margin-bottom: $padding_base;
+    }
 }
 .l-content__col.l-contact__follow {
     @include span(3);
+    @media screen and (max-width: $screen_md) {
+        @include span(12);
+        margin-bottom: $padding_base;
+    }    
 }
 .l-content__col.l-contact__sign {
     @include span(6);
+    @media screen and (max-width: $screen_md) {
+        @include span(12);
+        margin-bottom: $padding_base;
+    }    
 }
 .l-content__col.l-contact__address {
     @include span(6);
     .l-contact__logo {
         @include span(7);
+        padding: 0px;
     }
     .c-list-contact {
         @include span(5);
@@ -40,7 +53,15 @@
     .c-content__text {
         @include span(12);
         margin-top: $padding_base * 1.5; 
+        padding: 0px;
+        span, div {
+            display: inline-block;
+        }
     }
+    @media screen and (max-width: $screen_md) {
+        @include span(12);
+        margin-bottom: $padding_base;
+    }    
 }
 .l-content__col.l-contact__phone {
     @include span(4);
@@ -51,12 +72,19 @@
     .c-content__text {
         float: left;
         a {
-            margin-top: $padding_base * 1.5; 
+            margin-top: $padding_base / 1.5; 
             text-decoration: none;
             display: inline-block;
             //margin-left: $padding_base; 
         }
+        @media screen and (max-width: $screen_md) {
+            width: 100%;
+        }
     }
+    @media screen and (max-width: $screen_md) {
+        @include span(12);
+        margin-bottom: $padding_base;
+    }    
 }
 .l-content__col.l-contact__dev {
     @include span(2);
@@ -66,4 +94,8 @@
             text-decoration: none;
         }        
     }
+    @media screen and (max-width: $screen_md) {
+        @include span(12);
+        margin-bottom: $padding_base;    
+    }    
 }  

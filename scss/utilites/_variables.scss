@@ -5,6 +5,9 @@
 /* Base -----------*/
 $url_images: "../img";
 $url_fonts: "../fonts";
+.is--hidden {
+    display: none !important;
+}
 /* Colors ---------*/
 $color_gray_dark: #373737;
 $color_gray: #6e6e6e;

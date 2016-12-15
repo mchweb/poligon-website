@@ -18,7 +18,7 @@
   <header id="header">
      <div class="container">
           <section class="l-header l-header__logo">
-              <a href="#" class="c-logo__link"></a>
+              <a href="#" class="c-logo__link is--dark"></a>
           </section>
           <section class="l-header l-header__banner">
               <p class="c-banner__text">Развиваем сообщество молодых предпринимателей: проводим образовательные программы и встречи с представителями бизнеса</p>
@@ -497,7 +497,7 @@
           <section class="l-content__grid--three">              
               <section class="l-contact__address l-content__col">
                   <div class="l-contact__logo">
-                      <a href="#" class="c-logo__link"></a>
+                      <a href="#" class="c-logo__link is--light"></a>
                   </div>
                   <ul class="c-list-contact">
                       <li class="c-list-contact__item">
@@ -507,7 +507,17 @@
                           <a href="#" class="c-icon c-icon__instagram"></a>
                       </li>                      
                   </ul>
-                  <p class="c-content__text color--gray__light">Усова 9/4, 201 (7 корпус ТПУ) Тел.: 701-777, внутренний: 1808</p>                  
+                  <div class="c-content__text color--gray__light">
+                        <div itemscope itemtype="http://schema.org/Organization">
+                          <span itemprop="name" class="is--hidden">Полигон инженерного предпринимательства (Томский политехнический университет)</span>
+                          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            <span itemprop="postalCode" class="is--hidden">>634034</span>
+                            <span itemprop="addressLocality" class="is--hidden">Томск</span>
+                            <span itemprop="streetAddress">Усова 9/4, 201 (7 корпус ТПУ)</span>
+                          </div>
+                          Тел.:<span itemprop="telephone">701-777, внутренний: 1808</span> <span itemprop="telephone" class="is--hidden">>+7 923 422-39-22</span>.
+                        </div>
+                  </div>                  
               </section>   
               <section class="l-contact__phone l-content__col">
                   <p class="c-content__text color--gray__light ">Полигон на связи в мессендежарх:</p>
