@@ -4,16 +4,39 @@
 
 .c-infoblock {
     position: relative;    
+    overflow: hidden;
     &:before {
         content: '';
         position: absolute;
         left: 0;
         top: 0;
-        width: 80%;
+        width: 60%;
         height: 100%;
         background-color: $color_green;
         z-index: 1;
+        @media screen and (max-width: $screen_md) {
+            width: 100%;
+        }           
     }
+}
+.c-infoblock__background {
+    content: '';
+    position: absolute;
+    left: 60%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 200px 0 0 200px;
+    border-color: transparent transparent transparent $color_green;    
+}
+.c-infoblock__image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;   
+    z-index: -1;
 }
 .c-infoblock__text {
     padding-top: 92px;

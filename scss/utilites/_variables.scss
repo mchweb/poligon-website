@@ -10,6 +10,7 @@ $color_gray_dark: #373737;
 $color_gray: #6e6e6e;
 $color_gray_light: #9c9c9c;
 $color_gray_light2: #949494;
+$color_gray_light3: #8e8e8e;
 $color_white: #ffffff;
 $color_black_light: #1d1d1d;
 $color_red: #f04e23;
@@ -27,6 +28,14 @@ $color_orange_accent: #eb8913;
 $color_white_dark: #f1f1f1;
 .bg--green {
     background-color: $color_green;
+    color: $color_white;
+}
+.bg--blue {
+    background-color: $color_blue;
+    color: $color_white;
+}
+.bg--orange {
+    background-color: $color_orange;
     color: $color_white;
 }
 .color--red {

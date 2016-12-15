@@ -6,6 +6,27 @@
     @extend .container;
 }
 .c-slider {
+    .flickity-prev-next-button.next, .flickity-prev-next-button.previous {
+        opacity: 1;
+        background: transparent;
+        border: 2px solid $color_gray_light3;
+        width: 50px;
+        height: 50px;
+    }
+    .flickity-prev-next-button .arrow {
+        fill: $color_gray_light3;;
+    }
+    @media screen and (max-width: $screen_md) {
+        .flickity-prev-next-button.next, .flickity-prev-next-button.previous {
+            display: none;
+        }        
+    }    
+    @media screen and (min-width: $screen_md) {
+        .flickity-page-dots{
+            display: none;
+        } 
+    }
+    
 }
 .c-slider__item {
     @include span(12);
@@ -34,20 +55,45 @@
     @include span(6);
     color: $color_white;
 }
+.c-infoblock__date--text {
+    float: left;
+    display: block;
+}
 .c-infoblock__map {
     @include span(6);
     color: $color_white;
     text-decoration: none;
-    line-height: 92px; //TEMP
+    .c-infoblock__date--text {
+        line-height: 36px;
+    }
 }
 
 .c-slider-nav {
     display: inline-block;
     @include span(12);
     margin-top: $padding_base * 1.5;
+    @media screen and (max-width: $screen_md) {
+        display: none;
+    }       
 }
 .c-slider-nav__item {    
     @include span(2);
+    padding: 0px;
+    margin: 0px 15px;
+    min-height: 120px;   
+    &:hover, &.is-selected.is-nav-selected {
+        .c-slider-nav__title  {
+            position: static;
+        }
+    }
+}
+.c-slider-nav__content {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;   
+    left: 0;
+    right: 0;
 }
 .c-slider-nav__title {
     width: 100%;
@@ -56,7 +102,7 @@
     color: $color_white;
     font-size: $font_size_base - 2;  
     line-height: $line_height_base;
-    z-index: 1;
+    z-index: 2;
     margin-top: $padding_base/2;
     margin-bottom: $padding_base/2;
     padding-left: 10px;
@@ -94,4 +140,5 @@
     color: $color_white;
     font-size: 14px;    
     margin-bottom: $padding_base;
+    z-index: 2;
 }

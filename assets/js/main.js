@@ -1,13 +1,21 @@
 /*==================   Functions    ==================*/
-var backgroundImageBlocks = function (blockName,imgName) {
+var backgroundImageBlocks = function (blockName,imgName,blockNameBackground) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
         var blockThumbnail = block[i].querySelector(imgName);
         blockThumbnail.style.display = 'none';
-        block[i].style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
-        block[i].style.backgroundPosition = 'right center';
-        block[i].style.backgroundRepeat = 'no-repeat';
-        block[i].style.backgroundSize = 'cover';   
+        if(block[i].querySelector(blockNameBackground) != null){
+            var blockNameBack = block[i].querySelector(blockNameBackground);
+            blockNameBack.style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
+            blockNameBack.style.backgroundPosition = 'right center';
+            blockNameBack.style.backgroundRepeat = 'no-repeat';
+            blockNameBack.style.backgroundSize = 'cover';               
+        }else {
+            block[i].style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
+            block[i].style.backgroundPosition = 'right center';
+            block[i].style.backgroundRepeat = 'no-repeat';
+            block[i].style.backgroundSize = 'cover';              
+        } 
     }   
 };
 /*==================   Breakpoints    ================*/
@@ -28,7 +36,16 @@ var disableLink = function (blockName) {
 disableLink('.c-program__item');
 /*==================   Home page    ==================*/
 /*-------------  Infoblock  -------------*/
-backgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail');
+backgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','.c-infoblock__image');
+var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
+for (var i = 0; i < blockInfoblocks.length; i++) {
+    var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
+    console.log(blockInfoblockBack);
+    console.log(blockInfoblocks[i]);
+    console.log(blockInfoblocks[i].offsetHeight);
+    blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+    console.log(blockInfoblockBack.style.borderWidth);
+}
 
 /*-------------  Slider  ----------------*/
 backgroundImageBlocks('.c-slider__item','.c-slider__thumbnail');
@@ -43,8 +60,7 @@ backgroundImageBlocks('.c-feature','.c-feature__thumbnail');
 /*==================   Navigation menu    ============*/
 if(window.innerWidth < screen_md){
     var navItems =  document.querySelectorAll('.c-nav__item');
-    for (var i = 0; i < navItems.length; i++) {
-        
+    for (var i = 0; i < navItems.length; i++) {        
         if (navItems[i].classList.contains('is-dropdown')){ 
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
             navDropdown.style.display = 'none';

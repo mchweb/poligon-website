@@ -134,6 +134,8 @@
                   <img src="temp/images/index_hero.jpg" alt="" class="c-infoblock__thumbnail">
               </figure>
           </div>
+          <div class="c-infoblock__background"></div>
+          <div class="c-infoblock__image"></div>
       </article>      
   </header>
 
@@ -146,7 +148,7 @@
           </header>
 
 
-          <section class="c-slider" data-flickity='{"pageDots": false}'>
+          <section class="c-slider" data-flickity='{"wrapAround": true }'>
               <article class="c-slider__item">
                   <figure>
                       <img src="temp/images/pred-visov.jpg" alt="" class="c-slider__thumbnail">
@@ -159,12 +161,16 @@
                       <footer class="c-infoblock__footer">
                           <div class="c-infoblock__date">
                               <div class="c-icon c-icon__calendar"></div>
-                              12-13 декабря 2016<br>
-                              (проводится 2 раза в месяц)
+                              <div class="c-infoblock__date--text">
+                                  12-13 декабря 2016<br>
+                                  (проводится 2 раза в месяц)
+                              </div>
                           </div>
                           <a href="#" class="c-infoblock__map">
                               <div class="c-icon c-icon__mapmaker"></div>
-                              Белинского 51, 309
+                              <div class="c-infoblock__date--text">
+                                  Белинского 51, 309
+                              </div>
                           </a>
                       </footer>
                       <a href="#" class="c-btn bg--orange">Зарегистрироваться</a>
@@ -176,18 +182,22 @@
                   </figure>  
                   <div class="c-slider__content">                   
                       <hgroup>
-                          <h2 class="c-slider__title bg--green">TEST!Предпринимательский вызов</h2>
+                          <h2 class="c-slider__title bg--blue">TEST!Предпринимательский вызов</h2>
                           <h4 class="c-slider__subtitle">TEST!Стартовая двухдневная программа для поиска и тестирования предпринимательской идеи на реализуемость; для участников с бизнес-идеями и без</h4>
                       </hgroup>   
                       <footer class="c-infoblock__footer">
                           <div class="c-infoblock__date">
                               <div class="c-icon c-icon__calendar"></div>
-                              TEST!12-13 декабря 2016<br>
-                              (проводится 2 раза в месяц)
+                              <div class="c-infoblock__date--text">
+                                  TEST!12-13 декабря 2016<br>
+                                  (проводится 2 раза в месяц)
+                              </div>
                           </div>
                           <a href="#" class="c-infoblock__map">
                               <div class="c-icon c-icon__mapmaker"></div>
-                              TEST!Белинского 51, 309
+                              <div class="c-infoblock__date--text">
+                                  TEST!Белинского 51, 309
+                              </div>
                           </a>
                       </footer>
                       <a href="#" class="c-btn bg--orange">TEST!Зарегистрироваться</a>
@@ -199,18 +209,22 @@
                   </figure>                     
                   <div class="c-slider__content">                   
                       <hgroup>
-                          <h2 class="c-slider__title bg--green">TEST!Предпринимательский вызов</h2>
+                          <h2 class="c-slider__title bg--orange">TEST!Предпринимательский вызов</h2>
                           <h4 class="c-slider__subtitle">TEST!Стартовая двухдневная программа для поиска и тестирования предпринимательской идеи на реализуемость; для участников с бизнес-идеями и без</h4>
                       </hgroup>   
                       <footer class="c-infoblock__footer">
                           <div class="c-infoblock__date">
                               <div class="c-icon c-icon__calendar"></div>
-                              TEST!12-13 декабря 2016<br>
-                              (проводится 2 раза в месяц)
+                              <div class="c-infoblock__date--text">
+                                  TEST!12-13 декабря 2016<br>
+                                  (проводится 2 раза в месяц)
+                              </div>
                           </div>
                           <a href="#" class="c-infoblock__map">
                              <div class="c-icon c-icon__mapmaker"></div>
-                              TEST!Белинского 51, 309
+                             <div class="c-infoblock__date--text">
+                                 TEST!Белинского 51, 309
+                             </div>
                           </a>
                       </footer>
                       <a href="#" class="c-btn bg--orange">TEST!Зарегистрироваться</a>
@@ -223,33 +237,39 @@
               <a href="#" class="c-slider-nav__btn--left"></a>
               <a href="#" class="c-slider-nav__btn--right"></a>   
 -->
-          <section class="c-slider-nav" data-flickity='{ "asNavFor": ".c-slider", "contain": true, "pageDots": false, "prevNextButtons": false }'>
+          <section class="c-slider-nav" data-flickity='{ "asNavFor": ".c-slider", "contain": true, "pageDots": false, "prevNextButtons": false}'>
               <article class="c-slider-nav__item">
                   <figure>
                       <img src="temp/images/pred-visov.jpg" alt="" class="c-slider-nav__thumbnail">
-                  </figure>                     
-                  <header>
-                      <h3 class="c-slider-nav__title bg-transparent--green">Предпринимательский вызов</h3>
-                  </header>
-                  <div class="c-slider-nav__date">24 января</div>
+                  </figure>  
+                  <div class="c-slider-nav__content">                       
+                      <header>
+                          <h3 class="c-slider-nav__title bg-transparent--green">Предпринимательский вызов</h3>
+                      </header>
+                      <div class="c-slider-nav__date">24 января</div>
+                  </div> 
               </article>
               <article class="c-slider-nav__item">
                   <figure>
                       <img src="temp/images/pred-visov.jpg" alt="" class="c-slider-nav__thumbnail">
-                  </figure>                      
-                  <header>
-                      <h3 class="c-slider-nav__title bg-transparent--blue">Школа продвижения</h3>
-                  </header>
-                  <div class="c-slider-nav__date">26 января</div>
+                  </figure>   
+                  <div class="c-slider-nav__content">                
+                      <header>
+                          <h3 class="c-slider-nav__title bg-transparent--blue">Школа продвижения</h3>
+                      </header>
+                      <div class="c-slider-nav__date">26 января</div>
+                  </div>   
               </article>
               <article class="c-slider-nav__item">
                   <figure>
                       <img src="temp/images/pred-visov.jpg" alt="" class="c-slider-nav__thumbnail">
-                  </figure>                      
-                  <header>
-                      <h3 class="c-slider-nav__title bg-transparent--orange">В шаге от бизнеса</h3>
-                  </header>
-                  <div class="c-slider-nav__date">26 января</div>
+                  </figure>    
+                  <div class="c-slider-nav__content">                   
+                      <header>
+                          <h3 class="c-slider-nav__title bg-transparent--orange">В шаге от бизнеса</h3>
+                      </header>
+                      <div class="c-slider-nav__date">26 января</div>
+                  </div> 
               </article>                                    
           </section>
       </section>
@@ -420,7 +440,9 @@
               <figure>
                   <img src="temp/images/index_test.jpg" alt="" class="c-infoblock__thumbnail">
               </figure>
-          </div>          
+          </div>  
+          <div class="c-infoblock__background"></div>
+          <div class="c-infoblock__image"></div>        
       </article>
       
   </main>
