@@ -4,6 +4,7 @@
 
 .c-program {
     @extend .container;
+    padding-bottom: $padding_base / 2;
     .l-content__col {
         margin-bottom: 0px;
     }
