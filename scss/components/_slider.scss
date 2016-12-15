@@ -41,6 +41,9 @@
     display: inline-block;
     @include span(7);
     @include push(1);
+    @media screen and (max-width: $screen_md) {
+         @include span(10);
+    }    
 }
 .c-slider__subtitle {
     color: $color_white;
@@ -50,10 +53,16 @@
     @include span(12);
     margin-top: $padding_base * 1.5;
     margin-bottom: $padding_base * 2;
+    padding: 0;
 }
 .c-infoblock__date {
     @include span(6);
     color: $color_white;
+    padding: 0;
+    @media screen and (max-width: $screen_md) {
+        @include span(12);
+        margin-bottom: $padding_base;
+    }    
 }
 .c-infoblock__date--text {
     float: left;
@@ -63,8 +72,12 @@
     @include span(6);
     color: $color_white;
     text-decoration: none;
+    padding: 0;
     .c-infoblock__date--text {
         line-height: 36px;
+    }
+    @media screen and (max-width: $screen_md) {
+        @include span(12);
     }
 }
 

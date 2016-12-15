@@ -582,6 +582,14 @@ a {
   padding-right: 15px;
   margin-left: 8.33333%;
 }
+@media screen and (max-width: 992px) {
+  .c-slider__content {
+    width: 83.33333%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 
 .c-slider__subtitle {
   color: #ffffff;
@@ -594,6 +602,7 @@ a {
   padding-right: 15px;
   margin-top: 36px;
   margin-bottom: 48px;
+  padding: 0;
 }
 
 .c-infoblock__date {
@@ -602,6 +611,16 @@ a {
   padding-left: 15px;
   padding-right: 15px;
   color: #ffffff;
+  padding: 0;
+}
+@media screen and (max-width: 992px) {
+  .c-infoblock__date {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 24px;
+  }
 }
 
 .c-infoblock__date--text {
@@ -616,9 +635,18 @@ a {
   padding-right: 15px;
   color: #ffffff;
   text-decoration: none;
+  padding: 0;
 }
 .c-infoblock__map .c-infoblock__date--text {
   line-height: 36px;
+}
+@media screen and (max-width: 992px) {
+  .c-infoblock__map {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .c-slider-nav {

@@ -40,11 +40,7 @@ backgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','.c-infoblock__im
 var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
 for (var i = 0; i < blockInfoblocks.length; i++) {
     var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
-    console.log(blockInfoblockBack);
-    console.log(blockInfoblocks[i]);
-    console.log(blockInfoblocks[i].offsetHeight);
     blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
-    console.log(blockInfoblockBack.style.borderWidth);
 }
 
 /*-------------  Slider  ----------------*/
@@ -53,7 +49,14 @@ backgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail');
 
 var elem = document.querySelector('.c-slider');
 var flkty = new Flickity();
-
+var sliderItems =  document.querySelectorAll('.c-slider__item');
+var sliderItemsHeight = [];
+for (var i = 0; i < sliderItems.length; i++) {
+    sliderItemsHeight.push(sliderItems[i].offsetHeight);
+}
+for (var i = 0; i < sliderItems.length; i++) {
+    sliderItems[i].style.height = Math.max.apply(null, sliderItemsHeight)+'px';
+}
 /*-------------  Features  --------------*/
 backgroundImageBlocks('.c-feature','.c-feature__thumbnail');
 /*==================   Images    =====================*/    
