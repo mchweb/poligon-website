@@ -200,6 +200,7 @@ table {
   display: inline-block;
   text-decoration: none;
   border-bottom: none;
+  cursor: pointer;
 }
 .c-btn.bg--orange {
   color: #ffffff;
