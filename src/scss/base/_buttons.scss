@@ -10,6 +10,7 @@
     font-size: $btn_font_size;
     display: inline-block;
     text-decoration: none;
+    border-bottom: none;
     &.bg--orange {
         color: $color_white;
         background-color: $color_orange;

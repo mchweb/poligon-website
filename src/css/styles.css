@@ -199,6 +199,7 @@ table {
   font-size: 16px;
   display: inline-block;
   text-decoration: none;
+  border-bottom: none;
 }
 .c-btn.bg--orange {
   color: #ffffff;
@@ -410,7 +411,21 @@ strong {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  border-bottom-color: #6e6e6e;
+}
+a:hover {
+  border-bottom-color: #6e6e6e;
+}
+a:active {
+  border-bottom-color: #6e6e6e;
+}
+a:visited {
+  border-bottom-color: #6e6e6e;
+}
+a:focus {
+  border-bottom-color: #6e6e6e;
 }
 
 .c-content__title--block {
@@ -426,6 +441,7 @@ a {
 /* Icons *******************/
 .c-icon {
   display: inline-block;
+  border-bottom: none;
 }
 
 .c-icon__calendar {
@@ -502,6 +518,7 @@ a {
   height: 90px;
   background-size: contain;
   background-repeat: no-repeat;
+  border-bottom: none;
 }
 .c-logo__link.is--dark {
   background-image: url("../img/logo-dark.svg");
@@ -534,21 +551,39 @@ a {
   }
 }
 
-.c-nav__link {
+a.c-nav__link {
   text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  border-bottom-color: #373737;
   color: #373737;
 }
-.c-nav__link:visited {
+a.c-nav__link:visited {
   color: #373737;
 }
-.c-nav__link:focus {
+a.c-nav__link:focus {
   color: #80bf44;
 }
-.c-nav__link:hover {
+a.c-nav__link:hover {
   color: #80bf44;
 }
-.c-nav__link:active {
+a.c-nav__link:active {
   color: #80bf44;
+}
+a.c-nav__link:hover {
+  border-bottom-color: #80bf44;
+}
+a.c-nav__link:active {
+  border-bottom-color: #80bf44;
+}
+a.c-nav__link:visited {
+  border-bottom-color: #373737;
+}
+a.c-nav__link:visited:hover {
+  border-bottom-color: #80bf44;
+}
+a.c-nav__link:focus {
+  border-bottom-color: #80bf44;
 }
 
 .c-nav__dropdown {
@@ -746,6 +781,7 @@ a {
   color: #ffffff;
   text-decoration: none;
   padding: 0;
+  border-bottom: none;
 }
 .c-infoblock__map .c-infoblock__date--text {
   line-height: 36px;
@@ -914,6 +950,7 @@ a {
 .c-program__item.is-notactive a {
   pointer-events: none;
   cursor: default;
+  border-bottom-color: #9c9c9c;
 }
 
 .c-program__title a {
@@ -989,6 +1026,7 @@ a {
 }
 #footer .c-content__text a {
   color: #ffffff;
+  border-bottom-color: white;
 }
 #footer .c-form__input {
   border-bottom: 1px solid #9c9c9c;
@@ -1099,6 +1137,7 @@ a {
   margin-top: 16px;
   text-decoration: none;
   display: inline-block;
+  border-bottom: none;
 }
 @media screen and (max-width: 992px) {
   .l-content__col.l-contact__phone .c-content__text {
@@ -1124,6 +1163,7 @@ a {
 }
 .l-content__col.l-contact__dev .c-content__text a {
   text-decoration: none;
+  border-bottom: none;
 }
 @media screen and (max-width: 992px) {
   .l-content__col.l-contact__dev {

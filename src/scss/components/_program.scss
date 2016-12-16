@@ -19,6 +19,7 @@
         a {
             pointer-events: none;
             cursor: default;
+            border-bottom-color: rgba($color_gray_light,1); 
         }
     }
 }

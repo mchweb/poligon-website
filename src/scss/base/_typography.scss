@@ -38,7 +38,21 @@ strong {
     font-family: $font_clear_sans;
 }
 a {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba($color_gray, 1);  
+    &:hover {
+        border-bottom-color: rgba($color_gray,1);  
+    }
+    &:active {
+        border-bottom-color: rgba($color_gray,1);  
+    }
+    &:visited {
+        border-bottom-color: rgba($color_gray,1);  
+    }
+    &:focus {
+        border-bottom-color: rgba($color_gray,1); 
+    }    
 }
 
 .c-content__title--block {
