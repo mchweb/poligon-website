@@ -1,12 +1,15 @@
 // Normalize style ------- //
-@import "../vendor/normalize-scss/sass/normalize";
+@import "../../vendor/normalize-scss/sass/normalize";
 // Reset style ----------- //
-@import "../vendor/reset-scss/_reset-src.scss";
+@import "../../vendor/reset-scss/_reset-src.scss";
 
 
 @import "compass/css3";
 @import "compass/typography/vertical_rhythm";
 @import "compass/typography/links/link-colors";
+
+// Flickity style -------- //
+@import "../../vendor/flickity/dist/flickity.css";
 
 @import "utilites/index";
 @import "layout/index";

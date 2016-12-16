@@ -1,8 +1,14 @@
-/*==================   Basic    ======================*/
+/*
+ * Basic
+ */
 var screen_md = 992;
 var classActive = '.is-active';
 var classNotActive = 'is-notactive';
-/*==================   Functions    ==================*/
+
+
+/*
+ * Functions
+ */
 var funcDisableLink = function (blockName) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
@@ -42,8 +48,13 @@ var funcMaxHeightElement = function(blockName) {
         blockItems[i].style.height = Math.max.apply(null, blockItemsHeight)+'px';
     }    
 };
-/*==================   Home page    ==================*/
-/*-------------  Infoblock  -------------*/
+
+
+/*
+ *  Home page 
+ */
+
+/* Infoblock */
 funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
 var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
 for (var i = 0; i < blockInfoblocks.length; i++) {
@@ -51,7 +62,7 @@ for (var i = 0; i < blockInfoblocks.length; i++) {
     blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
 }
 
-/*-------------  Slider  ----------------*/
+/* Slider */
 funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','center');
 funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center');
 
@@ -60,11 +71,21 @@ var flkty = new Flickity( elem, {
   wrapAround: 'true'
 });
 funcMaxHeightElement('.c-slider__item');
-/*-------------  Features  --------------*/
+
+
+/* Features */
 funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
 funcMaxHeightElement('.c-feature__content');
-/*==================   Images    =====================*/    
-/*==================   Navigation menu    ============*/
+
+
+/*
+ *  Images
+ */ 
+
+
+/*
+ *  Navigation menu 
+ */
 if(window.innerWidth < screen_md){
     var navItems =  document.querySelectorAll('.c-nav__item');
     for (var i = 0; i < navItems.length; i++) {        
@@ -85,10 +106,12 @@ if(window.innerWidth < screen_md){
         }
     }
 }
-/*==================   Program    ====================*/   
+
+
+/*
+ *  Program 
+ */
 funcDisableLink('.c-program__item');
-/*==================   Animations   ==================*/
-
-
-
-
+/*
+ *  Animations 
+ */

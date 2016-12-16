@@ -3,7 +3,7 @@
 // ----------------------- //
 
 /* Susy Grids -----*/
-@import "../vendor/susy/sass/susy";
+@import "../../vendor/susy/sass/susy";
 $susy: (
   columns: 12, 
   gutters: 30px/70px,
@@ -11,8 +11,8 @@ $susy: (
   gutter-position: inside-static,
   global-box-sizing: border-box,
   debug: (
-      //image: show-columns,
-      image: hide,
+      image: show-columns,
+     //image: hide,
       color: rgba(#66f, .25),
       output: background
   )
