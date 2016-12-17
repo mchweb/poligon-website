@@ -598,6 +598,12 @@ a.c-nav__link:focus {
   opacity: 0;
   -webkit-transition: 0.25s linear opacity;
 }
+.c-nav__dropdown .c-program__item .c-program__info, .c-nav__dropdown .c-program__item .c-program__description {
+  font-size: 14px;
+}
+.c-nav__dropdown .c-program__item .c-program__title {
+  font-size: 16px;
+}
 @media screen and (max-width: 992px) {
   .c-nav__dropdown {
     left: 0;

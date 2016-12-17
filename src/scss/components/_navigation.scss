@@ -59,7 +59,15 @@ a.c-nav__link {
     padding-top: 28px;   
 	left:-9999px; 
 	opacity:0;
-	-webkit-transition:0.25s linear opacity;    
+	-webkit-transition:0.25s linear opacity;   
+    .c-program__item {
+        .c-program__info, .c-program__description {
+            font-size: $font_size_base - 2; 
+        }
+        .c-program__title {
+            font-size: $font_size_base; 
+        }
+    }
     @media screen and (max-width: $screen_md) {
         left: 0;
         opacity: 1;
