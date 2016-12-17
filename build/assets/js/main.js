@@ -92,6 +92,13 @@ var flkty = new Flickity( elem, {
 });
 funcMaxHeightElement('.c-slider__item');
 
+var navSliderItems =  document.querySelectorAll('.c-slider-nav__background');
+for (var i = 0; i < navSliderItems.length; i++) {
+  if(i===0){
+      navSliderItems[i].classList.add('is-selected');
+  } 
+} 
+
 var buttonGroup = document.querySelector('.c-slider-nav');
 var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
 buttons = fizzyUIUtils.makeArray( buttons );
