@@ -19,7 +19,7 @@ var funcDisableLink = function (blockName) {
         
     }
 };
-var funcBackgroundImageBlocks = function (blockName,imgName,backPositionHoriz,backPositionVertical,blockNameBackground) {
+var funcBackgroundImageBlocks = function (blockName, imgName, backPositionHoriz, backPositionVertical, blockNameBackground) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
         var blockThumbnail = block[i].querySelector(imgName);
@@ -64,7 +64,7 @@ for (var i = 0; i < blockInfoblocks.length; i++) {
 
 /* Slider */
 funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','center');
-funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center');
+funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center','.c-slider-nav__background');
 
 var elem = document.querySelector('.c-slider');
 var flkty = new Flickity( elem, {
@@ -72,7 +72,22 @@ var flkty = new Flickity( elem, {
 });
 funcMaxHeightElement('.c-slider__item');
 
+var buttonGroup = document.querySelector('.c-slider-nav');
+var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
+buttons = fizzyUIUtils.makeArray( buttons );
 
+buttonGroup.addEventListener( 'click', function( event ) {
+  if ( !matchesSelector( event.target, '.c-slider-nav__link' ) ) {
+    return;
+  }
+  var index = buttons.indexOf( event.target );
+  flkty.select( index ); 
+  var navItems =  document.querySelectorAll('.c-slider-nav__background');
+  for (var i = 0; i < navItems.length; i++) {
+      navItems[i].classList.remove('is-selected');
+  } 
+  event.srcElement.parentNode.classList.add('is-selected');
+});
 /* Features */
 funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
 funcMaxHeightElement('.c-feature__content');

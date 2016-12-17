@@ -86,22 +86,37 @@
 
 .c-slider-nav {
     display: inline-block;
-    @include span(12);
+    width: 100%;
     margin-top: $padding_base * 1.5;
     @media screen and (max-width: $screen_md) {
         display: none;
     }       
 }
 .c-slider-nav__item {    
-    @include span(2);
-    padding: 0px;
-    margin: 0px 15px;
-    min-height: 120px;   
-    &:hover, &.is-selected.is-nav-selected {
+    @include span(2);  
+    &:first-child {
+        @include push(3);
+    }
+}
+.c-slider-nav__background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 120px; 
+    &:hover, &.is-selected {
+        cursor: pointer;    
         .c-slider-nav__title  {
             position: static;
         }
-    }
+    }    
+}
+.c-slider-nav__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
 }
 .c-slider-nav__content {
     width: 100%;
