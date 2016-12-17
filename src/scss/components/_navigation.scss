@@ -14,14 +14,23 @@
         .c-nav__link {
             //font-weight: bold; 
             color: $color_green;
+            border-bottom-color: rgba($color_green,1); 
         }
     }
     &.is-dropdown {
         &:hover {
             .c-nav__dropdown {
-                left: 0;
+                visibility: visible;
                 opacity: 1;
+                transition: all 1s;
             }
+        }
+        &:not(:hover) {
+            .c-nav__dropdown {
+                visibility: hidden;
+                opacity: 0;
+                transition: all 1s;
+            }            
         }
     }
     @media screen and (max-width: $screen_md) {
@@ -37,7 +46,7 @@ a.c-nav__link {
     &:hover {
         border-bottom-color: rgba($color_green,1);  
     }
-    &:active {
+    &:active, &.is-active {
         border-bottom-color: rgba($color_green,1);  
     }
     &:visited {
@@ -53,13 +62,10 @@ a.c-nav__link {
 .c-nav__dropdown {
     position: absolute;
     width: 100%;
-    left: 0;
     z-index: 999;
     background-color: $color_white;
-    padding-top: 28px;   
-	left:-9999px; 
-	opacity:0;
-	-webkit-transition:0.25s linear opacity;   
+    padding-top: 28px; 
+    left: 0px;
     .c-program__item {
         .c-program__info, .c-program__description {
             font-size: $font_size_base - 2; 

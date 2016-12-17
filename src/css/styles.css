@@ -541,10 +541,17 @@ a:focus {
 }
 .c-nav__item.is-active .c-nav__link {
   color: #80bf44;
+  border-bottom-color: #80bf44;
 }
 .c-nav__item.is-dropdown:hover .c-nav__dropdown {
-  left: 0;
+  visibility: visible;
   opacity: 1;
+  transition: all 1s;
+}
+.c-nav__item.is-dropdown:not(:hover) .c-nav__dropdown {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
 }
 @media screen and (max-width: 992px) {
   .c-nav__item {
@@ -574,7 +581,7 @@ a.c-nav__link:active {
 a.c-nav__link:hover {
   border-bottom-color: #80bf44;
 }
-a.c-nav__link:active {
+a.c-nav__link:active, a.c-nav__link.is-active {
   border-bottom-color: #80bf44;
 }
 a.c-nav__link:visited {
@@ -590,13 +597,10 @@ a.c-nav__link:focus {
 .c-nav__dropdown {
   position: absolute;
   width: 100%;
-  left: 0;
   z-index: 999;
   background-color: #ffffff;
   padding-top: 28px;
-  left: -9999px;
-  opacity: 0;
-  -webkit-transition: 0.25s linear opacity;
+  left: 0px;
 }
 .c-nav__dropdown .c-program__item .c-program__info, .c-nav__dropdown .c-program__item .c-program__description {
   font-size: 14px;
