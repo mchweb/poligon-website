@@ -9,6 +9,7 @@ var classNotActive = 'is-notactive';
 /*
  * Functions
  */
+// Deactivating the default behavior of links and adding "notactive" class for block
 var funcDisableLink = function (blockName) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
@@ -19,6 +20,7 @@ var funcDisableLink = function (blockName) {
         
     }
 };
+// Takes a picture and make it the background for the block
 var funcBackgroundImageBlocks = function (blockName, imgName, backPositionHoriz, backPositionVertical, blockNameBackground) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
@@ -38,6 +40,7 @@ var funcBackgroundImageBlocks = function (blockName, imgName, backPositionHoriz,
         } 
     }   
 };
+// Finding the maximum height among the elements
 var funcMaxHeightElement = function(blockName) {
     var blockItems =  document.querySelectorAll(blockName);
     var blockItemsHeight = [];
@@ -55,7 +58,9 @@ var funcMaxHeightElement = function(blockName) {
  */
 
 /* Infoblock */
+// Set a background image
 funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
+// calculation of the background triangle height
 var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
 for (var i = 0; i < blockInfoblocks.length; i++) {
     var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
@@ -63,26 +68,28 @@ for (var i = 0; i < blockInfoblocks.length; i++) {
 }
 
 /* Slider */
+// Set a background image for slides
 funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','center');
+// Set a background image for navigation slides
 funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center','.c-slider-nav__background');
-
+// Connecting flickity.js for slider
 var elem = document.querySelector('.c-slider');
 var flkty = new Flickity( elem, {
   wrapAround: 'true'
 });
-funcMaxHeightElement('.c-slider__item');
-
+// Finding the maximum height among the elements slider
+funcMaxHeightElement('.c-slider__item'); 
+// Set the active-first slide navigation
 var navSliderItems =  document.querySelectorAll('.c-slider-nav__background');
 for (var i = 0; i < navSliderItems.length; i++) {
   if(i===0){
       navSliderItems[i].classList.add('is-selected');
   } 
 } 
-
+// Set the active slide navigation on click
 var buttonGroup = document.querySelector('.c-slider-nav');
 var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
 buttons = fizzyUIUtils.makeArray( buttons );
-
 buttonGroup.addEventListener( 'click', function( event ) {
   if ( !matchesSelector( event.target, '.c-slider-nav__link' ) ) {
     return;
@@ -96,7 +103,9 @@ buttonGroup.addEventListener( 'click', function( event ) {
   event.srcElement.parentNode.classList.add('is-selected');
 });
 /* Features */
+// Set a background image for features
 funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
+// Finding the maximum height among the elements features
 funcMaxHeightElement('.c-feature__content');
 
 
@@ -108,8 +117,9 @@ funcMaxHeightElement('.c-feature__content');
 /*
  *  Navigation menu 
  */
- var navItems =  document.querySelectorAll('.c-nav__item');
+var navItems =  document.querySelectorAll('.c-nav__item');
 if(window.innerWidth < screen_md){
+    // Set the active menu navigation on click
     for (var i = 0; i < navItems.length; i++) {        
         if (navItems[i].classList.contains('is-dropdown')){ 
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
@@ -127,6 +137,7 @@ if(window.innerWidth < screen_md){
         }
     }
 }else {
+    // Set the active menu navigation on hover
     for (var i = 0; i < navItems.length; i++) {        
         if (navItems[i].classList.contains('is-dropdown')){ 
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
@@ -154,6 +165,7 @@ if(window.innerWidth < screen_md){
 /*
  *  Program 
  */
+// Deactivating the default behavior of links and adding "notactive" class for prgramms block
 funcDisableLink('.c-program__item');
 /*
  *  Animations 
