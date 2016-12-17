@@ -262,23 +262,23 @@ table {
   background: transparent;
   padding: 5px 0px;
   border-bottom: 1px solid #b3d98f;
-  color: #ffffff;
+  color: #d3d4d4;
   font-size: 16px;
 }
 .c-form__input:-moz-placeholder {
-  color: #ffffff;
+  color: #d3d4d4;
   font-size: 16px;
 }
 .c-form__input::-moz-placeholder {
-  color: #ffffff;
+  color: #d3d4d4;
   font-size: 16px;
 }
 .c-form__input:-ms-input-placeholder {
-  color: #ffffff;
+  color: #d3d4d4;
   font-size: 16px;
 }
 .c-form__input::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #d3d4d4;
   font-size: 16px;
 }
 .c-form__input:focus {
@@ -1056,7 +1056,20 @@ a.c-nav__link:focus {
   border-bottom-color: white;
 }
 #footer .c-form__input {
+  color: #9c9c9c;
   border-bottom: 1px solid #9c9c9c;
+}
+#footer .c-form__input:-moz-placeholder {
+  color: #9c9c9c;
+}
+#footer .c-form__input::-moz-placeholder {
+  color: #9c9c9c;
+}
+#footer .c-form__input:-ms-input-placeholder {
+  color: #9c9c9c;
+}
+#footer .c-form__input::-webkit-input-placeholder {
+  color: #9c9c9c;
 }
 
 .l-content__col.l-contact__register {
