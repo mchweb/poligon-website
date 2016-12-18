@@ -438,6 +438,22 @@ a:focus {
   padding-right: 15px;
   display: inline-block;
 }
+@media (min-width: 900px) and (max-width: 1200px) {
+  .c-content__title--block {
+    padding-top: 48px;
+  }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .c-content__title--block {
+    padding-top: 36px;
+  }
+}
+@media (min-width: 320px) and (max-width: 600px) {
+  .c-content__title--block {
+    padding-top: 24px;
+    padding-bottom: 12px;
+  }
+}
 
 /* Icons *******************/
 .c-icon {

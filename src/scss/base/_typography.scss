@@ -60,4 +60,15 @@ a {
     padding-bottom: $padding_base;   
     @include span(12);
     display: inline-block;
+    @media (min-width: $screen_md) and (max-width: $screen_lg) {
+        padding-top: $padding_base * 2;        
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+         padding-top: $padding_base * 1.5;
+        
+    }
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+        padding-top: $padding_base;
+        padding-bottom: $padding_base /2 ;      
+    }    
 }
