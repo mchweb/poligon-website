@@ -775,8 +775,8 @@ a.c-nav__link:focus {
 }
 
 .c-infoblock__text {
-  padding-top: 92px;
-  padding-bottom: 115px;
+  padding-top: 96px;
+  padding-bottom: 96px;
   width: 58.33333%;
   float: left;
   padding-left: 15px;
@@ -792,15 +792,35 @@ a.c-nav__link:focus {
     padding-right: 15px;
   }
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-infoblock__text {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
 
 .c-infoblock__title {
   margin-bottom: 24px;
   color: #ffffff;
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-infoblock__title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 12px;
+  }
+}
 
 .c-infoblock__description {
   color: #ffffff;
   margin-bottom: 48px;
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-infoblock__description {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 12px;
+  }
 }
 
 /* Slider ******************/
