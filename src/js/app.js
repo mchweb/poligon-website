@@ -1,7 +1,7 @@
 /*
  * Basic
  */
-var screen_md = 992;
+var screen_md = 900;
 var classActive = '.is-active';
 var classNotActive = 'is-notactive';
 
@@ -70,17 +70,26 @@ for (var i = 0; i < blockInfoblocks.length; i++) {
 /* Slider */
 // Set a background image for slides
 funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','center');
+
+
 // Set a background image for navigation slides
 funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center','.c-slider-nav__background');
 // Connecting flickity.js for slider
-var elem = document.querySelector('.c-slider');
-var flkty = new Flickity( elem, {
-  wrapAround: 'true'
-});
+var elemSlider = document.querySelector('.c-slider');
+var paramsSlider = { wrapAround: 'true', draggable: true};
+// Disable flickity.js on mobile
+var flkty = new Flickity( elemSlider, paramsSlider);
+if(window.innerWidth >= screen_md){   
+    var flkty = new Flickity( elemSlider, paramsSlider);
+}else {
+    flkty.destroy();
+}
 // Finding the maximum height among the elements slider
-funcMaxHeightElement('.c-slider__item'); 
+if(window.innerWidth >= screen_md){ 
+    funcMaxHeightElement('.c-slider__item'); 
+}
 // Set the active-first slide navigation
-var navSliderItems =  document.querySelectorAll('.c-slider-nav__background');
+var navSliderItems = document.querySelectorAll('.c-slider-nav__background');
 for (var i = 0; i < navSliderItems.length; i++) {
   if(i===0){
       navSliderItems[i].classList.add('is-selected');
@@ -101,6 +110,14 @@ buttonGroup.addEventListener( 'click', function( event ) {
       navItems[i].classList.remove('is-selected');
   } 
   event.srcElement.parentNode.classList.add('is-selected');
+});
+// Set the active slide navigation on click next/prev buttons
+flkty.on( 'select', function() {
+    var navItems =  document.querySelectorAll('.c-slider-nav__background');
+    for (var i = 0; i < navItems.length; i++) {
+      navItems[i].classList.remove('is-selected');
+    }     
+    navItems[flkty.selectedIndex].classList.add('is-selected');
 });
 /* Features */
 // Set a background image for features

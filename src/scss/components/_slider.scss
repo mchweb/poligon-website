@@ -33,11 +33,24 @@
 .c-slider__item {
     @include span(12);
     padding: $padding_base * 2.5 0;
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        margin-bottom: $padding_base / 2;
+        padding: $padding_base * 1.5 0;
+    }
 }
 .c-slider__title {
     display: inline-block;
     padding: 5px 15px;
     margin-bottom: $padding_base - 6;
+    @media (min-width: $screen_xs) and (max-width: 400px) {
+        font-size: $font_size_base + 4;
+        line-height: $line_height_base + 4;
+        margin-bottom: $padding_base / 2;
+    }
+    @media (min-width: 400px) and (max-width: $screen_md) {
+        font-size: $font_size_base + 12;
+        line-height: $line_height_base + 12;
+    }
 }
 .c-slider__content {
     display: inline-block;
@@ -46,9 +59,16 @@
     @media screen and (max-width: $screen_md) {
          @include span(10);
     }    
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        @include push(0.5);
+    }   
 }
 .c-slider__subtitle {
     color: $color_white;
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        font-size: $font_size_base;
+        line-height: $line_height_base;
+    }  
     
 }
 .c-infoblock__footer {
@@ -56,14 +76,23 @@
     margin-top: $padding_base * 1.5;
     margin-bottom: $padding_base * 2;
     padding: 0;
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        margin-top: $padding_base * 1;
+        margin-bottom: $padding_base * 1;        
+    }
 }
 .c-infoblock__date {
     @include span(6);
     color: $color_white;
     padding: 0;
-    @media screen and (max-width: $screen_md) {
+    @media screen and (max-width: $screen_sm) {
         @include span(12);
-        margin-bottom: $padding_base;
+        margin-bottom: $padding_base/2;        
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        .c-infoblock__date--text {
+            font-size: $font_size_base - 2;
+        }        
     }    
 }
 .c-infoblock__date--text {
@@ -79,9 +108,14 @@
     .c-infoblock__date--text {
         line-height: 36px;
     }
-    @media screen and (max-width: $screen_md) {
+    @media screen and (max-width: $screen_sm) {
         @include span(12);
     }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        .c-infoblock__date--text {
+            font-size: $font_size_base - 2;
+        }
+    }     
 }
 
 .c-slider-nav {
@@ -96,6 +130,12 @@
     @include span(2);  
     &:first-child {
         @include push(3);
+    }
+    @media (min-width: $screen_md) and (max-width: $screen_lg) {
+        @include span(2.6); 
+        &:first-child {
+            @include push(2.1);
+        }        
     }
 }
 .c-slider-nav__background {
