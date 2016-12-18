@@ -4,34 +4,98 @@
 
 /* Logo main ------*/
 .l-header__logo {
-    @include span(4);
+    @include span(4 at 1 first);
     padding-top: $padding_base/2;
+    @media (min-width: $screen_md) and (max-width: $screen_lg) {
+        padding-top: $padding_base/1.5;
+        @include span(4 at 1 first);
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        @include push(2);
+        @include span(5 at 2);     
+    }     
 }
 /* Banner ---------*/
 .l-header__banner {
-    @include span(5);
-}
-.c-banner__text {
-    font-size: $font_size_base - 2;
-    color: $color_gray_dark;
-    margin-top: $padding_base;
-    margin-bottom: $padding_base/2;
+    @include push(1);    
+    @include span(5 at 2);
+    padding-top: $padding_base*1.5;
+    @media (min-width: $screen_md) and (max-width: $screen_lg) {
+        @include span(5 at 2);
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        padding-top: $padding_base;
+        @include span(12 at 3 last);
+        @include push(0);
+        margin-bottom: $padding_base;
+    }
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+        padding-top: $padding_base;
+        margin-bottom: $padding_base;
+    }
 }
 
 /* Logo small -----*/
 .l-header__logo--small {
-    @include span(2);
-    padding-top: $padding_base*2;
+    @include span(2 at 3 last);
+    padding-top: $padding_base*1.75;
+    a {
+        width: 138px;
+        height: 32px;
+        display: inline-block;
+        background-image: url('#{$url_images}/logo-tpu-small.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        border-bottom: none;
+        @media (min-width: $screen_sm) and (max-width: $screen_lg) {
+            width: 32px;
+            height: 32px;
+            background-image: url('#{$url_images}/logo-tpu-small-size-xs.png');       
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            background-image: url('#{$url_images}/logo-tpu-small.png');
+            width: 138px;
+            height: 32px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    @media (min-width: $screen_md) and (max-width: $screen_lg) {
+        @include span(1 at 3 last);
+        @include push(1);
+         padding-top: $padding_base * 1.5;
+    }  
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        @include push(3);
+        @include span(1 at 2);   
+        padding-top: $padding_base * 1.5;
+    }    
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+         padding-top: $padding_base;
+    }
 }
 
 /* Navigtion ------*/
 .l-header__nav {
     @include span(12);
+    @media (min-width: $screen_md) and (max-width: 1140px) {
+        margin-top: -24px;
+        display: block;
+        width: auto;
+    }
+}
+.l-header__nav-button {
+    @media (min-width: $screen_md) {
+        display: none;
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        @include span(1 at 1 first);  
+    }   
 }
 
-
 .l-header {
-    @media screen and (max-width: $screen_md) {
+    @media screen and (max-width: $screen_sm) {
         @include span(12);
+        @include push(0);
     }        
 }

@@ -124,8 +124,8 @@ if(window.innerWidth < screen_md){
         if (navItems[i].classList.contains('is-dropdown')){ 
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
             navDropdown.style.display = 'none';
-            navItems[i].onclick=function(){
-                console.log(this.classList.contains('is-active'));
+            navItems[i].onclick = function(){
+                //console.log(this.classList.contains('is-active'));
                 if(this.classList.contains('is-active')){
                     navDropdown.style.display = 'none';
                     this.classList.remove('is-active');    
@@ -160,7 +160,20 @@ if(window.innerWidth < screen_md){
         }
     }    
 }
-
+// Open mobile navigation
+var blockNav = document.querySelector('.l-header__nav');
+var btnNav = document.querySelector('.c-nav-button');
+btnNav.onclick = function(event){
+    if(!this.classList.contains('is-active')){
+        blockNav.className += ' is-active';
+    }
+};
+document.addEventListener('click', function(event) {
+    var isClickInside = blockNav.contains(event.target);
+    if (!isClickInside && !btnNav.contains(event.target)) {
+        blockNav.classList.remove('is-active'); 
+    }
+}); 
 
 /*
  *  Program 

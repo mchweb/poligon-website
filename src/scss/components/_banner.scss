@@ -1,0 +1,31 @@
+// ----------------------- //
+// Banner style ---------- //
+// ----------------------- //
+
+.c-banner__text {
+    font-size: $font_size_base - 2;
+    color: $color_gray_dark;
+    margin-bottom: $padding_base/2;
+}
+.c-banner {
+    .c-banner__text {
+        @media (min-width: $screen_sm) and (max-width: $screen_md) {
+            @include span(8);
+            padding-left: 0px;
+        }    
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            @include span(12);
+            padding-left: 0px;
+        }  
+    }
+    .c-banner__btn {
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            @include span(4);
+            padding-right: 0px;
+        }  
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            @include span(12);
+            padding-right: 0px;
+        }      
+    }
+}

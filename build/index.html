@@ -16,21 +16,34 @@
 <![endif]-->
   <header id="header">
      <div class="container">
-          <section class="l-header l-header__logo">
-              <a href="#" class="c-logo__link is--dark"></a>
+          <section class="l-header l-header__nav-button">
+              <div class="c-nav-button">
+                  <span class="c-nav-button__item"></span>
+                  <span class="c-nav-button__item"></span>
+                  <span class="c-nav-button__item"></span>
+              </div>
           </section>
-          <section class="l-header l-header__banner">
-              <p class="c-banner__text">Развиваем сообщество молодых предпринимателей: проводим образовательные программы и встречи с представителями бизнеса</p>
-              <a href="#" class="c-btn c-btn--small bg--orange">Подобрать программу</a>
+          <section class="l-header l-header__logo">
+              <a href="#" class="c-logo__link">
+                  <img src="assets/img/logo-dark.svg" alt="" width="360" height="90">
+              </a>
           </section>
           <section class="l-header l-header__logo--small">
-              <a href="#"><figure><img src="assets/img/logo-tpu-small.png" alt="Томский политехнический университет" width="138" height="32"></figure></a>
+              <a href="#" title="Томский политехнический университет"></a>
+          </section>          
+          <section class="l-header l-header__banner">
+              <div class="c-banner">
+                  <p class="c-banner__text">Развиваем сообщество молодых предпринимателей: проводим образовательные программы и встречи с представителями бизнеса</p>
+                  <div class="c-banner__btn">
+                      <a href="#" class="c-btn c-btn--small bg--orange">Подобрать программу</a>
+                  </div>
+              </div>
           </section>
-          <nav class="l-header l-header__nav">
+          <nav class="l-header l-header__nav is-responsive" id="testDiv">
               <ul class="c-nav">
                   <li class="c-nav__item"><a href="#" class="c-nav__link">Главная</a></li>
                   <li class="c-nav__item is-dropdown">
-                      <a href="#" class="c-nav__link">Программы</a>
+                      <a href="#" class="c-nav__link">Программы</a><span class="c-icon c-icon__arrow"></span>
                       <div class="c-nav__dropdown">
                           <div class="container">
                               <div class="l-content__grid--four">
@@ -504,7 +517,9 @@
           <section class="l-content__grid--three">              
               <section class="l-contact__address l-content__col">
                   <div class="l-contact__logo">
-                      <a href="#" class="c-logo__link is--light"></a>
+                      <a href="#" class="c-logo__link">
+                          <img src="assets/img/logo-light.svg" alt="" width="360" height="90">
+                      </a>
                   </div>
                   <ul class="c-list-contact">
                       <li class="c-list-contact__item">
