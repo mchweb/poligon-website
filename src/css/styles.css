@@ -61,17 +61,17 @@ table {
 
 /* Colors ---------*/
 .bg--green {
-  background-color: #80bf44;
+  background: #80bf44;
   color: #ffffff;
 }
 
 .bg--blue {
-  background-color: #0072bc;
+  background: #0072bc;
   color: #ffffff;
 }
 
 .bg--orange {
-  background-color: #f7941e;
+  background: #f7941e;
   color: #ffffff;
 }
 
@@ -146,7 +146,26 @@ table {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media screen and (max-width: 900px) {
+@media (min-width: 900px) and (max-width: 1200px) {
+  .l-content__grid--four .l-content__col {
+    width: 25%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .l-content__grid--four .l-content__col {
+    width: 50%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .l-content__grid--four .l-content__col:nth-child(2n+1) {
+    clear: left;
+  }
+}
+@media (min-width: 320px) and (max-width: 600px) {
   .l-content__grid--four .l-content__col {
     width: 100%;
     float: left;
@@ -1587,11 +1606,24 @@ a.c-nav__link:focus {
   margin-top: 15px;
   color: #6e6e6e;
 }
+@media (min-width: 320px) and (max-width: 600px) {
+  .l-content__text .l-content__col {
+    margin-bottom: 24px;
+  }
+}
 
 .c-content__title.bg--green {
-  font-weight: bold;
+  margin-left: 8px;
   padding: 8px 13px;
+  font-weight: bold;
   display: inline;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-box-decoration-break: clone;
+  -ms-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+  box-shadow: 8px 0 0 #80bf44, -8px 0 0 #80bf44;
 }
 
 /* Contact *****************/

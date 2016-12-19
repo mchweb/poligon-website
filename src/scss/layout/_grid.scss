@@ -27,10 +27,19 @@ $susy: (
 .l-content__grid--four {
     .l-content__col {
         @include span(3);
-        @media screen and (max-width: $screen_md) {
-            @include span(12);
-        }           
-    }
+        @media (min-width: $screen_md) and (max-width: $screen_lg) {
+            @include span(3);        
+        }
+        @media (min-width: $screen_sm) and (max-width: $screen_md) {
+            @include span(6);
+            &:nth-child(2n+1) {
+               clear: left; 
+            }
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            @include span(12);      
+        }                  
+    }   
 }
 .l-content__grid--three {
     .l-content__col {
@@ -42,7 +51,7 @@ $susy: (
 }
 .l-content__grid--two {
     .l-content__col {
-        @include span(6);
+        @include span(6);         
         @media screen and (max-width: $screen_md) {
             @include span(12);
         }           

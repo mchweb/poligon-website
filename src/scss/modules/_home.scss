@@ -12,13 +12,24 @@
             color: $color_gray;
         }
         margin-bottom: $padding_base * 2;
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            margin-bottom: $padding_base;
+        }
     }    
 }
 
 .c-content__title {
-    &.bg--green {
-        font-weight: bold;
+    &.bg--green {       
+        margin-left: 8px;
         padding: 8px 13px;
+        font-weight: bold;
         display: inline;
+        padding-left: 0;
+        padding-right: 0;
+        -webkit-box-decoration-break: clone;
+        -ms-box-decoration-break: clone;
+        -o-box-decoration-break: clone;
+        box-decoration-break: clone;
+        box-shadow: 8px 0 0 $color_green, -8px 0 0 $color_green;
     }
 }
