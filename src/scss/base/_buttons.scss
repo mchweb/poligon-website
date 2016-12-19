@@ -3,10 +3,8 @@
 // ----------------------- //
 
 .c-btn {
-    height: $btn_height;
-    line-height: $btn_height;
     @include border-radius($btn_border_radius, $btn_border_radius);
-    padding: 0 $btn_padding;
+    padding: ($btn_height - $btn_font_size) / 2 $btn_padding;
     font-size: $btn_font_size;
     display: inline-block;
     text-decoration: none;
