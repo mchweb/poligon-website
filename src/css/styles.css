@@ -824,6 +824,12 @@ a.c-nav__link:focus {
   .l-header__nav.is-responsive .c-program__title {
     font-weight: bold;
   }
+  .l-header__nav.is-responsive .l-content__col {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 @media (min-width: 320px) and (max-width: 600px) {
   .l-header__nav.is-responsive {

@@ -155,6 +155,9 @@ a.c-nav__link {
             .c-program__title {
                 font-weight: bold;
             }
+            .l-content__col {
+                @include span(12);
+            }
         } 
         @media (min-width: $screen_xs) and (max-width: $screen_sm) {
             right: 0;
