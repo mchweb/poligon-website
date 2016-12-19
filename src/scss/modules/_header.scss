@@ -50,31 +50,39 @@
 /* Logo small -----*/
 .l-header__logo--small {
     @include span(2 at 3 last);
-    padding-top: $padding_base*1.75;
+    padding-top: $padding_base*1.25;
     a {
         width: 138px;
         height: 32px;
         display: inline-block;
-        background-image: url('#{$url_images}/logo-tpu-small.png');
+        background-image: url('#{$url_images}/logo-tpu-small.svg');
         background-repeat: no-repeat;
         background-size: 100%;
         border-bottom: none;
+        &:hover{
+            background-image: url('#{$url_images}/logo-tpu-small-color.svg');  
+        }        
         @media (min-width: $screen_sm) and (max-width: $screen_lg) {
             width: 32px;
             height: 32px;
-            background-image: url('#{$url_images}/logo-tpu-small-size-xs.png');       
+            background-image: url('#{$url_images}/logo-tpu-small-size-xs.svg');       
         }
         @media (min-width: 400px) and (max-width: $screen_sm) {
             width: 32px;
             height: 32px;
-            background-image: url('#{$url_images}/logo-tpu-small-size-xs.png');   
+            background-image: url('#{$url_images}/logo-tpu-small-size-xs.svg');   
             float: right;
         }
         @media (min-width: $screen_xs) and (max-width: 400px) {
             width: 28px;
             height: 28px;   
-            background-image: url('#{$url_images}/logo-tpu-small-size-xs.png');   
+            background-image: url('#{$url_images}/logo-tpu-small-size-xs.svg');   
             float: right;            
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_lg) {
+            &:hover{
+                background-image: url('#{$url_images}/logo-tpu-small-size-xs-color.svg');  
+            }
         }
     }
     @media (min-width: $screen_md) and (max-width: $screen_lg) {

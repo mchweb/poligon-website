@@ -105,14 +105,14 @@ var funcMaxHeightElementOnlyDesktop = function(blockName) {
 
 /* Logo */
 // Change image on hover for header
-var headerLogo = document.querySelector('.l-header__logo');
-var headerLogoLink = headerLogo.querySelector('.c-logo__link');
-headerLogoLink.onmouseover = function(){
-    this.querySelector('img').src = imgDirectory+'logo-dark-color.svg';
-};
-headerLogoLink.onmouseout = function(){
-    this.querySelector('img').src = imgDirectory+'logo-dark.svg';
-};
+//var headerLogo = document.querySelector('.l-header__logo');
+//var headerLogoLink = headerLogo.querySelector('.c-logo__link');
+//headerLogoLink.onmouseover = function(){
+//    this.querySelector('img').src = imgDirectory+'logo-dark-color.svg';
+//};
+//headerLogoLink.onmouseout = function(){
+//    this.querySelector('img').src = imgDirectory+'logo-dark.svg';
+//};
 
 /* Infoblock */
 // Set a background image

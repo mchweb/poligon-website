@@ -1534,29 +1534,32 @@ a.c-nav__link:focus {
   float: right;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 42px;
+  padding-top: 30px;
 }
 .l-header__logo--small a {
   width: 138px;
   height: 32px;
   display: inline-block;
-  background-image: url("../img/logo-tpu-small.png");
+  background-image: url("../img/logo-tpu-small.svg");
   background-repeat: no-repeat;
   background-size: 100%;
   border-bottom: none;
+}
+.l-header__logo--small a:hover {
+  background-image: url("../img/logo-tpu-small-color.svg");
 }
 @media (min-width: 600px) and (max-width: 1200px) {
   .l-header__logo--small a {
     width: 32px;
     height: 32px;
-    background-image: url("../img/logo-tpu-small-size-xs.png");
+    background-image: url("../img/logo-tpu-small-size-xs.svg");
   }
 }
 @media (min-width: 400px) and (max-width: 600px) {
   .l-header__logo--small a {
     width: 32px;
     height: 32px;
-    background-image: url("../img/logo-tpu-small-size-xs.png");
+    background-image: url("../img/logo-tpu-small-size-xs.svg");
     float: right;
   }
 }
@@ -1564,8 +1567,13 @@ a.c-nav__link:focus {
   .l-header__logo--small a {
     width: 28px;
     height: 28px;
-    background-image: url("../img/logo-tpu-small-size-xs.png");
+    background-image: url("../img/logo-tpu-small-size-xs.svg");
     float: right;
+  }
+}
+@media (min-width: 320px) and (max-width: 1200px) {
+  .l-header__logo--small a:hover {
+    background-image: url("../img/logo-tpu-small-size-xs-color.svg");
   }
 }
 @media (min-width: 900px) and (max-width: 1200px) {
