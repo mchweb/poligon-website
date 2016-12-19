@@ -450,6 +450,10 @@ body {
   font-family: "ClearSans", Arial, Helvetica, sans-serif;
 }
 
+input, label, select, button, textarea {
+  font-family: "ClearSans", Arial, Helvetica, sans-serif;
+}
+
 h1, .c-infoblock__title, .c-feature__title, h2, h3, h4 {
   font-family: "ClearSans", Arial, Helvetica, sans-serif;
   color: #373737;
