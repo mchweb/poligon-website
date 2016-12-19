@@ -9,6 +9,7 @@
 }
 .c-banner {
     .c-banner__text {
+        line-height: $line_height_base - 6px;
         @media (min-width: $screen_sm) and (max-width: $screen_md) {
             @include span(8);
             padding-left: 0px;

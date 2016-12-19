@@ -11,7 +11,7 @@
         @include span(4 at 1 first);
     }
     @media (min-width: $screen_sm) and (max-width: $screen_md) {
-        @include push(2);
+        @include push(1);
         @include span(5 at 2);     
     }     
 }
@@ -19,7 +19,7 @@
 .l-header__banner {
     @include push(1);    
     @include span(5 at 2);
-    padding-top: $padding_base*1.5;
+    padding-top: $padding_base*1.25;
     @media (min-width: $screen_md) and (max-width: $screen_lg) {
         @include span(5 at 2);
     }
@@ -78,7 +78,7 @@
 /* Navigtion ------*/
 .l-header__nav {
     @include span(12);
-    @media (min-width: $screen_md) and (max-width: 1140px) {
+    @media (min-width: $screen_md) and (max-width: 1000px) {
         margin-top: -24px;
         display: block;
         width: auto;
@@ -89,7 +89,7 @@
         display: none;
     }
     @media (min-width: $screen_sm) and (max-width: $screen_md) {
-        @include span(1 at 1 first);  
+        @include span(2 at 1 first);  
     }   
 }
 

@@ -117,20 +117,22 @@ a.c-nav__link {
     opacity: 1;
     left: 0;
 }
-.c-nav-button .c-nav-button__item:nth-child(1) {
-  top: 0px;
-}
-.c-nav-button .c-nav-button__item:nth-child(2) {
-  top: 10px;
-}
-.c-nav-button .c-nav-button__item:nth-child(3) {
-  top: 20px;
+.c-nav-button {
+    $btnElements: 3;
+    $btnHeight: 10;
+    @for $i from 0 through $btnElements {
+        .c-nav-button__item:nth-child(#{$i+1}) {
+          top: 0px+$i*$btnHeight;
+        }    
+    }    
 }
 /* Nav mobile -----*/
 .l-header__nav {
+    
     &.is-responsive {
         padding-left: $padding_base;
         @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            @include box-shadow(0px 4px 30px 8px rgba($color_black, 0.2));
             visibility: hidden;
             &.is-active {
                 visibility: visible;
