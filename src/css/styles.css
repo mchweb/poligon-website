@@ -1140,7 +1140,7 @@ a.c-nav__link:focus {
   padding-right: 15px;
   margin-bottom: 48px;
 }
-@media screen and (max-width: 900px) {
+@media (min-width: 320px) and (max-width: 900px) {
   .c-feature__item {
     width: 100%;
     float: left;
@@ -1169,6 +1169,12 @@ a.c-nav__link:focus {
   background: -o-linear-gradient(rgba(247, 148, 30, 0), #f7941e);
   background: linear-gradient(rgba(247, 148, 30, 0), #f7941e);
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-feature__content {
+    min-height: auto;
+    padding: 20px 12px;
+  }
+}
 
 .c-feature__title {
   color: #ffffff;
@@ -1180,6 +1186,18 @@ a.c-nav__link:focus {
   display: inline-block;
   line-height: 130px;
   width: 100%;
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-feature__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .c-feature__title span {
+    width: auto;
+    font-size: 24px;
+    line-height: 32px;
+    display: inline;
+  }
 }
 
 .c-feature__text {

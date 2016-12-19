@@ -123,7 +123,9 @@ flkty.on( 'select', function() {
 // Set a background image for features
 funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
 // Finding the maximum height among the elements features
-funcMaxHeightElement('.c-feature__content');
+if(window.innerWidth >= screen_md){ 
+    funcMaxHeightElement('.c-feature__content');
+}
 
 
 /*

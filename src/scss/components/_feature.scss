@@ -8,7 +8,7 @@
 .c-feature__item {
     @include span(4);  
     margin-bottom: $padding_base * 2;
-    @media screen and (max-width: $screen_md) {
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
         @include span(12); 
         margin-bottom: $padding_base;
     }
@@ -27,10 +27,15 @@
         top: 0;
         left: 0;
         z-index: 1;
-        background: -webkit-linear-gradient(rgba(247, 148, 30, 0), rgba(247, 148, 30, 1));
-        background: -o-linear-gradient(rgba(247, 148, 30, 0), rgba(247, 148, 30, 1));
-        background: linear-gradient(rgba(247, 148, 30, 0), rgba(247, 148, 30, 1));
+        background: -webkit-linear-gradient(rgba($color_orange, 0), rgba($color_orange, 1));
+        background: -o-linear-gradient(rgba($color_orange, 0), rgba($color_orange, 1));
+        background: linear-gradient(rgba($color_orange, 0), rgba($color_orange, 1));
     }    
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        min-height: auto;
+        padding: $padding_base - 4 $padding_base / 2;
+        
+    }
 }
 .c-feature__title {
     @extend h1;
@@ -42,6 +47,16 @@
         display: inline-block;
         line-height: 130px;
         width: 100%;
+    }
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        font-size: $font_size_base + 8;
+        line-height: $line_height_base + 8;
+        span {
+            width: auto;
+            font-size: $font_size_base + 8;
+            line-height: $line_height_base + 8;
+            display: inline;
+        }
     }
 }
 .c-feature__text {
