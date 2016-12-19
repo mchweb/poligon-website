@@ -68,6 +68,8 @@
 }
 .l-content__col.l-contact__sign {
     @include span(6);
+    position: relative;
+    z-index: 2;
     @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         @include span(12);
         margin-bottom: $padding_base;
@@ -79,6 +81,8 @@
 }
 .l-content__col.l-contact__address {
     @include span(6);
+    position: relative;
+    z-index: 1;
     .l-contact__logo {
         @include span(7);
         padding: 0px;

@@ -1709,6 +1709,8 @@ a.c-nav__link:focus {
   float: left;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  z-index: 2;
 }
 @media (min-width: 320px) and (max-width: 600px) {
   .l-content__col.l-contact__sign {
@@ -1734,6 +1736,8 @@ a.c-nav__link:focus {
   float: left;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  z-index: 1;
 }
 .l-content__col.l-contact__address .l-contact__logo {
   width: 58.33333%;
