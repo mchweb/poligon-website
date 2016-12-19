@@ -71,6 +71,32 @@ var funcMaxHeightElement = function(blockName) {
         blockItems[i].style.height = Math.max.apply(null, blockItemsHeight)+'px';
     }    
 };
+// Setting the auto height among the elements
+var funcAutoHeightElement = function(blockName) {
+    var blockItems =  document.querySelectorAll(blockName);
+    var blockItemsHeight = [];
+    for (var i = 0; i < blockItems.length; i++) {
+        blockItems[i].style.height = 'auto';
+    }    
+};
+// Maximum and automatic height among the elements to resize
+var funcMaxHeightElementResize = function(blockName) {
+    window.addEventListener('resize', function(event){ 
+        if(event.target.innerWidth >= screen_md){ 
+            funcMaxHeightElement(blockName);
+        }else {
+            funcAutoHeightElement(blockName);
+        }    
+    });
+};
+// Changing the height of the elements only on desktops
+var funcMaxHeightElementOnlyDesktop = function(blockName) {
+    if(window.innerWidth >= screen_md){ 
+        funcMaxHeightElement(blockName);
+    }else {
+        funcAutoHeightElement(blockName);
+    }    
+};
 
 
 /*
@@ -104,10 +130,17 @@ if(window.innerWidth >= screen_md){
 }else {
     flkty.destroy();
 }
+window.addEventListener('resize', function(event){ 
+    var flkty = new Flickity( elemSlider, paramsSlider);
+    if(event.target.innerWidth >= screen_md){   
+        var flkty = new Flickity( elemSlider, paramsSlider);
+    }else {
+        flkty.destroy();
+    }  
+});
 // Finding the maximum height among the elements slider
-if(window.innerWidth >= screen_md){ 
-    funcMaxHeightElement('.c-slider__item'); 
-}
+funcMaxHeightElementOnlyDesktop('.c-slider__item'); 
+funcMaxHeightElementResize('.c-feature__content');
 // Set the active-first slide navigation
 var navSliderItems = document.querySelectorAll('.c-slider-nav__background');
 for (var i = 0; i < navSliderItems.length; i++) {
@@ -143,10 +176,8 @@ flkty.on( 'select', function() {
 // Set a background image for features
 funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
 // Finding the maximum height among the elements features
-if(window.innerWidth >= screen_md){ 
-    funcMaxHeightElement('.c-feature__content');
-}
-
+funcMaxHeightElementOnlyDesktop('.c-feature__content'); 
+funcMaxHeightElementResize('.c-feature__content');
 
 /*
  *  Images
@@ -164,7 +195,6 @@ if(window.innerWidth < screen_md){
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
             navDropdown.style.display = 'none';
             navItems[i].onclick = function(){
-                //console.log(this.classList.contains('is-active'));
                 if(this.classList.contains('is-active')){
                     navDropdown.style.display = 'none';
                     this.classList.remove('is-active');    

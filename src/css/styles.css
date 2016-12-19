@@ -1036,6 +1036,14 @@ a.c-nav__link:focus {
     margin-left: 4.16667%;
   }
 }
+@media (min-width: 900px) and (max-width: 950px) {
+  .c-slider__content {
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 
 .c-slider__subtitle {
   color: #ffffff;

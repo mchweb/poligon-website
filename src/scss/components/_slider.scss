@@ -61,7 +61,10 @@
     }    
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         @include push(0.5);
-    }   
+    }
+    @media (min-width: $screen_md) and (max-width: 950px) {
+        @include span(7.2);
+    }
 }
 .c-slider__subtitle {
     color: $color_white;
