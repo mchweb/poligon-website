@@ -195,7 +195,15 @@ table {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media screen and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 900px) {
+  .l-content__grid--two .l-content__col {
+    width: 50%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (min-width: 320px) and (max-width: 600px) {
   .l-content__grid--two .l-content__col {
     width: 100%;
     float: left;
@@ -1227,9 +1235,37 @@ a.c-nav__link:focus {
   cursor: default;
   border-bottom-color: #9c9c9c;
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-program__item {
+    margin-bottom: 24px;
+  }
+}
 
+.c-program__title {
+  font-weight: bold;
+}
 .c-program__title a {
   color: inherit;
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-program__title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-program__description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-program__info {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 /* Banner ******************/

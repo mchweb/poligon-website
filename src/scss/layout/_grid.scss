@@ -51,8 +51,11 @@ $susy: (
 }
 .l-content__grid--two {
     .l-content__col {
-        @include span(6);         
-        @media screen and (max-width: $screen_md) {
+        @include span(6);      
+        @media (min-width: $screen_sm) and (max-width: $screen_md) {
+            @include span(6); 
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
             @include span(12);
         }           
     }
