@@ -19,7 +19,7 @@
         a {
             pointer-events: none;
             cursor: default;
-            border-bottom-color: rgba($color_gray_light,1); 
+            border-bottom-color: rgba($color_gray_light,0.5); 
         }
     }
     @media (min-width: $screen_xs) and (max-width: $screen_md) {

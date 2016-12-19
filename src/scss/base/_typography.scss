@@ -42,18 +42,18 @@ strong {
 a {
     text-decoration: none;
     border-bottom: 1px solid;
-    border-bottom-color: rgba($color_gray, 0.75);  
+    border-bottom-color: rgba($color_gray, 0.5);  
     &:hover {
-        border-bottom-color: rgba($color_gray, 0.75);  
+        border-bottom-color: rgba($color_gray, 0.5);  
     }
     &:active {
-        border-bottom-color: rgba($color_gray, 0.75);  
+        border-bottom-color: rgba($color_gray, 0.5);  
     }
     &:visited {
-        border-bottom-color: rgba($color_gray, 0.75);  
+        border-bottom-color: rgba($color_gray, 0.5);  
     }
     &:focus {
-        border-bottom-color: rgba($color_gray, 0.75); 
+        border-bottom-color: rgba($color_gray, 0.5); 
     }    
 }
 

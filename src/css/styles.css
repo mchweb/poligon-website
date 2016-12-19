@@ -123,16 +123,6 @@ table {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYjNiM2ZmIiBzdG9wLW9wYWNpdHk9IjAuMjUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(102, 102, 255, 0.25)), color-stop(100%, rgba(179, 179, 255, 0.25))), -webkit-gradient(linear, 50% 0%, 50% 1, color-stop(100%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background-image: -moz-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25)), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
-  background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25)), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
-  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25)), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
-  background-size: 8.33333%, 100% 24px;
-  background-origin: content-box, border-box;
-  background-clip: content-box, border-box;
-  background-position: left top;
 }
 .container:after, .l-content__slider:after, .c-program:after, .l-content__text:after {
   content: " ";
@@ -502,19 +492,19 @@ strong {
 a {
   text-decoration: none;
   border-bottom: 1px solid;
-  border-bottom-color: rgba(110, 110, 110, 0.75);
+  border-bottom-color: rgba(110, 110, 110, 0.5);
 }
 a:hover {
-  border-bottom-color: rgba(110, 110, 110, 0.75);
+  border-bottom-color: rgba(110, 110, 110, 0.5);
 }
 a:active {
-  border-bottom-color: rgba(110, 110, 110, 0.75);
+  border-bottom-color: rgba(110, 110, 110, 0.5);
 }
 a:visited {
-  border-bottom-color: rgba(110, 110, 110, 0.75);
+  border-bottom-color: rgba(110, 110, 110, 0.5);
 }
 a:focus {
-  border-bottom-color: rgba(110, 110, 110, 0.75);
+  border-bottom-color: rgba(110, 110, 110, 0.5);
 }
 
 .c-content__title--block {
@@ -732,7 +722,7 @@ a.c-nav__link {
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: 1px solid;
-  border-bottom-color: rgba(55, 55, 55, 0.75);
+  border-bottom-color: rgba(55, 55, 55, 0.5);
   color: #373737;
 }
 a.c-nav__link:visited {
@@ -748,19 +738,19 @@ a.c-nav__link:active {
   color: #80bf44;
 }
 a.c-nav__link:hover {
-  border-bottom-color: rgba(128, 191, 68, 0.75);
+  border-bottom-color: rgba(128, 191, 68, 0.5);
 }
 a.c-nav__link:active, a.c-nav__link.is-active {
-  border-bottom-color: rgba(128, 191, 68, 0.75);
+  border-bottom-color: rgba(128, 191, 68, 0.5);
 }
 a.c-nav__link:visited {
-  border-bottom-color: rgba(55, 55, 55, 0.75);
+  border-bottom-color: rgba(55, 55, 55, 0.5);
 }
 a.c-nav__link:visited:hover {
-  border-bottom-color: rgba(128, 191, 68, 0.75);
+  border-bottom-color: rgba(128, 191, 68, 0.5);
 }
 a.c-nav__link:focus {
-  border-bottom-color: rgba(128, 191, 68, 0.75);
+  border-bottom-color: rgba(128, 191, 68, 0.5);
 }
 
 .c-nav__dropdown {
@@ -1364,7 +1354,7 @@ a.c-nav__link:focus {
 .c-program__item.is-notactive a {
   pointer-events: none;
   cursor: default;
-  border-bottom-color: #9c9c9c;
+  border-bottom-color: rgba(156, 156, 156, 0.5);
 }
 @media (min-width: 320px) and (max-width: 900px) {
   .c-program__item {
@@ -1702,7 +1692,7 @@ a.c-nav__link:focus {
 }
 #footer .c-content__text a {
   color: #ffffff;
-  border-bottom-color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 #footer .c-form__input {
   color: #9c9c9c;

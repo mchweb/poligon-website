@@ -59,22 +59,22 @@ a.c-nav__link {
     text-transform: uppercase;
     text-decoration: none;
     border-bottom: 1px solid;
-    border-bottom-color: rgba($color_gray_dark, 0.75);        
+    border-bottom-color: rgba($color_gray_dark, 0.5);        
     @include link-colors($color_gray_dark, $color_green, $color_green, $color_gray_dark, $color_green);
     &:hover {
-        border-bottom-color: rgba($color_green, 0.75);  
+        border-bottom-color: rgba($color_green, 0.5);  
     }
     &:active, &.is-active {
-        border-bottom-color: rgba($color_green, 0.75);  
+        border-bottom-color: rgba($color_green, 0.5);  
     }
     &:visited {
-        border-bottom-color: rgba($color_gray_dark, 0.75);  
+        border-bottom-color: rgba($color_gray_dark, 0.5);  
         &:hover{
-            border-bottom-color: rgba($color_green, 0.75);  
+            border-bottom-color: rgba($color_green, 0.5);  
         }
     }
     &:focus {
-        border-bottom-color: rgba($color_green, 0.75); 
+        border-bottom-color: rgba($color_green, 0.5); 
     }
 }
 .c-nav__dropdown {
