@@ -1090,6 +1090,12 @@ a.c-nav__link:focus {
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 12px;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .c-infoblock__date {
+    font-size: 14px;
   }
 }
 @media (min-width: 600px) and (max-width: 900px) {
@@ -1122,6 +1128,12 @@ a.c-nav__link:focus {
     float: left;
     padding-left: 15px;
     padding-right: 15px;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .c-infoblock__map {
+    font-size: 14px;
   }
 }
 @media (min-width: 600px) and (max-width: 900px) {
