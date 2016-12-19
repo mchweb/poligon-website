@@ -108,10 +108,20 @@ var funcMaxHeightElementOnlyDesktop = function(blockName) {
 funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
 // calculation of the background triangle height
 var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
-for (var i = 0; i < blockInfoblocks.length; i++) {
-    var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
-    blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+if(window.innerWidth >= screen_md){ 
+    for (var i = 0; i < blockInfoblocks.length; i++) {
+        var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
+        blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+    }
 }
+window.addEventListener('resize', function(event){ 
+    if(event.target.innerWidth >= screen_md){ 
+        for (var i = 0; i < blockInfoblocks.length; i++) {
+            var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
+            blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+        }
+    }
+ });
 
 /* Slider */
 // Set a background image for slides
