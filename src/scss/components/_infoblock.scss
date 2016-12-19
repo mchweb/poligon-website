@@ -14,9 +14,14 @@
         height: 100%;
         background-color: $color_green;
         z-index: 1;
-        @media screen and (max-width: $screen_md) {
-            width: 100%;
+        @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            display: none;
         }           
+    }
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        .container {
+            background-color: $color_green;
+        }
     }
 }
 .c-infoblock__background {
@@ -29,6 +34,9 @@
     border-style: solid;
     border-width: 200px 0 0 200px;
     border-color: transparent transparent transparent $color_green;    
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        display: none;     
+    }
 }
 .c-infoblock__image {
     position: absolute;
@@ -70,4 +78,15 @@
         line-height: $line_height_base + 2;
         margin-bottom: $padding_base / 2;
     }    
+}
+.c-infoblock__image {
+    &.is-display--mobile {
+        @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            display: block;
+            width: 100%;
+            height: 200px;    
+            position: relative;
+        }        
+    }
+
 }

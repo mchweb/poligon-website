@@ -91,3 +91,14 @@
     border-top: 1px solid $color_green;
     @include transform(rotate(135deg));
 }
+.c-icon__check {
+    content: '';
+    width: 12px;
+    height: 7px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-right: none;
+    background: 0 0;
+    opacity: 1;
+    transform: rotate(-45deg);
+}
