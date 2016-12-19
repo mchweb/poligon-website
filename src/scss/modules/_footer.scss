@@ -3,11 +3,12 @@
 // ----------------------- //
 
 #footer {
-    background-color: $color_black_light;
+    @include background-image(linear-gradient(to bottom, $color_black_light2, $color_black_light3));
+    //background-color: $color_black_light;
     padding-top: $padding_base * 1.5;
     padding-bottom: $padding_base * 2;
     .c-content__title {
-        color: $color_white;
+        color: $color_white_dark;
         font-weight: bold;
     }
     .c-form.c-form--horizontal {
@@ -30,18 +31,21 @@
         }
     }
     .c-content__text {
-        color: $color_white;
+        color: $color_white_dark;
         a {
-           color: $color_white; 
-           border-bottom-color: rgba($color_white,0.5); 
+           color: $color_white_dark; 
+           border-bottom-color: rgba($color_white_dark,0.5); 
         }
     }   
     .c-form__input {
-        color: $color_white;
+        color: $color_white_dark;
         border-bottom: 1px solid $color_gray_light;
         @include input-placeholder {
            color: $color_gray_light;
         }         
+    }
+    .c-btn {
+        margin-top: 40px;
     }
 }
 .l-content__col.l-contact__register {
@@ -57,6 +61,16 @@
 }
 .l-content__col.l-contact__follow {
     @include span(3);
+    position: relative;
+    &:before {
+        content: '';
+        width: 1px;
+        height: 115px;
+        position: absolute;
+        left: -3px;
+        top: 9px;        
+        background-color: $color_gray_light4;
+    }
     @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         @include span(12);
         margin-bottom: $padding_base;
@@ -70,6 +84,15 @@
     @include span(6);
     position: relative;
     z-index: 2;
+    &:before {
+        content: '';
+        width: 1px;
+        height: 115px;
+        position: absolute;
+        left: -3px;
+        top: 9px;        
+        background-color: $color_gray_light4;
+    }    
     @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         @include span(12);
         margin-bottom: $padding_base;
@@ -84,8 +107,9 @@
     position: relative;
     z-index: 1;
     .l-contact__logo {
-        @include span(7);
+        @include span(6);
         padding: 0px;
+        padding-right: 5px;
     }
     .c-list-contact {
         margin-top: 10px;
@@ -171,6 +195,13 @@
             }
         }
     }
+    @media (min-width: $screen_xs) and (max-width: 435px) {
+        .c-content__text {
+            &.l-content__phone {
+                margin-left: 0px;
+            }
+        }
+    }
 }
 .l-content__col.l-contact__dev {
     @include span(2);
@@ -189,12 +220,12 @@
         @include span(12);
         margin-top: 10px; 
         .c-content__text {
-            text-align: left;
+            text-align: right;
         }
     }  
-    @media (min-width: $screen_xs) and (max-width: $screen_lg) {
+    @media screen and (max-width: $screen_md) {
         .c-content__text {
-            text-align: right;
+            text-align: center;
         }        
     }
 }  
