@@ -10,6 +10,25 @@
         color: $color_white;
         font-weight: bold;
     }
+    .c-form.c-form--horizontal {
+        @include span(12); 
+        margin-top: $padding_base / 1.5;
+        padding: 0px;
+        .l-form__col:first-child {
+            @include span(8);
+            padding-left: 0px;
+        }
+        .l-form__col:last-child {
+            @include span(4);
+            padding-right: 0px;
+        }        
+        @media (min-width: $screen_xs) and (max-width: $screen_lg) {
+            .l-form__col:first-child, .l-form__col:last-child {
+                @include span(12);
+                padding-left: 0px;                
+            }
+        }
+    }
     .c-content__text {
         color: $color_white;
         a {
@@ -27,24 +46,36 @@
 }
 .l-content__col.l-contact__register {
     @include span(3);
-    @media screen and (max-width: $screen_md) {
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         @include span(12);
         margin-bottom: $padding_base;
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        @include span(6);
+        margin-bottom: $padding_base;        
     }
 }
 .l-content__col.l-contact__follow {
     @include span(3);
-    @media screen and (max-width: $screen_md) {
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         @include span(12);
         margin-bottom: $padding_base;
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        @include span(6);
+        margin-bottom: $padding_base;        
     }    
 }
 .l-content__col.l-contact__sign {
     @include span(6);
-    @media screen and (max-width: $screen_md) {
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         @include span(12);
         margin-bottom: $padding_base;
-    }    
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        @include span(12);
+        margin-bottom: $padding_base;        
+    }     
 }
 .l-content__col.l-contact__address {
     @include span(6);
@@ -53,29 +84,53 @@
         padding: 0px;
     }
     .c-list-contact {
+        margin-top: 10px;
         @include span(5);
     }
     .c-content__text {
         @include span(12);
-        margin-top: $padding_base * 1.5; 
+        margin-top: $padding_base; 
         padding: 0px;
         span, div {
             display: inline-block;
         }
-    }
-    @media screen and (max-width: $screen_md) {
+    }   
+    @media (min-width: $screen_xs) and (max-width: $screen_lg) {
         @include span(12);
-        margin-bottom: $padding_base;
-    }    
+
+        margin-top: -40px;
+        .l-contact__logo {
+            display: none;
+        }
+        .c-list-contact {
+            padding: 0px;
+        }
+        .c-content__text {
+            margin-top: 10px; 
+        }
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        margin-top: 0px;       
+    }
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+        margin-top: 0px;
+        .c-list-contact {
+            margin-top: 0px;
+        }
+    }
 }
 .l-content__col.l-contact__phone {
     @include span(4);
-    margin-top: $padding_base * 2;  
+    margin-top: $padding_base * 2.5;  
     .c-list-contact {
         float: left;
     }
     .c-content__text {
         float: left;
+        &.l-content__phone {
+            float: right;
+            margin-right: $padding_base * 3;  
+        }
         a {
             margin-top: $padding_base / 1.5; 
             text-decoration: none;
@@ -87,22 +142,55 @@
             width: 100%;
         }
     }
-    @media screen and (max-width: $screen_md) {
+    @media (min-width: $screen_md) and (max-width: $screen_lg) {
+        @include span(6);
+    }      
+
+    @media (min-width: $screen_xs) and (max-width: $screen_lg) {
         @include span(12);
-        margin-bottom: $padding_base;
-    }    
+        clear: left;
+        margin-top: 10px;  
+        .c-list-contact {
+            width: 100%;
+        }           
+        .c-content__text {
+            width: auto;
+            &.l-content__phone {
+                margin: 0px;
+                float: none;
+                display: inline-block;
+                margin-left: 10px;
+                width: auto;
+                a {
+                    margin: 0px;
+                }
+            }
+        }
+    }
 }
 .l-content__col.l-contact__dev {
     @include span(2);
-    margin-top: $padding_base * 2; 
+    margin-top: $padding_base * 2.5; 
     .c-content__text {
+        text-align: right;
         a {
             text-decoration: none;
             border-bottom: none;
         }        
     }
-    @media screen and (max-width: $screen_md) {
-        @include span(12);
-        margin-bottom: $padding_base;    
+    @media (min-width: $screen_md) and (max-width: $screen_lg) {
+        @include span(6);
     }    
+    @media (min-width: $screen_xs) and (max-width: $screen_lg) {
+        @include span(12);
+        margin-top: 10px; 
+        .c-content__text {
+            text-align: left;
+        }
+    }  
+    @media (min-width: $screen_xs) and (max-width: $screen_lg) {
+        .c-content__text {
+            text-align: right;
+        }        
+    }
 }  
