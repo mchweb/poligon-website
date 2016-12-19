@@ -210,7 +210,7 @@ table {
   -moz-border-radius: 24px / 24px;
   -webkit-border-radius: 24px 24px;
   border-radius: 24px / 24px;
-  padding: 16px 24px;
+  padding: 12px 24px;
   font-size: 16px;
   display: inline-block;
   text-decoration: none;
@@ -360,6 +360,7 @@ table {
 .c-form__btn {
   border: none;
   width: auto;
+  line-height: 22px;
 }
 
 .c-form__checkbox {

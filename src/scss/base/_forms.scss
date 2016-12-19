@@ -69,6 +69,7 @@
 .c-form__btn {
     border: none;
     width: auto;
+    line-height: $line_height_base - 2;
 }
 .c-form__checkbox {
     margin-top: $padding_base / 2; 

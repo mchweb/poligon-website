@@ -4,7 +4,7 @@
 
 .c-btn {
     @include border-radius($btn_border_radius, $btn_border_radius);
-    padding: ($btn_height - $btn_font_size) / 2 $btn_padding;
+    padding: ((($btn_height - $btn_font_size) / 2) - 4) $btn_padding;
     font-size: $btn_font_size;
     display: inline-block;
     text-decoration: none;
