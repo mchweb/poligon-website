@@ -1047,6 +1047,7 @@ a.c-nav__link:focus {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: 8.33333%;
+  padding: 0px;
 }
 @media screen and (max-width: 900px) {
   .c-slider__content {

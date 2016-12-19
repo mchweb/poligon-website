@@ -56,6 +56,7 @@
     display: inline-block;
     @include span(7);
     @include push(1);
+    padding: 0px;
     @media screen and (max-width: $screen_md) {
          @include span(10);
     }    
