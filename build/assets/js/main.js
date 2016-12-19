@@ -24,7 +24,7 @@ var t=this.getRestingPosition(),e=Math.abs(this.getSlideDistance(-t,this.selecte
 var screen_md = 900;
 var classActive = '.is-active';
 var classNotActive = 'is-notactive';
-
+var imgDirectory = 'assets/img/';
 
 /*
  * Functions
@@ -102,6 +102,17 @@ var funcMaxHeightElementOnlyDesktop = function(blockName) {
 /*
  *  Home page 
  */
+
+/* Logo */
+// Change image on hover for header
+var headerLogo = document.querySelector('.l-header__logo');
+var headerLogoLink = headerLogo.querySelector('.c-logo__link');
+headerLogoLink.onmouseover = function(){
+    this.querySelector('img').src = imgDirectory+'logo-dark-color.svg';
+};
+headerLogoLink.onmouseout = function(){
+    this.querySelector('img').src = imgDirectory+'logo-dark.svg';
+};
 
 /* Infoblock */
 // Set a background image

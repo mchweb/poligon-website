@@ -13,7 +13,17 @@
     @media (min-width: $screen_sm) and (max-width: $screen_md) {
         @include push(1);
         @include span(5 at 2);     
-    }     
+    }  
+    @media (min-width: 400px) and (max-width: $screen_sm) {
+        @include push(1);
+        @include span(6 at 2);     
+    } 
+    @media (min-width: $screen_xs) and (max-width: 400px) {
+        @include push(1);
+        @include span(6 at 2);    
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
 /* Banner ---------*/
 .l-header__banner {
@@ -32,6 +42,8 @@
     @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         padding-top: $padding_base;
         margin-bottom: $padding_base;
+        @include span(12 at 4);
+        @include push(0);
     }
 }
 
@@ -52,12 +64,17 @@
             height: 32px;
             background-image: url('#{$url_images}/logo-tpu-small-size-xs.png');       
         }
-        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
-            background-image: url('#{$url_images}/logo-tpu-small.png');
-            width: 138px;
+        @media (min-width: 400px) and (max-width: $screen_sm) {
+            width: 32px;
             height: 32px;
-            margin: 0 auto;
-            display: block;
+            background-image: url('#{$url_images}/logo-tpu-small-size-xs.png');   
+            float: right;
+        }
+        @media (min-width: $screen_xs) and (max-width: 400px) {
+            width: 28px;
+            height: 28px;   
+            background-image: url('#{$url_images}/logo-tpu-small-size-xs.png');   
+            float: right;            
         }
     }
     @media (min-width: $screen_md) and (max-width: $screen_lg) {
@@ -71,7 +88,9 @@
         padding-top: $padding_base * 1.5;
     }    
     @media (min-width: $screen_xs) and (max-width: $screen_sm) {
-         padding-top: $padding_base;
+        @include push(1);
+        @include span(2 at 2);   
+        padding-top: $padding_base;        
     }
 }
 
@@ -91,11 +110,19 @@
     @media (min-width: $screen_sm) and (max-width: $screen_md) {
         @include span(2 at 1 first);  
     }   
+    @media (min-width: 400px) and (max-width: $screen_sm) {
+        @include span(2 at 1 first);  
+    } 
+    @media (min-width: $screen_xs) and (max-width: 400px) {
+        @include span(2 at 1 first); 
+        padding: 0px;
+        padding-left: 6px;
+    }
 }
 
 .l-header {
-    @media screen and (max-width: $screen_sm) {
-        @include span(12);
-        @include push(0);
-    }        
+//    @media screen and (max-width: $screen_sm) {
+//        @include span(12);
+//        @include push(0);
+//    }        
 }

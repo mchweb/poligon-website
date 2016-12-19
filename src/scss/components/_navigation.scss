@@ -130,8 +130,9 @@ a.c-nav__link {
 .l-header__nav {
     
     &.is-responsive {
-        padding-left: $padding_base;
+        
         @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            padding-left: $padding_base;
             @include box-shadow(0px 4px 30px 8px rgba($color_black, 0.2));
             visibility: hidden;
             &.is-active {
