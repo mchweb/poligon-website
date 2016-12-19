@@ -329,7 +329,7 @@ table {
   background: transparent;
   padding: 5px 0px;
   border-bottom: 1px solid #b3d98f;
-  color: #d3d4d4;
+  color: #ffffff;
   font-size: 16px;
 }
 .c-form__input:-moz-placeholder {
@@ -1695,7 +1695,7 @@ a.c-nav__link:focus {
   border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 #footer .c-form__input {
-  color: #9c9c9c;
+  color: #ffffff;
   border-bottom: 1px solid #9c9c9c;
 }
 #footer .c-form__input:-moz-placeholder {
