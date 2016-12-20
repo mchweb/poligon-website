@@ -328,7 +328,8 @@ table {
 .c-form__input {
   border: none;
   background: transparent;
-  padding: 5px 0px;
+  padding-bottom: 5px;
+  padding-top: 0px;
   border-bottom: 1px solid #b3d98f;
   color: #ffffff;
   font-size: 16px;
@@ -380,7 +381,7 @@ table {
 }
 @media screen and (min-width: 600px) {
   .c-form__btn {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 }
 
@@ -1780,7 +1781,7 @@ a.c-nav__link:focus {
 }
 @media screen and (min-width: 1200px) {
   #footer .c-btn {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 }
 @media (min-width: 320px) and (max-width: 1200px) {
