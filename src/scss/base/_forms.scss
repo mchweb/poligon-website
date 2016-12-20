@@ -65,6 +65,12 @@
     &:first-child {
         margin-top: 0px;
     }   
+    &.is-error {
+        @include input-placeholder {
+           color: $color_red;
+        }  
+        border-bottom: 1px solid $color_red;
+    }
 }    
 .c-form__btn {
     border: none;

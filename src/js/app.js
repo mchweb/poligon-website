@@ -2,8 +2,10 @@
  * Basic
  */
 var screen_md = 900;
-var classActive = '.is-active';
+var classActive = 'is-active';
 var classNotActive = 'is-notactive';
+var classError= 'is-error';
+var classValidate = 'is-validate';
 var imgDirectory = 'assets/img/';
 
 /*
@@ -77,8 +79,29 @@ var funcMaxHeightElementOnlyDesktop = function(blockName) {
         funcAutoHeightElement(blockName);
     }    
 };
-
-
+// Reset class error for elements form 
+var funcValidateFormResetError = function (blockName) {
+    if (blockName.classList.contains(classError)) {
+        blockName.classList.remove(classError);
+    }
+};
+// Add class error for elements form 
+var funcValidateFormShowError = function(blockName){
+    blockName.classList.add(classError);
+};
+// Validate elements form 
+var funcValidateForm = function(form, formItemClass, checkType){
+    console.log(form);
+     var formElements = form.querySelectorAll(formItemClass);
+     for (var i = 0; i < formElements.length; i++) {
+         funcValidateFormResetError(formElements[i]);
+         if (checkType == 'is-value'){         
+             if (!formElements[i].value) {
+                funcValidateFormShowError(formElements[i]);
+             }                
+         }        
+     }  
+};
 /*
  *  Home page 
  */
@@ -196,12 +219,12 @@ if(window.innerWidth < screen_md){
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
             navDropdown.style.display = 'none';
             navItems[i].onclick = function(){
-                if(this.classList.contains('is-active')){
+                if(this.classList.contains(classActive)){
                     navDropdown.style.display = 'none';
-                    this.classList.remove('is-active');    
+                    this.classList.remove(classActive);    
                 }else {
                     navDropdown.style.display = 'block';
-                    this.className += ' is-active';                      
+                    this.className += ' '+classActive;                      
                 }
             };
         }
@@ -212,20 +235,20 @@ if(window.innerWidth < screen_md){
         if (navItems[i].classList.contains('is-dropdown')){ 
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
             navItems[i].onmouseover = function(){
-                if(!this.classList.contains('is-active')){
-                    this.className += ' is-active';                          
+                if(!this.classList.contains(classActive)){
+                    this.className += ' '+classActive;                          
                 }
             };
             navDropdown.onmouseover = function(){
-                if(!this.parentNode.classList.contains('is-active')){
-                    this.parentNode.className += ' is-active';                   
+                if(!this.parentNode.classList.contains(classActive)){
+                    this.parentNode.className += ' '+classActive;                    
                 }             
             };
             navItems[i].onmouseout = function(){
-                this.classList.remove('is-active'); 
+                this.classList.remove(classActive); 
             };
             navDropdown.onmouseout = function(){
-                this.parentNode.classList.remove('is-active'); 
+                this.parentNode.classList.remove(classActive); 
             };
         }
     }    
@@ -234,14 +257,14 @@ if(window.innerWidth < screen_md){
 var blockNav = document.querySelector('.l-header__nav');
 var btnNav = document.querySelector('.c-nav-button');
 btnNav.onclick = function(event){
-    if(!this.classList.contains('is-active')){
-        blockNav.className += ' is-active';
+    if(!this.classList.contains(classActive)){
+        blockNav.className += ' '+classActive;
     }
 };
 document.addEventListener('click', function(event) {
     var isClickInside = blockNav.contains(event.target);
     if (!isClickInside && !btnNav.contains(event.target)) {
-        blockNav.classList.remove('is-active'); 
+        blockNav.classList.remove(classActive); 
     }
 }); 
 
@@ -250,6 +273,34 @@ document.addEventListener('click', function(event) {
  */
 // Deactivating the default behavior of links and adding "notactive" class for prgramms block
 funcDisableLink('.c-program__item');
+
+
+/*
+ *  Forms
+ */
+var formButon = document.querySelectorAll('.c-form__btn');
+for (var i = 0; i < formButon.length; i++) {
+    formButon[i].addEventListener('click', function(event) {
+        //funcValidateForm(formItem, '.c-form__input','is-value');
+        //console.log(this.form);
+        if (this.form.classList.contains(classValidate)){
+            funcValidateForm(this.form, '.c-form__input','is-value');
+        }
+    });    
+}
+//
+//var formItems =  document.querySelectorAll('.c-form');
+//for (var i = 0; i < formItems.length; i++) { 
+//    if (formItems[i].classList.contains(classValidate)){
+//        var formItem = formItems[i];
+//        var formButon = formItem.querySelector('.c-form__btn');
+//        formButon.addEventListener('click', function(event) {
+//            funcValidateForm(formItem, '.c-form__input','is-value');
+//        });
+//    }
+//    
+//}
+                
 /*
  *  Animations 
- */
+ */                

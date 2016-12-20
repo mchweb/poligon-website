@@ -356,6 +356,21 @@ table {
 .c-form__input:first-child {
   margin-top: 0px;
 }
+.c-form__input.is-error {
+  border-bottom: 1px solid #f04e23;
+}
+.c-form__input.is-error:-moz-placeholder {
+  color: #f04e23;
+}
+.c-form__input.is-error::-moz-placeholder {
+  color: #f04e23;
+}
+.c-form__input.is-error:-ms-input-placeholder {
+  color: #f04e23;
+}
+.c-form__input.is-error::-webkit-input-placeholder {
+  color: #f04e23;
+}
 
 .c-form__btn {
   border: none;
