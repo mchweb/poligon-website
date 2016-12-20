@@ -86,11 +86,25 @@
         line-height: $line_height_base + 2;
         margin-bottom: $padding_base / 2;
         &.is-small {
-            font-size: $font_size_base + 2;
+            font-size: $font_size_h4;
             line-height: $line_height_base + 2;            
             font-weight: normal;
-            margin-bottom: $padding_base;
         }
+    } 
+    @media (min-width: $screen_md) and (max-width: $screen_lg) {
+        &.is-small {
+            margin-bottom: $padding_base * 1.25;
+        }           
+    }
+    @media (min-width: $screen_sm) and (max-width: $screen_md) {
+        &.is-small {
+            margin-bottom: $padding_base * 1.25;
+        }        
+    }
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+        &.is-small {
+            margin-bottom: $padding_base * 1.25;
+        }        
     }    
 }
 .c-infoblock__image {

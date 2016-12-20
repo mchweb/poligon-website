@@ -989,10 +989,24 @@ a.c-nav__link:focus {
     margin-bottom: 12px;
   }
   .c-infoblock__description.is-small {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 26px;
     font-weight: normal;
-    margin-bottom: 24px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1200px) {
+  .c-infoblock__description.is-small {
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  .c-infoblock__description.is-small {
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 600px) {
+  .c-infoblock__description.is-small {
+    margin-bottom: 30px;
   }
 }
 
