@@ -976,7 +976,7 @@ a.c-nav__link:focus {
 
 .c-infoblock__description {
   color: #ffffff;
-  margin-bottom: 48px;
+  margin-bottom: 30px;
 }
 .c-infoblock__description.is-small {
   margin-bottom: 36px;
@@ -986,6 +986,12 @@ a.c-nav__link:focus {
     font-size: 18px;
     line-height: 26px;
     margin-bottom: 12px;
+  }
+  .c-infoblock__description.is-small {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: normal;
+    margin-bottom: 24px;
   }
 }
 
