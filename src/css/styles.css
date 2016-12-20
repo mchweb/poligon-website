@@ -1398,9 +1398,10 @@ a.c-nav__link:focus {
 
 .c-program__title {
   font-weight: bold;
+  color: #373737;
 }
 .c-program__title a {
-  color: inherit;
+  color: #373737;
 }
 @media (min-width: 320px) and (max-width: 900px) {
   .c-program__title {
@@ -1416,6 +1417,9 @@ a.c-nav__link:focus {
   }
 }
 
+.c-program__info {
+  color: #373737;
+}
 @media (min-width: 320px) and (max-width: 900px) {
   .c-program__info {
     font-size: 14px;

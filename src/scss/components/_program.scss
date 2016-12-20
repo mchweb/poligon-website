@@ -28,8 +28,9 @@
 }
 .c-program__title {
     font-weight: bold;
+    color: $color_gray_dark;
     a {
-        color: inherit;
+        color: $color_gray_dark;
     }
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         font-size: $font_size_base;
@@ -45,6 +46,7 @@
     }     
 }
 .c-program__info {
+    color: $color_gray_dark;
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         font-size: $font_size_base - 2;
         line-height: $line_height_base - 2;
