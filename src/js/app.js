@@ -246,10 +246,19 @@ if(window.innerWidth < screen_md){
                 }             
             };
             navItems[i].onmouseout = function(){
-                this.classList.remove(classActive); 
+                var objectThis = this;
+                function funcDeleteActiveClass(blockObject) {
+                  blockObject.classList.remove(classActive); 
+                }
+                setTimeout(funcDeleteActiveClass, 3000,objectThis);                
+                
             };
             navDropdown.onmouseout = function(){
-                this.parentNode.classList.remove(classActive); 
+                var objectThis = this;
+                function funcDeleteActiveClass(blockObject) {
+                    blockObject.parentNode.classList.remove(classActive); 
+                }
+                setTimeout(funcDeleteActiveClass, 3000, objectThis);                       
             };
         }
     }    

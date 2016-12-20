@@ -717,16 +717,12 @@ a:focus {
   border-color: #80bf44;
 }
 @media (min-width: 900px) {
-  .c-nav__item.is-dropdown:hover .c-nav__dropdown {
+  .c-nav__item.is-active.is-dropdown .c-nav__dropdown {
     visibility: visible;
-    opacity: 1;
-    transition: all 1s;
   }
-  .c-nav__item.is-dropdown:not(:hover) .c-nav__dropdown {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 1s;
-  }
+}
+.c-nav__item .c-nav__dropdown {
+  visibility: hidden;
 }
 .c-nav__item.is-dropdown .c-icon {
   margin-left: 6px;

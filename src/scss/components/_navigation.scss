@@ -23,23 +23,34 @@
                 border-color: $color_green;
             }            
         }
-    }
-    &.is-dropdown {
-        @media (min-width: $screen_md) {
-            &:hover {
+        &.is-dropdown {
+            @media (min-width: $screen_md) {
                 .c-nav__dropdown {
                     visibility: visible;
-                    opacity: 1;
-                    transition: all 1s;
                 }
             }
-            &:not(:hover) {
+        }
+    }
                 .c-nav__dropdown {
                     visibility: hidden;
-                    opacity: 0;
-                    transition: all 1s;
-                }            
-            }
+
+                }    
+    &.is-dropdown {
+        @media (min-width: $screen_md) {
+//            &:hover {
+//                .c-nav__dropdown {
+//                    visibility: visible;
+//                    opacity: 1;
+//                    transition: all 1s;
+//                }
+//            }
+//            &:not(:hover) {
+//                .c-nav__dropdown {
+//                    visibility: hidden;
+//                    opacity: 0;
+//                    transition: all 1s;
+//                }            
+//            }
         }
         .c-icon {
             margin-left: 6px;
