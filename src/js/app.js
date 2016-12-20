@@ -112,7 +112,6 @@ var funcDeleteActiveClassMouseOut = function (bloclObject){
         if (!!~list.indexOf(eventMouse)) {
             return;
         }
-        console.log('out');
         submenuOutTimeoutID = setTimeout(function (bloclObject) { bloclObject.parentNode.classList.remove(classActive); }, 2000, bloclObject); 
     };
 };
@@ -278,7 +277,6 @@ if(window.innerWidth < screen_md){
                 }
             };
             navDropdown.onmouseover = function(){
-                console.log('nav-dropdown')
                 if(!this.parentNode.classList.contains(classActive)){
                     this.parentNode.classList.add(classActive);                    
                 }    
