@@ -4,6 +4,7 @@
 var screen_md = 900;
 var classActive = 'is-active';
 var classNotActive = 'is-notactive';
+var classDropdown = 'is-dropdown';
 var classError= 'is-error';
 var classValidate = 'is-validate';
 var imgDirectory = 'assets/img/';
@@ -63,8 +64,8 @@ var funcAutoHeightElement = function(blockName) {
 };
 // Maximum and automatic height among the elements to resize
 var funcMaxHeightElementResize = function(blockName) {
-    window.addEventListener('resize', function(event){ 
-        if(event.target.innerWidth >= screen_md){ 
+    window.addEventListener('resize', function(eventResize){ 
+        if(eventResize.target.innerWidth >= screen_md){ 
             funcAutoHeightElement(blockName);
             funcMaxHeightElement(blockName);
         }else {
@@ -102,6 +103,39 @@ var funcValidateForm = function(form, formItemClass, checkType){
          }        
      }  
 };
+// Bind MouseOut and delete active class menu
+var funcDeleteActiveClassMouseOut = function (bloclObject){
+    var list = funcTraverseChildren(bloclObject);
+    return function onMouseOut(eventMouseOut) {
+        var eventMouse = eventMouseOut.toElement || eventMouseOut.relatedTarget;
+        if (!!~list.indexOf(eventMouse)) {
+            return;
+        }
+        function funcDeleteActiveClass(bloclObject) {
+            bloclObject.parentNode.classList.remove(classActive); 
+        }
+        setTimeout(funcDeleteActiveClass, 2000, bloclObject);           
+    };
+};
+// Traverse children elemets
+var funcTraverseChildren = function (bloclObject){
+    var children = [];
+    var q = [];
+    q.push(bloclObject);
+    while (q.length > 0)
+    {
+        var bloclObject = q.pop();
+        children.push(bloclObject);
+        pushAll(bloclObject.children);
+    }
+    function pushAll(blocksArray){
+        for(var i = 0; i < blocksArray.length; i++)
+        {
+            q.push(blocksArray[i]);
+        }
+    }
+    return children;
+};
 /*
  *  Home page 
  */
@@ -128,8 +162,8 @@ if(window.innerWidth >= screen_md){
         blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
     }
 }
-window.addEventListener('resize', function(event){ 
-    if(event.target.innerWidth >= screen_md){ 
+window.addEventListener('resize', function(eventResize){ 
+    if(eventResize.target.innerWidth >= screen_md){ 
         for (var i = 0; i < blockInfoblocks.length; i++) {
             var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
             blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
@@ -154,9 +188,9 @@ if(window.innerWidth >= screen_md){
 }else {
     flkty.destroy();
 }
-window.addEventListener('resize', function(event){ 
+window.addEventListener('resize', function(eventResize){ 
     var flkty = new Flickity( elemSlider, paramsSlider);
-    if(event.target.innerWidth >= screen_md){   
+    if(eventResize.target.innerWidth >= screen_md){   
         var flkty = new Flickity( elemSlider, paramsSlider);
     }else {
         flkty.destroy();
@@ -177,18 +211,18 @@ for (var i = 0; i < navSliderItems.length; i++) {
 var buttonGroup = document.querySelector('.c-slider-nav');
 var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
 buttons = fizzyUIUtils.makeArray( buttons );
-buttonGroup.addEventListener( 'click', function( event ) {
-  if ( !matchesSelector( event.target, '.c-slider-nav__link' ) ) {
+buttonGroup.addEventListener( 'click', function( eventClick ) {
+  if ( !matchesSelector( eventClick.target, '.c-slider-nav__link' ) ) {
     return;
   }
-  var index = buttons.indexOf( event.target );
+  var index = buttons.indexOf( eventClick.target );
   flkty.select( index ); 
   var navItems =  document.querySelectorAll('.c-slider-nav__background');
   for (var i = 0; i < navItems.length; i++) {
       navItems[i].classList.remove('is-selected');
   } 
-  event.srcElement.parentNode.querySelector('.c-slider-nav__title').style.position = 'static';
-  event.srcElement.parentNode.classList.add('is-selected');
+  eventClick.srcElement.parentNode.querySelector('.c-slider-nav__title').style.position = 'static';
+  eventClick.srcElement.parentNode.classList.add('is-selected');
 });
 // Set the active slide navigation on click next/prev buttons
 flkty.on( 'select', function() {
@@ -228,7 +262,7 @@ if(window.innerWidth < screen_md){
                     this.classList.remove(classActive);    
                 }else {
                     navDropdown.style.display = 'block';
-                    this.className += ' '+classActive;                      
+                    this.classList.add(classActive);                      
                 }
             };
         }
@@ -236,33 +270,32 @@ if(window.innerWidth < screen_md){
 }else {
     // Set the active menu navigation on hover
     for (var i = 0; i < navItems.length; i++) {        
-        if (navItems[i].classList.contains('is-dropdown')){ 
+        if (navItems[i].classList.contains(classDropdown)){ 
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
             navItems[i].onmouseover = function(){
+                //console.log('navitemmenuDrop');
                 if(!this.classList.contains(classActive)){
-                    this.className += ' '+classActive;                          
+                    this.classList.add(classActive);                          
                 }
             };
             navDropdown.onmouseover = function(){
+                //console.log('navdropdown')
                 if(!this.parentNode.classList.contains(classActive)){
-                    this.parentNode.className += ' '+classActive;                    
+                    this.parentNode.classList.add(classActive);                    
                 }             
             };
-            navItems[i].onmouseout = function(){
-                var objectThis = this;
-                function funcDeleteActiveClass(blockObject) {
-                  blockObject.classList.remove(classActive); 
-                }
-                setTimeout(funcDeleteActiveClass, 3000,objectThis);                
-                
-            };
-            navDropdown.onmouseout = function(){
-                var objectThis = this;
-                function funcDeleteActiveClass(blockObject) {
-                    blockObject.parentNode.classList.remove(classActive); 
-                }
-                setTimeout(funcDeleteActiveClass, 3000, objectThis);                       
-            };
+            navDropdown.addEventListener('mouseout', funcDeleteActiveClassMouseOut(navDropdown),true);
+        }else {
+            navItems[i].onmouseover = function(){
+                //console.log('navitemmenu');
+                for (var k = 0; k < navItems.length; k++) {
+                    if (navItems[k].classList.contains(classDropdown)){
+                        if(navItems[k].classList.contains(classActive)){
+                            navItems[k].classList.remove(classActive);                              
+                        }
+                    } 
+                } 
+            };                      
         }
     }    
 }
@@ -271,7 +304,7 @@ var blockNav = document.querySelector('.l-header__nav');
 var btnNav = document.querySelector('.c-nav-button');
 btnNav.onclick = function(event){
     if(!this.classList.contains(classActive)){
-        blockNav.className += ' '+classActive;
+        blockNav.classList.add(classActive);
     }
 };
 document.addEventListener('click', function(event) {
