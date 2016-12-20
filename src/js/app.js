@@ -104,6 +104,7 @@ var funcValidateForm = function(form, formItemClass, checkType){
      }  
 };
 // Bind MouseOut and delete active class menu
+var submenuOutTimeoutID = '';
 var funcDeleteActiveClassMouseOut = function (bloclObject){
     var list = funcTraverseChildren(bloclObject);
     return function onMouseOut(eventMouseOut) {
@@ -111,10 +112,8 @@ var funcDeleteActiveClassMouseOut = function (bloclObject){
         if (!!~list.indexOf(eventMouse)) {
             return;
         }
-        function funcDeleteActiveClass(bloclObject) {
-            bloclObject.parentNode.classList.remove(classActive); 
-        }
-        setTimeout(funcDeleteActiveClass, 2000, bloclObject);           
+        console.log('out');
+        submenuOutTimeoutID = setTimeout(function (bloclObject) { bloclObject.parentNode.classList.remove(classActive); }, 2000, bloclObject); 
     };
 };
 // Traverse children elemets
@@ -279,10 +278,14 @@ if(window.innerWidth < screen_md){
                 }
             };
             navDropdown.onmouseover = function(){
-                //console.log('navdropdown')
+                console.log('nav-dropdown')
                 if(!this.parentNode.classList.contains(classActive)){
                     this.parentNode.classList.add(classActive);                    
-                }             
+                }    
+                navDropdown.removeEventListener('mouseout', funcDeleteActiveClassMouseOut(navDropdown),true);
+                if (submenuOutTimeoutID != ''){
+                   clearTimeout(submenuOutTimeoutID); 
+                }                
             };
             navDropdown.addEventListener('mouseout', funcDeleteActiveClassMouseOut(navDropdown),true);
         }else {
