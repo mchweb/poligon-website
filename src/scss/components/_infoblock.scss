@@ -61,9 +61,14 @@
     }
 }
 .c-infoblock__title {
-    @extend h1;
+    @extend h1; 
     margin-bottom: $padding_base;
     color: $color_white;
+    &.is-small {
+       @extend h2; 
+       color: $color_white;
+        margin-bottom: $padding_base / 1.5;
+    }       
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         font-size: $font_size_base * 1.5;
         line-height: $line_height_base * 1.5;
@@ -73,6 +78,9 @@
 .c-infoblock__description {
     color: $color_white;   
     margin-bottom: $padding_base * 2;
+    &.is-small {
+        margin-bottom: $padding_base * 1.5;
+    }
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         font-size: $font_size_base + 2;
         line-height: $line_height_base + 2;

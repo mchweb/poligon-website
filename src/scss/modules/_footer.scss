@@ -44,8 +44,15 @@
            color: $color_gray_light;
         }         
     }
-    .c-btn {
-        margin-top: 40px;
+    @media screen and (min-width: $screen_lg) {
+        .c-btn {
+            margin-top: 40px;
+        }        
+    }
+    @media (min-width: $screen_xs) and (max-width: $screen_lg) {
+        .c-btn {
+            margin-top: $padding_base;
+        }          
     }
 }
 .l-content__col.l-contact__register {

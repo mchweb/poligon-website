@@ -111,7 +111,6 @@ var funcValidateFormShowError = function(blockName){
 };
 // Validate elements form 
 var funcValidateForm = function(form, formItemClass, checkType){
-    console.log(form);
      var formElements = form.querySelectorAll(formItemClass);
      for (var i = 0; i < formElements.length; i++) {
          funcValidateFormResetError(formElements[i]);
@@ -301,8 +300,6 @@ funcDisableLink('.c-program__item');
 var formButon = document.querySelectorAll('.c-form__btn');
 for (var i = 0; i < formButon.length; i++) {
     formButon[i].addEventListener('click', function(event) {
-        //funcValidateForm(formItem, '.c-form__input','is-value');
-        //console.log(this.form);
         if (this.form.classList.contains(classValidate)){
             funcValidateForm(this.form, '.c-form__input','is-value');
         }

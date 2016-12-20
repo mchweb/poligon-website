@@ -28,7 +28,8 @@
             padding-left: 0px;
         }
         .l-form__col:last-child {
-            @include span(12);      
+            @include span(12);    
+            padding-left: 0px;
         }         
     }
 }
@@ -75,7 +76,10 @@
 .c-form__btn {
     border: none;
     width: auto;
-    line-height: $line_height_base;
+    line-height: $line_height_base;    
+    @media screen and (min-width: $screen_sm) {
+        margin-top: 40px;
+    }
 }
 .c-form__checkbox {
     margin-top: $padding_base / 2; 
