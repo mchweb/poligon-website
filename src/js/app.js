@@ -65,6 +65,7 @@ var funcAutoHeightElement = function(blockName) {
 var funcMaxHeightElementResize = function(blockName) {
     window.addEventListener('resize', function(event){ 
         if(event.target.innerWidth >= screen_md){ 
+            funcAutoHeightElement(blockName);
             funcMaxHeightElement(blockName);
         }else {
             funcAutoHeightElement(blockName);
@@ -163,7 +164,8 @@ window.addEventListener('resize', function(event){
 });
 // Finding the maximum height among the elements slider
 funcMaxHeightElementOnlyDesktop('.c-slider__item'); 
-funcMaxHeightElementResize('.c-feature__content');
+funcMaxHeightElementResize('.c-slider__item');
+//funcMaxHeightElementResize('.c-feature__content');
 // Set the active-first slide navigation
 var navSliderItems = document.querySelectorAll('.c-slider-nav__background');
 for (var i = 0; i < navSliderItems.length; i++) {

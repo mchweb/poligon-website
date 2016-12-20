@@ -1003,6 +1003,13 @@ a.c-nav__link:focus {
 }
 
 /* Slider ******************/
+.l-content__slider .l-content__box {
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .c-slider {
   width: 100%;
   float: left;
@@ -1185,6 +1192,11 @@ a.c-nav__link:focus {
 @media (min-width: 600px) and (max-width: 900px) {
   .c-infoblock__map .c-infoblock__date--text {
     font-size: 14px;
+  }
+}
+@media (min-width: 320px) and (max-width: 600px) {
+  .c-infoblock__map .c-icon__mapmaker {
+    margin-right: 22px;
   }
 }
 

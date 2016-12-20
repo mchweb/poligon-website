@@ -4,6 +4,9 @@
 
 .l-content__slider {   
     @extend .container;
+    .l-content__box {
+        @include span(12);
+    }
 }
 .c-slider {
     @include span(12);
@@ -127,7 +130,12 @@
         .c-infoblock__date--text {
             font-size: $font_size_base - 2;
         }
-    }     
+    }  
+    @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+        .c-icon__mapmaker {
+            margin-right: $padding_base - 2;
+        }        
+    }
 }
 
 .c-slider-nav {
