@@ -187,14 +187,17 @@ buttonGroup.addEventListener( 'click', function( event ) {
   for (var i = 0; i < navItems.length; i++) {
       navItems[i].classList.remove('is-selected');
   } 
+  event.srcElement.parentNode.querySelector('.c-slider-nav__title').style.position = 'static';
   event.srcElement.parentNode.classList.add('is-selected');
 });
 // Set the active slide navigation on click next/prev buttons
 flkty.on( 'select', function() {
     var navItems =  document.querySelectorAll('.c-slider-nav__background');
-    for (var i = 0; i < navItems.length; i++) {
+    for (var i = 0; i < navItems.length; i++) {      
+      navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
       navItems[i].classList.remove('is-selected');
-    }     
+    } 
+    navItems[flkty.selectedIndex].querySelector('.c-slider-nav__title').style.position = 'static';
     navItems[flkty.selectedIndex].classList.add('is-selected');
 });
 /* Features */
