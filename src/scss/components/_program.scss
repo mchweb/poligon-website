@@ -14,7 +14,10 @@
     margin-bottom: $padding_base * 1.5;
     &.is-notactive {
         .c-program__title, .c-program__info, .c-program__description {
-            color: $color_gray_light;
+            color: $color_gray_light; 
+            a {
+              color: $color_gray_light;   
+            }
         }
         a {
             pointer-events: none;

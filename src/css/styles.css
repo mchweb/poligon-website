@@ -1399,6 +1399,9 @@ a.c-nav__link:focus {
 .c-program__item.is-notactive .c-program__title, .c-program__item.is-notactive .c-program__info, .c-program__item.is-notactive .c-program__description {
   color: #9c9c9c;
 }
+.c-program__item.is-notactive .c-program__title a, .c-program__item.is-notactive .c-program__info a, .c-program__item.is-notactive .c-program__description a {
+  color: #9c9c9c;
+}
 .c-program__item.is-notactive a {
   pointer-events: none;
   cursor: default;
