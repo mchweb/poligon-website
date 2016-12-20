@@ -20,16 +20,46 @@
 
 .c-content__title {
     &.bg--green {       
-        margin-left: 8px;
-        padding: 8px 13px;
+        //margin-left: 8px;
+        //padding: 8px 13px;
         font-weight: bold;
-        display: inline;
-        padding-left: 0;     
-        padding-right: 0;
-        -webkit-box-decoration-break: clone;
-        -ms-box-decoration-break: clone;
-        -o-box-decoration-break: clone;
-        box-decoration-break: clone;
-        box-shadow: 8px 0 0 $color_green, -8px 0 0 $color_green;
+        //display: inline;
+        background-color: transparent;
+        padding: 0px;
+       
+        span {
+            padding: 0px 13px;
+            background-color: $color_green;
+            padding-bottom: 4px;
+            &:first-child {
+                padding-top: 8px;
+            }
+            &:last-child {
+                padding-bottom: 8px;
+            }            
+            &.is-line {
+                padding: 8px 13px;
+            }
+        }
+//        padding-left: 0;     
+//        padding-right: 0;
+//        -webkit-box-decoration-break: clone;
+//        -ms-box-decoration-break: clone;
+//        -o-box-decoration-break: clone;
+//        box-decoration-break: clone;
+//        box-shadow: 8px 0 0 $color_green, -8px 0 0 $color_green;
+    }
+}
+@media (min-width: $screen_xs) and (max-width: $screen_lg) {
+    .c-content__title {
+        margin-left: 0px;
+        &.bg--green {
+            padding: 8px 13px;  
+            background-color: $color_green;
+            span {
+                padding: 0px;
+                background: transparent;
+            }
+        }
     }
 }
