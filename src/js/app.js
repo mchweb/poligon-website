@@ -12,7 +12,7 @@ var imgDirectory = 'assets/img/';
 /*
  * Functions
  */
-// Deactivating the default behavior of links and adding "notactive" class for block
+/* Deactivating the default behavior of links and adding "notactive" class for block */
 var funcDisableLink = function (blockName) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
@@ -23,7 +23,7 @@ var funcDisableLink = function (blockName) {
         
     }
 };
-// Takes a picture and make it the background for the block
+/* Takes a picture and make it the background for the block */
 var funcBackgroundImageBlocks = function (blockName, imgName, backPositionHoriz, backPositionVertical, blockNameBackground) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
@@ -43,7 +43,7 @@ var funcBackgroundImageBlocks = function (blockName, imgName, backPositionHoriz,
         } 
     }   
 };
-// Finding the maximum height among the elements
+/* Finding the maximum height among the elements */
 var funcMaxHeightElement = function(blockName) {
     var blockItems =  document.querySelectorAll(blockName);
     var blockItemsHeight = [];
@@ -54,7 +54,7 @@ var funcMaxHeightElement = function(blockName) {
         blockItems[i].style.height = Math.max.apply(null, blockItemsHeight)+'px';
     }    
 };
-// Setting the auto height among the elements
+/* Setting the auto height among the elements */
 var funcAutoHeightElement = function(blockName) {
     var blockItems =  document.querySelectorAll(blockName);
     var blockItemsHeight = [];
@@ -62,7 +62,7 @@ var funcAutoHeightElement = function(blockName) {
         blockItems[i].style.height = 'auto';
     }    
 };
-// Maximum and automatic height among the elements to resize
+/* Maximum and automatic height among the elements to resize */
 var funcMaxHeightElementResize = function(blockName) {
     window.addEventListener('resize', function(eventResize){ 
         if(eventResize.target.innerWidth >= screen_md){ 
@@ -73,7 +73,7 @@ var funcMaxHeightElementResize = function(blockName) {
         }    
     });
 };
-// Changing the height of the elements only on desktops
+/* Changing the height of the elements only on desktops */
 var funcMaxHeightElementOnlyDesktop = function(blockName) {
     if(window.innerWidth >= screen_md){ 
         funcMaxHeightElement(blockName);
@@ -81,17 +81,17 @@ var funcMaxHeightElementOnlyDesktop = function(blockName) {
         funcAutoHeightElement(blockName);
     }    
 };
-// Reset class error for elements form 
+/* Reset class error for elements form */ 
 var funcValidateFormResetError = function (blockName) {
     if (blockName.classList.contains(classError)) {
         blockName.classList.remove(classError);
     }
 };
-// Add class error for elements form 
+/* Add class error for elements form */ 
 var funcValidateFormShowError = function(blockName){
     blockName.classList.add(classError);
 };
-// Validate elements form 
+/* Validate elements form */ 
 var funcValidateForm = function(form, formItemClass, checkType){
      var formElements = form.querySelectorAll(formItemClass);
      for (var i = 0; i < formElements.length; i++) {
@@ -103,7 +103,7 @@ var funcValidateForm = function(form, formItemClass, checkType){
          }        
      }  
 };
-// Bind MouseOut and delete active class menu
+/* Bind MouseOut and delete active class menu */
 var submenuOutTimeoutID = '';
 var funcDeleteActiveClassMouseOut = function (bloclObject){
     var list = funcTraverseChildren(bloclObject);
@@ -115,7 +115,7 @@ var funcDeleteActiveClassMouseOut = function (bloclObject){
         submenuOutTimeoutID = setTimeout(function (bloclObject) { bloclObject.parentNode.classList.remove(classActive); }, 2000, bloclObject); 
     };
 };
-// Traverse children elemets
+/* Traverse children elemets */
 var funcTraverseChildren = function (bloclObject){
     var children = [];
     var q = [];
@@ -139,20 +139,20 @@ var funcTraverseChildren = function (bloclObject){
  */
 
 /* Logo */
-// Change image on hover for header
-//var headerLogo = document.querySelector('.l-header__logo');
-//var headerLogoLink = headerLogo.querySelector('.c-logo__link');
-//headerLogoLink.onmouseover = function(){
-//    this.querySelector('img').src = imgDirectory+'logo-dark-color.svg';
-//};
-//headerLogoLink.onmouseout = function(){
-//    this.querySelector('img').src = imgDirectory+'logo-dark.svg';
-//};
+/* Change image on hover for header
+var headerLogo = document.querySelector('.l-header__logo');
+var headerLogoLink = headerLogo.querySelector('.c-logo__link');
+headerLogoLink.onmouseover = function(){
+    this.querySelector('img').src = imgDirectory+'logo-dark-color.svg';
+};
+headerLogoLink.onmouseout = function(){
+    this.querySelector('img').src = imgDirectory+'logo-dark.svg';
+}; */
 
 /* Infoblock */
-// Set a background image
+/* Set a background image */
 funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
-// calculation of the background triangle height
+/* calculation of the background triangle height */
 var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
 if(window.innerWidth >= screen_md){ 
     for (var i = 0; i < blockInfoblocks.length; i++) {
@@ -170,16 +170,16 @@ window.addEventListener('resize', function(eventResize){
  });
 
 /* Slider */
-// Set a background image for slides
+/* Set a background image for slides */
 funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','center');
 
 
-// Set a background image for navigation slides
+/* Set a background image for navigation slides */
 funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center','.c-slider-nav__background');
-// Connecting flickity.js for slider
+/* Connecting flickity.js for slider */
 var elemSlider = document.querySelector('.c-slider');
 var paramsSlider = { wrapAround: 'true', draggable: true};
-// Disable flickity.js on mobile
+/* Disable flickity.js on mobile */
 var flkty = new Flickity( elemSlider, paramsSlider);
 if(window.innerWidth >= screen_md){   
     var flkty = new Flickity( elemSlider, paramsSlider);
@@ -194,18 +194,18 @@ window.addEventListener('resize', function(eventResize){
         flkty.destroy();
     }  
 });
-// Finding the maximum height among the elements slider
+/* Finding the maximum height among the elements slider */
 funcMaxHeightElementOnlyDesktop('.c-slider__item'); 
 funcMaxHeightElementResize('.c-slider__item');
-//funcMaxHeightElementResize('.c-feature__content');
-// Set the active-first slide navigation
+/* funcMaxHeightElementResize('.c-feature__content'); */
+/* Set the active-first slide navigation */
 var navSliderItems = document.querySelectorAll('.c-slider-nav__background');
 for (var i = 0; i < navSliderItems.length; i++) {
   if(i===0){
       navSliderItems[i].classList.add('is-selected');
   } 
 } 
-// Set the active slide navigation on click
+/* Set the active slide navigation on click */
 var buttonGroup = document.querySelector('.c-slider-nav');
 var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
 buttons = fizzyUIUtils.makeArray( buttons );
@@ -217,12 +217,13 @@ buttonGroup.addEventListener( 'click', function( eventClick ) {
   flkty.select( index ); 
   var navItems =  document.querySelectorAll('.c-slider-nav__background');
   for (var i = 0; i < navItems.length; i++) {
+      navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
       navItems[i].classList.remove('is-selected');
-  } 
+  }  
   eventClick.srcElement.parentNode.querySelector('.c-slider-nav__title').style.position = 'static';
   eventClick.srcElement.parentNode.classList.add('is-selected');
 });
-// Set the active slide navigation on click next/prev buttons
+/* Set the active slide navigation on click next/prev buttons */
 flkty.on( 'select', function() {
     var navItems =  document.querySelectorAll('.c-slider-nav__background');
     for (var i = 0; i < navItems.length; i++) {      
@@ -233,9 +234,9 @@ flkty.on( 'select', function() {
     navItems[flkty.selectedIndex].classList.add('is-selected');
 });
 /* Features */
-// Set a background image for features
+/* Set a background image for features */
 funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
-// Finding the maximum height among the elements features
+/* Finding the maximum height among the elements features */
 funcMaxHeightElementOnlyDesktop('.c-feature__content'); 
 funcMaxHeightElementResize('.c-feature__content');
 
@@ -249,7 +250,7 @@ funcMaxHeightElementResize('.c-feature__content');
  */
 var navItems =  document.querySelectorAll('.c-nav__item');
 if(window.innerWidth < screen_md){
-    // Set the active menu navigation on click
+    /* Set the active menu navigation on click */
     for (var i = 0; i < navItems.length; i++) {        
         if (navItems[i].classList.contains('is-dropdown')){ 
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
@@ -266,12 +267,11 @@ if(window.innerWidth < screen_md){
         }
     }
 }else {
-    // Set the active menu navigation on hover
+    /* Set the active menu navigation on hover */
     for (var i = 0; i < navItems.length; i++) {        
         if (navItems[i].classList.contains(classDropdown)){ 
             var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
             navItems[i].onmouseover = function(){
-                //console.log('navitemmenuDrop');
                 if(!this.classList.contains(classActive)){
                     this.classList.add(classActive);                          
                 }
@@ -288,7 +288,6 @@ if(window.innerWidth < screen_md){
             navDropdown.addEventListener('mouseout', funcDeleteActiveClassMouseOut(navDropdown),true);
         }else {
             navItems[i].onmouseover = function(){
-                //console.log('navitemmenu');
                 for (var k = 0; k < navItems.length; k++) {
                     if (navItems[k].classList.contains(classDropdown)){
                         if(navItems[k].classList.contains(classActive)){
@@ -300,7 +299,7 @@ if(window.innerWidth < screen_md){
         }
     }    
 }
-// Open mobile navigation
+/* Open mobile navigation */
 var blockNav = document.querySelector('.l-header__nav');
 var btnNav = document.querySelector('.c-nav-button');
 btnNav.onclick = function(event){
@@ -318,7 +317,7 @@ document.addEventListener('click', function(event) {
 /*
  *  Program 
  */
-// Deactivating the default behavior of links and adding "notactive" class for prgramms block
+/* Deactivating the default behavior of links and adding "notactive" class for prgramms block */
 funcDisableLink('.c-program__item');
 
 
@@ -333,18 +332,18 @@ for (var i = 0; i < formButon.length; i++) {
         }
     });    
 }
-//
-//var formItems =  document.querySelectorAll('.c-form');
-//for (var i = 0; i < formItems.length; i++) { 
-//    if (formItems[i].classList.contains(classValidate)){
-//        var formItem = formItems[i];
-//        var formButon = formItem.querySelector('.c-form__btn');
-//        formButon.addEventListener('click', function(event) {
-//            funcValidateForm(formItem, '.c-form__input','is-value');
-//        });
-//    }
-//    
-//}
+
+/*var formItems =  document.querySelectorAll('.c-form');
+for (var i = 0; i < formItems.length; i++) { 
+    if (formItems[i].classList.contains(classValidate)){
+        var formItem = formItems[i];
+        var formButon = formItem.querySelector('.c-form__btn');
+        formButon.addEventListener('click', function(event) {
+            funcValidateForm(formItem, '.c-form__input','is-value');
+        });
+    }
+    
+} */
                 
 /*
  *  Animations 
