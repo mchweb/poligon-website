@@ -179,21 +179,23 @@ funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','righ
 /* Connecting flickity.js for slider */
 var elemSlider = document.querySelector('.c-slider');
 var paramsSlider = { wrapAround: 'true', draggable: true};
-/* Disable flickity.js on mobile */
-var flkty = new Flickity( elemSlider, paramsSlider);
-if(window.innerWidth >= screen_md){   
+if(elemSlider){
+    /* Disable flickity.js on mobile */
     var flkty = new Flickity( elemSlider, paramsSlider);
-}else {
-    flkty.destroy();
-}
-window.addEventListener('resize', function(eventResize){ 
-    var flkty = new Flickity( elemSlider, paramsSlider);
-    if(eventResize.target.innerWidth >= screen_md){   
+    if(window.innerWidth >= screen_md){   
         var flkty = new Flickity( elemSlider, paramsSlider);
     }else {
         flkty.destroy();
-    }  
-});
+    }
+    window.addEventListener('resize', function(eventResize){ 
+        var flkty = new Flickity( elemSlider, paramsSlider);
+        if(eventResize.target.innerWidth >= screen_md){   
+            var flkty = new Flickity( elemSlider, paramsSlider);
+        }else {
+            flkty.destroy();
+        }  
+    });    
+}
 /* Finding the maximum height among the elements slider */
 funcMaxHeightElementOnlyDesktop('.c-slider__item'); 
 funcMaxHeightElementResize('.c-slider__item');
@@ -207,32 +209,34 @@ for (var i = 0; i < navSliderItems.length; i++) {
 } 
 /* Set the active slide navigation on click */
 var buttonGroup = document.querySelector('.c-slider-nav');
-var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
-buttons = fizzyUIUtils.makeArray( buttons );
-buttonGroup.addEventListener( 'click', function( eventClick ) {
-  if ( !matchesSelector( eventClick.target, '.c-slider-nav__link' ) ) {
-    return;
-  }
-  var index = buttons.indexOf( eventClick.target );
-  flkty.select( index ); 
-  var navItems =  document.querySelectorAll('.c-slider-nav__background');
-  for (var i = 0; i < navItems.length; i++) {
-      navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
-      navItems[i].classList.remove('is-selected');
-  }  
-  eventClick.srcElement.parentNode.querySelector('.c-slider-nav__title').style.position = 'static';
-  eventClick.srcElement.parentNode.classList.add('is-selected');
-});
-/* Set the active slide navigation on click next/prev buttons */
-flkty.on( 'select', function() {
-    var navItems =  document.querySelectorAll('.c-slider-nav__background');
-    for (var i = 0; i < navItems.length; i++) {      
-      navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
-      navItems[i].classList.remove('is-selected');
-    } 
-    navItems[flkty.selectedIndex].querySelector('.c-slider-nav__title').style.position = 'static';
-    navItems[flkty.selectedIndex].classList.add('is-selected');
-});
+if(buttonGroup){
+    var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
+    buttons = fizzyUIUtils.makeArray( buttons );
+    buttonGroup.addEventListener( 'click', function( eventClick ) {
+      if ( !matchesSelector( eventClick.target, '.c-slider-nav__link' ) ) {
+        return;
+      }
+      var index = buttons.indexOf( eventClick.target );
+      flkty.select( index ); 
+      var navItems =  document.querySelectorAll('.c-slider-nav__background');
+      for (var i = 0; i < navItems.length; i++) {
+          navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
+          navItems[i].classList.remove('is-selected');
+      }  
+      eventClick.srcElement.parentNode.querySelector('.c-slider-nav__title').style.position = 'static';
+      eventClick.srcElement.parentNode.classList.add('is-selected');
+    });    
+    /* Set the active slide navigation on click next/prev buttons */
+    flkty.on( 'select', function() {
+        var navItems =  document.querySelectorAll('.c-slider-nav__background');
+        for (var i = 0; i < navItems.length; i++) {      
+          navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
+          navItems[i].classList.remove('is-selected');
+        } 
+        navItems[flkty.selectedIndex].querySelector('.c-slider-nav__title').style.position = 'static';
+        navItems[flkty.selectedIndex].classList.add('is-selected');
+    });
+}
 /* Features */
 /* Set a background image for features */
 funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');

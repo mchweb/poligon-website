@@ -29,7 +29,7 @@ var path = {
         fonts: 'src/fonts/**/*.*'
     },
     watch: { 
-        html: '**/*.html',
+        html: 'src/**/*.html',
         js: 'src/js/**/*.js',
         style: 'src/**/*.scss',
         img: 'src/img/**/*.*',
