@@ -301,14 +301,16 @@ funcMaxHeightElementResize('.c-feature__content');
  *  Pages
  */ 
 /* Reviews */
+/* Set height for block */
 var blockReviews =  document.querySelectorAll('.c-reviews__item');
 if(blockReviews.length){ 
     for (var i = 0; i < blockReviews.length; i++) {
         var blockThumbnail = blockReviews[i].querySelector('.c-human__thumbnail');
-        blockThumbnail.style.height = blockThumbnail.offsetWidth;
+        blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
     }
 }
-
+/* Set a background image */
+funcBackgroundImageBlocks('.c-reviews__item','img','center','center','.c-human__thumbnail');
 
 /* Program */
 /* Deactivating the default behavior of links and adding "notactive" class for prgramms block */
