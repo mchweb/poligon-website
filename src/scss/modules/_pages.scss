@@ -1,10 +1,30 @@
 // ----------------------- //
-// Home style ------------ //
+// Pages style ----------- //
 // ----------------------- //
 
-.l-content__text {
-    @extend .container;
+.l-content__text {    
+    &.is-container {
+       @extend .container; 
+    }
+    &.is-no-padding {
+        .c-content__title--block {
+            padding-left: 0px;
+            padding-right: 0px;                 
+        }
+        .l-content__grid--three {
+            .l-content__col {
+                &:first-child {
+                    padding-left: 0px;
+                }
+                &:last-child {
+                    padding-right: 0px;   
+                }
+                               
+            }
+        }
+    }
 }
+
 .l-content__text {
     .l-content__col {
         .c-content__text {
