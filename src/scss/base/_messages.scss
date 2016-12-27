@@ -1,0 +1,28 @@
+// ----------------------- //
+// Messages style -------- //
+// ----------------------- //
+
+.c-message {
+    display: inline-block;    
+    border-bottom: none;
+    position: relative;
+    font-style: normal;    
+}
+.c-message__laptop {
+    padding: $padding_base $padding_base / 4 $padding_base $padding_base / 3;
+    .c-icon__laptop {
+        width: 30%;
+        float: left;
+        margin-top: $padding_base / 4;
+    }
+    .c-message__text {
+        width: 65%;
+        display: block;
+        float: left;        
+    }
+}
+.c-message__text {
+    font-size: $font_size_base - 2;
+    line-height: $line_height_base - 2;
+    margin-left: $padding_base / 3;
+}
