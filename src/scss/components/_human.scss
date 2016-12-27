@@ -24,23 +24,46 @@
         width: 100%;
         height: 100%;
         display: block;
+    }  
+    .c-human__thumbnail-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        @include background-image(linear-gradient(to bottom, rgba($color_green, 0), rgba($color_green, 0.7)));
+        padding: $padding_base / 1.2 $padding_base / 1.5;
+        .c-human__title {
+            @extend h4;
+            font-weight: bold;
+            margin: 0px;
+            margin-bottom: $padding_base / 1.5;
+            color: $color_white;
+            text-align: left;
+        }  
+        .c-human__description {
+            font-size: $font_size_base - 2;
+            ine-height: $line_height_base - 2;
+            color: $color_white;
+            text-align: left;
+        }        
     }    
 }
-.c-human__thumbnail-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    @include background-image(linear-gradient(to bottom, rgba($color_green, 0), rgba($color_green, 0.7)));
-    padding: $padding_base / 1.2 $padding_base / 1.5;
-}
 .c-human__title {
+    font-size: $font_size_base - 2;
+    line-height: $line_height_base - 2;
     font-weight: bold;
     margin: 0px;
     margin-bottom: $padding_base / 1.5;
     color: $color_white;
-}
+    text-align: center;
+    color: $color_gray_dark;
+    margin-bottom: 0px;
+}  
 .c-human__description {
     font-size: $font_size_base - 2;
-    color: $color_white;
+    line-height: $line_height_base - 2;    
+    color: $color_gray;
+    text-align: center;
 }
+
+

@@ -24,7 +24,7 @@ var funcDisableLink = function (blockName) {
     }
 };
 /* Takes a picture and make it the background for the block */
-var funcBackgroundImageBlocks = function (blockName, imgName, backPositionHoriz, backPositionVertical, blockNameBackground) {
+var funcBackgroundImageBlocks = function (blockName, imgName, bagPositionHoriz, bagPositionVertical, blockNameBackground) {
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
         var blockThumbnail = block[i].querySelector(imgName);
@@ -33,12 +33,12 @@ var funcBackgroundImageBlocks = function (blockName, imgName, backPositionHoriz,
             if(block[i].querySelector(blockNameBackground) != null){
                 var blockNameBack = block[i].querySelector(blockNameBackground);
                 blockNameBack.style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
-                blockNameBack.style.backgroundPosition = backPositionHoriz+' '+backPositionVertical;
+                blockNameBack.style.backgroundPosition = bagPositionHoriz+' '+bagPositionVertical;
                 blockNameBack.style.backgroundRepeat = 'no-repeat';
                 blockNameBack.style.backgroundSize = 'cover';               
             }else {
                 block[i].style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
-                block[i].style.backgroundPosition = backPositionHoriz+' '+backPositionVertical;
+                block[i].style.backgroundPosition = bagPositionHoriz+' '+bagPositionVertical;
                 block[i].style.backgroundRepeat = 'no-repeat';
                 block[i].style.backgroundSize = 'cover';              
             }             
@@ -136,6 +136,77 @@ var funcTraverseChildren = function (bloclObject){
     }
     return children;
 };
+
+/*
+ *  Navigation menu 
+ */
+var navItems =  document.querySelectorAll('.c-nav__item');
+if(window.innerWidth < screen_md){
+    /* Set the active menu navigation on click */
+    for (var i = 0; i < navItems.length; i++) {        
+        if (navItems[i].classList.contains('is-dropdown')){ 
+            var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
+            navDropdown.style.display = 'none';
+            navItems[i].onclick = function(){
+                if(this.classList.contains(classActive)){
+                    navDropdown.style.display = 'none';
+                    this.classList.remove(classActive);    
+                }else {
+                    navDropdown.style.display = 'block';
+                    this.classList.add(classActive);                      
+                }
+            };
+        }
+    }
+}else {
+    /* Set the active menu navigation on hover */
+    for (var i = 0; i < navItems.length; i++) {        
+        if (navItems[i].classList.contains(classDropdown)){ 
+            var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
+            navItems[i].onmouseover = function(){
+                if(!this.classList.contains(classActive)){
+                    this.classList.add(classActive);                          
+                }
+            };
+            navDropdown.onmouseover = function(){
+                if(!this.parentNode.classList.contains(classActive)){
+                    this.parentNode.classList.add(classActive);                    
+                }    
+                navDropdown.removeEventListener('mouseout', funcDeleteActiveClassMouseOut(navDropdown),true);
+                if (submenuOutTimeoutID != ''){
+                   clearTimeout(submenuOutTimeoutID); 
+                }                
+            };
+            navDropdown.addEventListener('mouseout', funcDeleteActiveClassMouseOut(navDropdown),true);
+        }else {
+            navItems[i].onmouseover = function(){
+                for (var k = 0; k < navItems.length; k++) {
+                    if (navItems[k].classList.contains(classDropdown)){
+                        if(navItems[k].classList.contains(classActive)){
+                            navItems[k].classList.remove(classActive);                              
+                        }
+                    } 
+                } 
+            };                      
+        }
+    }    
+}
+/* Open mobile navigation */
+var blockNav = document.querySelector('.l-header__nav');
+var btnNav = document.querySelector('.c-nav-button');
+btnNav.onclick = function(event){
+    if(!this.classList.contains(classActive)){
+        blockNav.classList.add(classActive);
+    }
+};
+document.addEventListener('click', function(event) {
+    var isClickInside = blockNav.contains(event.target);
+    if (!isClickInside && !btnNav.contains(event.target)) {
+        blockNav.classList.remove(classActive); 
+    }
+}); 
+
+
 /*
  *  Home page 
  */
@@ -150,26 +221,6 @@ headerLogoLink.onmouseover = function(){
 headerLogoLink.onmouseout = function(){
     this.querySelector('img').src = imgDirectory+'logo-dark.svg';
 }; */
-
-/* Infoblock */
-/* Set a background image */
-funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
-/* calculation of the background triangle height */
-var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
-if(window.innerWidth >= screen_md){ 
-    for (var i = 0; i < blockInfoblocks.length; i++) {
-        var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
-        blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
-    }
-}
-window.addEventListener('resize', function(eventResize){ 
-    if(eventResize.target.innerWidth >= screen_md){ 
-        for (var i = 0; i < blockInfoblocks.length; i++) {
-            var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
-            blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
-        }
-    }
- });
 
 /* Slider */
 /* Set a background image for slides */
@@ -247,84 +298,41 @@ funcMaxHeightElementOnlyDesktop('.c-feature__content');
 funcMaxHeightElementResize('.c-feature__content');
 
 /*
- *  Images
+ *  Pages
  */ 
-
-
-/*
- *  Navigation menu 
- */
-var navItems =  document.querySelectorAll('.c-nav__item');
-if(window.innerWidth < screen_md){
-    /* Set the active menu navigation on click */
-    for (var i = 0; i < navItems.length; i++) {        
-        if (navItems[i].classList.contains('is-dropdown')){ 
-            var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
-            navDropdown.style.display = 'none';
-            navItems[i].onclick = function(){
-                if(this.classList.contains(classActive)){
-                    navDropdown.style.display = 'none';
-                    this.classList.remove(classActive);    
-                }else {
-                    navDropdown.style.display = 'block';
-                    this.classList.add(classActive);                      
-                }
-            };
-        }
+/* Reviews */
+var blockReviews =  document.querySelectorAll('.c-reviews__item');
+if(blockReviews.length){ 
+    for (var i = 0; i < blockReviews.length; i++) {
+        var blockThumbnail = blockReviews[i].querySelector('.c-human__thumbnail');
+        blockThumbnail.style.height = blockThumbnail.offsetWidth;
     }
-}else {
-    /* Set the active menu navigation on hover */
-    for (var i = 0; i < navItems.length; i++) {        
-        if (navItems[i].classList.contains(classDropdown)){ 
-            var navDropdown = navItems[i].querySelector('.c-nav__dropdown');
-            navItems[i].onmouseover = function(){
-                if(!this.classList.contains(classActive)){
-                    this.classList.add(classActive);                          
-                }
-            };
-            navDropdown.onmouseover = function(){
-                if(!this.parentNode.classList.contains(classActive)){
-                    this.parentNode.classList.add(classActive);                    
-                }    
-                navDropdown.removeEventListener('mouseout', funcDeleteActiveClassMouseOut(navDropdown),true);
-                if (submenuOutTimeoutID != ''){
-                   clearTimeout(submenuOutTimeoutID); 
-                }                
-            };
-            navDropdown.addEventListener('mouseout', funcDeleteActiveClassMouseOut(navDropdown),true);
-        }else {
-            navItems[i].onmouseover = function(){
-                for (var k = 0; k < navItems.length; k++) {
-                    if (navItems[k].classList.contains(classDropdown)){
-                        if(navItems[k].classList.contains(classActive)){
-                            navItems[k].classList.remove(classActive);                              
-                        }
-                    } 
-                } 
-            };                      
-        }
-    }    
 }
-/* Open mobile navigation */
-var blockNav = document.querySelector('.l-header__nav');
-var btnNav = document.querySelector('.c-nav-button');
-btnNav.onclick = function(event){
-    if(!this.classList.contains(classActive)){
-        blockNav.classList.add(classActive);
-    }
-};
-document.addEventListener('click', function(event) {
-    var isClickInside = blockNav.contains(event.target);
-    if (!isClickInside && !btnNav.contains(event.target)) {
-        blockNav.classList.remove(classActive); 
-    }
-}); 
 
-/*
- *  Program 
- */
+
+/* Program */
 /* Deactivating the default behavior of links and adding "notactive" class for prgramms block */
 funcDisableLink('.c-program__item');
+
+/* Infoblock */
+/* Set a background image */
+funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
+/* calculation of the background triangle height */
+var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
+if(window.innerWidth >= screen_md){ 
+    for (var i = 0; i < blockInfoblocks.length; i++) {
+        var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
+        blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+    }
+}
+window.addEventListener('resize', function(eventResize){ 
+    if(eventResize.target.innerWidth >= screen_md){ 
+        for (var i = 0; i < blockInfoblocks.length; i++) {
+            var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
+            blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+        }
+    }
+ });
 
 
 /*

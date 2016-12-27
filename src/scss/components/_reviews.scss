@@ -1,0 +1,35 @@
+// ----------------------- //
+// Reviews style --------- //
+// ----------------------- //
+
+.l-reviews {
+    .c-content__title {
+        padding-left: 0px;
+        padding-top: 0px;
+    }
+}
+.c-reviews__item {
+    margin-bottom: $padding_base * 2;
+    display: inline-block;
+    .c-human__thumbnail {
+        @include span(1 of 3);
+        padding: 0px;
+    }
+    .c-human__thumbnail-caption {
+        @include span(2 of 3);
+        .c-human__title, .c-human__description {
+            text-align: left;
+            display: inline;
+            font-weight: bold;
+            color: $color_gray_dark; 
+            font-size: $font_size_base;
+            line-height: $line_height_base;
+        }
+    }  
+}
+.c-reviews__text {
+    color: $color_gray_dark;  
+    @include span(3 of 3);
+    padding: 0px;
+    margin-top: $padding_base / 2;
+}

@@ -2,7 +2,7 @@
 html, body, div, span, applet, object, iframe,
 h1,
 .c-infoblock__title,
-.c-feature__title, h2, .c-infoblock__title.is-small, h3, h4, h5, h6, p, blockquote, pre,
+.c-feature__title, h2, .c-infoblock__title.is-small, h3, h4, .c-human__thumbnail .c-human__thumbnail-caption .c-human__title, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -487,7 +487,7 @@ input, label, select, button, textarea {
   font-family: "ClearSans", Arial, Helvetica, sans-serif;
 }
 
-h1, .c-infoblock__title, .c-feature__title, h2, .c-infoblock__title.is-small, h3, h4 {
+h1, .c-infoblock__title, .c-feature__title, h2, .c-infoblock__title.is-small, h3, h4, .c-human__thumbnail .c-human__thumbnail-caption .c-human__title {
   font-family: "ClearSans", Arial, Helvetica, sans-serif;
   color: #373737;
 }
@@ -508,7 +508,7 @@ h3 {
   line-height: 36px;
 }
 
-h4 {
+h4, .c-human__thumbnail .c-human__thumbnail-caption .c-human__title {
   font-size: 22px;
   line-height: 30px;
 }
@@ -566,7 +566,7 @@ a:focus {
 }
 
 @media (min-width: 320px) and (max-width: 600px) {
-  h1, .c-infoblock__title, .c-feature__title, h2, .c-infoblock__title.is-small, h3, h4 {
+  h1, .c-infoblock__title, .c-feature__title, h2, .c-infoblock__title.is-small, h3, h4, .c-human__thumbnail .c-human__thumbnail-caption .c-human__title {
     font-size: 22px !important;
     font-weight: bold;
     line-height: 30px !important;
@@ -1388,6 +1388,7 @@ a.c-nav__link:focus {
   padding-top: 270px;
 }
 .c-feature.is-vertical {
+  display: inline-block;
   padding-top: 0px;
   border: 5px solid #949494;
 }
@@ -1634,8 +1635,7 @@ a.c-nav__link:focus {
   height: 100%;
   display: block;
 }
-
-.c-human__thumbnail-caption {
+.c-human__thumbnail .c-human__thumbnail-caption {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1648,17 +1648,79 @@ a.c-nav__link:focus {
   background-image: linear-gradient(to bottom, rgba(128, 191, 68, 0), rgba(128, 191, 68, 0.7));
   padding: 20px 16px;
 }
-
-.c-human__title {
+.c-human__thumbnail .c-human__thumbnail-caption .c-human__title {
   font-weight: bold;
   margin: 0px;
   margin-bottom: 16px;
   color: #ffffff;
+  text-align: left;
+}
+.c-human__thumbnail .c-human__thumbnail-caption .c-human__description {
+  font-size: 14px;
+  ine-height: 22px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.c-human__title {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: bold;
+  margin: 0px;
+  margin-bottom: 16px;
+  color: #ffffff;
+  text-align: center;
+  color: #373737;
+  margin-bottom: 0px;
 }
 
 .c-human__description {
   font-size: 14px;
-  color: #ffffff;
+  line-height: 22px;
+  color: #6e6e6e;
+  text-align: center;
+}
+
+/* Reviews *****************/
+.l-reviews .c-content__title {
+  padding-left: 0px;
+  padding-top: 0px;
+}
+
+.c-reviews__item {
+  margin-bottom: 48px;
+  display: inline-block;
+}
+.c-reviews__item .c-human__thumbnail {
+  width: 33.33333%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 0px;
+}
+.c-reviews__item .c-human__thumbnail-caption {
+  width: 66.66667%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.c-reviews__item .c-human__thumbnail-caption .c-human__title, .c-reviews__item .c-human__thumbnail-caption .c-human__description {
+  text-align: left;
+  display: inline;
+  font-weight: bold;
+  color: #373737;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.c-reviews__text {
+  color: #373737;
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 0px;
+  margin-top: 12px;
 }
 
 /****************************
