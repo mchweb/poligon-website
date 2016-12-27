@@ -1,3 +1,18 @@
 // ----------------------- //
 // Sidebar style --------- //
 // ----------------------- //
+
+.l-content__col--sidebar {
+    @extend .container;
+    padding-left: 0px;
+    margin-top: $padding_base * 3;
+    margin-bottom: $padding_base * 2;
+    .is-content {
+        @include span(9);
+        padding-left: 0px;
+    }
+    .is-sidebar {
+        @include span(3);
+        padding-right: 0px;
+    }
+}

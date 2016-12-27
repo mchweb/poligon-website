@@ -85,3 +85,15 @@ a {
        line-height: $line_height_base !important;
     }
 }
+
+.c-content__text {
+    color: $color_gray_dark;
+    ul {
+        padding-bottom: $padding_base;
+    }
+}
+.c-content__blockquote, .c-content__text blockquote {
+    background-color: $color_white_dark;
+    padding: $padding_base $padding_base * 2.25 $padding_base $padding_base * 3.5;
+    margin: $padding_base 0px;
+}

@@ -28,19 +28,21 @@ var funcBackgroundImageBlocks = function (blockName, imgName, backPositionHoriz,
     var block =  document.querySelectorAll(blockName);
     for (var i = 0; i < block.length; i++) {
         var blockThumbnail = block[i].querySelector(imgName);
-        blockThumbnail.style.display = 'none';
-        if(block[i].querySelector(blockNameBackground) != null){
-            var blockNameBack = block[i].querySelector(blockNameBackground);
-            blockNameBack.style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
-            blockNameBack.style.backgroundPosition = backPositionHoriz+' '+backPositionVertical;
-            blockNameBack.style.backgroundRepeat = 'no-repeat';
-            blockNameBack.style.backgroundSize = 'cover';               
-        }else {
-            block[i].style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
-            block[i].style.backgroundPosition = backPositionHoriz+' '+backPositionVertical;
-            block[i].style.backgroundRepeat = 'no-repeat';
-            block[i].style.backgroundSize = 'cover';              
-        } 
+        if(blockThumbnail){
+            blockThumbnail.style.display = 'none';        
+            if(block[i].querySelector(blockNameBackground) != null){
+                var blockNameBack = block[i].querySelector(blockNameBackground);
+                blockNameBack.style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
+                blockNameBack.style.backgroundPosition = backPositionHoriz+' '+backPositionVertical;
+                blockNameBack.style.backgroundRepeat = 'no-repeat';
+                blockNameBack.style.backgroundSize = 'cover';               
+            }else {
+                block[i].style.backgroundImage = 'url('+blockThumbnail.getAttribute('src')+')';
+                block[i].style.backgroundPosition = backPositionHoriz+' '+backPositionVertical;
+                block[i].style.backgroundRepeat = 'no-repeat';
+                block[i].style.backgroundSize = 'cover';              
+            }             
+        }
     }   
 };
 /* Finding the maximum height among the elements */

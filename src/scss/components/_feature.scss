@@ -4,7 +4,42 @@
 
 .c-feature {
     padding-top: 270px;
+    &.is-vertical {
+        padding-top: 0px;
+        border: 5px solid $color_gray_light2;
+        .c-feature__item {
+            @include span(12);    
+            margin-bottom: 0px;
+            padding: 0px;
+            padding-bottom: $padding_base * 2;
+            &:first-child {
+                padding-top: $padding_base * 1.5;
+            }
+            .c-feature__content {
+                height: auto !important;
+                min-height: auto;
+                border: none;
+                padding: 0px;
+                &:before {
+                    background: transparent;
+                }
+            }
+            .c-feature__title {
+                text-align: center;
+                color: $color_blue;
+                span {
+                    line-height: 90px;
+                }
+            }
+            .c-feature__text {
+                text-align: center;
+                color: $color_blue;
+                padding: 0px $padding_base * 1.5;
+            }
+        }
+    }
 }
+
 .c-feature__item {
     @include span(4);  
     margin-bottom: $padding_base * 2;
@@ -12,6 +47,7 @@
         @include span(12); 
         margin-bottom: $padding_base;
     }
+    
 }
 .c-feature__content {
     border: 10px solid $color_orange;
@@ -27,9 +63,7 @@
         top: 0;
         left: 0;
         z-index: 1;
-        background: -webkit-linear-gradient(rgba($color_orange, 0), rgba($color_orange, 1));
-        background: -o-linear-gradient(rgba($color_orange, 0), rgba($color_orange, 1));
-        background: linear-gradient(rgba($color_orange, 0), rgba($color_orange, 1));
+        @include background-image(linear-gradient(to bottom, rgba($color_orange, 0), rgba($color_orange, 1)));
     }    
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         min-height: auto;

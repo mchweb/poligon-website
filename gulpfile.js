@@ -84,8 +84,8 @@ gulp.task('build', [
     'html:build',
     'fonts:build',    
     'style:build',    
-    'js:build'
-//    'image:build'
+    'js:build',
+    'image:build'
 ]);
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
@@ -100,8 +100,8 @@ gulp.task('watch', function(){
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
-//    watch([path.watch.img], function(event, cb) {
-//        gulp.start('image:build');
-//    });
+    watch([path.watch.img], function(event, cb) {
+        gulp.start('image:build');
+    });
 });
 gulp.task('default', ['build', 'watch']);
