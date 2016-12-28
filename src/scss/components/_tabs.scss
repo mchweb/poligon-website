@@ -1,0 +1,77 @@
+// ----------------------- //
+// Tabs style ------------ //
+// ----------------------- //
+
+.c-tabs-nav {
+    @include span(1 of 9);
+    padding: 0px;
+}
+.c-tabs-nav__item {
+    color: $color_green;
+    background-color: $color_white_dark;
+    cursor: pointer;
+    padding: $padding_base / 2 $padding_base / 3 $padding_base / 2.4 $padding_base / 2.4;
+    border: 1px solid $color_white_dark3;
+    border-right: none;
+    border-bottom: none;
+    @include border-top-left-radius(2px);
+    @include border-bottom-left-radius(2px);
+    &:last-child {
+        border-bottom: 1px solid $color_white_dark3;
+    }
+    &.is-active {
+        background-color: $color_white;
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 0;
+            right: -1px;
+            content: '';
+            width: 1px;
+            height: 100%;
+            background-color: $color_white;
+            z-index: 2;
+        }
+    }
+}
+
+
+.c-tabs-text {
+    @include span(8 of 9);
+    background-color: $color_white;
+    border: 1px solid $color_white_dark3;
+    padding: $padding_base / 2 $padding_base; 
+    position: relative;
+    @include border-radius(2px);
+    @include border-top-left-radius(0px);
+    &:before {
+       position: absolute;
+        content: '';
+        width: 1px;
+        height: 90%;
+        background-color: $color_white_dark3;
+        top: $padding_base / 2;
+        left: 150px;
+    }
+}
+.c-tabs-text__item {
+    display: none;
+    color: $color_gray_dark;
+    &.is-active {
+        display: block;
+    }    
+    
+}
+.c-schedule__item {
+    margin-bottom: $padding_base;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+.c-schedule__time {
+    display: inline-block;
+    margin-right: $padding_base;
+}
+.c-schedule__content {
+    display: inline-block;
+}

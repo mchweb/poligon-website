@@ -136,7 +136,37 @@ var funcTraverseChildren = function (bloclObject){
     }
     return children;
 };
-
+/* Tabs */ 
+var funcTabs = function (blockName, blockNameNavTabs, blockNameTextTabs){
+    var blockParent = document.querySelector(blockName);
+    if (blockParent){
+        var navElements = blockParent.querySelectorAll(blockNameNavTabs);
+        var textElements = blockParent.querySelectorAll(blockNameTextTabs);
+        for (var i = 0; i < navElements.length; i++) {
+            navElements[i].addEventListener('click', function(event) {
+                var navIndex = '0';
+                for (var n = 0; n < navElements.length; n++) {
+                    if(navElements[n].classList.contains(classActive)){
+                        navElements[n].classList.remove(classActive);   
+                    }
+                    if(event.target === navElements[n]){
+                        navIndex = n;
+                        navElements[n].classList.add(classActive);   
+                    }                    
+                }
+                for (var k = 0; k < textElements.length; k++){
+                    console.log(navIndex);
+                    textElements[k].classList.remove(classActive); 
+                    if(k === navIndex){
+                        textElements[k].classList.add(classActive);   
+                    }
+                }
+                
+            });  
+        }           
+    }
+};
+funcTabs('.c-tabs','.c-tabs-nav__item','.c-tabs-text__item');
 /*
  *  Navigation menu 
  */
