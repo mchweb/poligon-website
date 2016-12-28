@@ -252,6 +252,99 @@ headerLogoLink.onmouseout = function(){
     this.querySelector('img').src = imgDirectory+'logo-dark.svg';
 }; */
 
+
+/*
+ *  Pages
+ */ 
+/* Reviews */
+/* Set height for block */
+var blockReviews =  document.querySelectorAll('.c-reviews__item');
+if(blockReviews.length){ 
+    for (var i = 0; i < blockReviews.length; i++) {
+        var blockThumbnail = blockReviews[i].querySelector('.c-human__thumbnail');
+        blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
+    }
+}
+/* Set a background image */
+funcBackgroundImageBlocks('.c-reviews__item','img','center','center','.c-human__thumbnail');
+
+/* Program */
+/* Deactivating the default behavior of links and adding "notactive" class for prgramms block */
+funcDisableLink('.c-program__item');
+
+/* Infoblock */
+/* Set a background image */
+funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
+/* calculation of the background triangle height */
+var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
+if(window.innerWidth >= screen_md){ 
+    for (var i = 0; i < blockInfoblocks.length; i++) {
+        var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
+        blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+    }
+}
+window.addEventListener('resize', function(eventResize){ 
+    if(eventResize.target.innerWidth >= screen_md){ 
+        for (var i = 0; i < blockInfoblocks.length; i++) {
+            var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
+            blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+        }
+    }
+ });
+/* Speakers */
+/* Set height for block */
+var blockSpeakers =  document.querySelectorAll('.c-human__item');
+if(blockSpeakers.length){ 
+    for (var i = 0; i < blockSpeakers.length; i++) {
+        var blockThumbnail = blockSpeakers[i].querySelector('.c-human__thumbnail');
+        blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
+    }
+}
+/* Set a background image */
+funcBackgroundImageBlocks('.c-human__item','img','top','center','.c-human__thumbnail');
+
+/* Slider images */
+/* Set height for block */
+var sliderImagesHeightElements = function () {
+    var blockSLider = document.querySelector('.c-slider.is-not-content');
+    if(blockSLider){ 
+        var blockSLidersItems =  document.querySelectorAll('.c-slider__image');
+        if(blockSLidersItems.length){ 
+            for (var i = 0; i < blockSLidersItems.length; i++) {
+
+                blockSLidersItems[i].style.height = blockSLidersItems[i].offsetWidth/1.5+'px';
+                console.log(blockSLidersItems[i].offsetWidth/1.3+'----'+blockSLidersItems[i].offsetWidth);
+            }
+        }
+    }    
+};
+sliderImagesHeightElements();
+window.addEventListener('resize', function(eventResize){
+    sliderImagesHeightElements();
+});
+/*
+ *  Forms
+ */
+var formButon = document.querySelectorAll('.c-form__btn');
+for (var i = 0; i < formButon.length; i++) {
+    formButon[i].addEventListener('click', function(event) {
+        if (this.form.classList.contains(classValidate)){
+            funcValidateForm(this.form, '.c-form__input','is-value');
+        }
+    });    
+}
+
+/*var formItems =  document.querySelectorAll('.c-form');
+for (var i = 0; i < formItems.length; i++) { 
+    if (formItems[i].classList.contains(classValidate)){
+        var formItem = formItems[i];
+        var formButon = formItem.querySelector('.c-form__btn');
+        formButon.addEventListener('click', function(event) {
+            funcValidateForm(formItem, '.c-form__input','is-value');
+        });
+    }
+    
+} */
 /* Slider */
 /* Set a background image for slides */
 funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','center');
@@ -262,6 +355,7 @@ funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','righ
 /* Connecting flickity.js for slider */
 var elemSlider = document.querySelector('.c-slider');
 var paramsSlider = { wrapAround: 'true', draggable: true};
+
 if(elemSlider){
     /* Disable flickity.js on mobile */
     var flkty = new Flickity( elemSlider, paramsSlider);
@@ -326,79 +420,6 @@ funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
 /* Finding the maximum height among the elements features */
 funcMaxHeightElementOnlyDesktop('.c-feature__content'); 
 funcMaxHeightElementResize('.c-feature__content');
-
-/*
- *  Pages
- */ 
-/* Reviews */
-/* Set height for block */
-var blockReviews =  document.querySelectorAll('.c-reviews__item');
-if(blockReviews.length){ 
-    for (var i = 0; i < blockReviews.length; i++) {
-        var blockThumbnail = blockReviews[i].querySelector('.c-human__thumbnail');
-        blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
-    }
-}
-/* Set a background image */
-funcBackgroundImageBlocks('.c-reviews__item','img','center','center','.c-human__thumbnail');
-
-/* Program */
-/* Deactivating the default behavior of links and adding "notactive" class for prgramms block */
-funcDisableLink('.c-program__item');
-
-/* Infoblock */
-/* Set a background image */
-funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
-/* calculation of the background triangle height */
-var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
-if(window.innerWidth >= screen_md){ 
-    for (var i = 0; i < blockInfoblocks.length; i++) {
-        var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
-        blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
-    }
-}
-window.addEventListener('resize', function(eventResize){ 
-    if(eventResize.target.innerWidth >= screen_md){ 
-        for (var i = 0; i < blockInfoblocks.length; i++) {
-            var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
-            blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
-        }
-    }
- });
-/* Speakers */
-/* Set height for block */
-var blockSpeakers =  document.querySelectorAll('.c-human__item');
-if(blockSpeakers.length){ 
-    for (var i = 0; i < blockSpeakers.length; i++) {
-        var blockThumbnail = blockSpeakers[i].querySelector('.c-human__thumbnail');
-        blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
-    }
-}
-/* Set a background image */
-funcBackgroundImageBlocks('.c-human__item','img','top','center','.c-human__thumbnail');
-/*
- *  Forms
- */
-var formButon = document.querySelectorAll('.c-form__btn');
-for (var i = 0; i < formButon.length; i++) {
-    formButon[i].addEventListener('click', function(event) {
-        if (this.form.classList.contains(classValidate)){
-            funcValidateForm(this.form, '.c-form__input','is-value');
-        }
-    });    
-}
-
-/*var formItems =  document.querySelectorAll('.c-form');
-for (var i = 0; i < formItems.length; i++) { 
-    if (formItems[i].classList.contains(classValidate)){
-        var formItem = formItems[i];
-        var formButon = formItem.querySelector('.c-form__btn');
-        formButon.addEventListener('click', function(event) {
-            funcValidateForm(formItem, '.c-form__input','is-value');
-        });
-    }
-    
-} */
                 
 /*
  *  Animations 

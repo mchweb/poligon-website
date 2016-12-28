@@ -1149,6 +1149,9 @@ a.c-nav__link:focus {
     display: none;
   }
 }
+.c-slider.is-not-content .c-slider__item {
+  padding: 0px;
+}
 
 .c-slider__item {
   width: 100%;
