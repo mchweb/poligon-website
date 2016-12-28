@@ -1,0 +1,50 @@
+// ----------------------- //
+// Shedule style --------- //
+// ----------------------- //
+
+.c-schedule {
+    &.is-table {
+        margin: $padding_base 0;
+        display: inline-block;
+        .c-schedule__item {
+            display: inline-block;
+            width: 100%;
+        }
+        .c-schedule__day {
+            display: inline-block;
+            min-width: 70px;
+            @extend h4;
+            margin-right: $padding_base * 3.25;
+            float: left;
+            min-height: $line_height_h4;
+            clear: both;
+        }
+        .c-schedule__time {
+            display: inline-block;
+            margin-right: $padding_base;
+            float: left;
+            min-width: 115px;
+        }
+        .c-schedule__content {
+            display: inline-block;
+            float: left;
+            width: 65%;
+        }        
+    }
+}
+.c-schedule__item {
+    margin-bottom: $padding_base;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+.c-schedule__day {
+    display: inline-block;
+}
+.c-schedule__time {
+    display: inline-block;
+    margin-right: $padding_base;
+}
+.c-schedule__content {
+    display: inline-block;
+}

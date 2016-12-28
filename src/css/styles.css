@@ -1833,6 +1833,7 @@ a.c-nav__link:focus {
   display: block;
 }
 
+/* Shedule *****************/
 .c-schedule.is-table {
   margin: 24px 0;
   display: inline-block;
