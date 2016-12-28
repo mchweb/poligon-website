@@ -1835,6 +1835,7 @@ a.c-nav__link:focus {
 
 .c-schedule.is-table {
   margin: 24px 0;
+  display: inline-block;
 }
 .c-schedule.is-table .c-schedule__item {
   display: inline-block;
