@@ -385,8 +385,17 @@ window.addEventListener('resize', function(eventResize){
         }
     }
  });
-
-
+/* Speakers */
+/* Set height for block */
+var blockSpeakers =  document.querySelectorAll('.c-human__item');
+if(blockSpeakers.length){ 
+    for (var i = 0; i < blockSpeakers.length; i++) {
+        var blockThumbnail = blockSpeakers[i].querySelector('.c-human__thumbnail');
+        blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
+    }
+}
+/* Set a background image */
+funcBackgroundImageBlocks('.c-human__item','img','top','center','.c-human__thumbnail');
 /*
  *  Forms
  */

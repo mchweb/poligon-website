@@ -33,6 +33,7 @@ var path = {
         js: 'src/js/**/*.js',
         style: 'src/**/*.scss',
         img: 'src/img/**/*.*',
+        imgTemp: 'src/temp/images/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     clean: './build'
@@ -99,7 +100,10 @@ gulp.task('watch', function(){
     });
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
-    });
+    });    
+    watch([path.watch.imgTemp], function(event, cb) {
+        gulp.start('image:build');
+    });        
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });

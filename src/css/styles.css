@@ -1644,6 +1644,26 @@ a.c-nav__link:focus {
 }
 
 /* Human *******************/
+.c-human.is-grid {
+  margin-left: -15px;
+}
+.c-human.is-grid .c-human__item {
+  margin-bottom: 30px;
+  width: 22.22222%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.c-human.is-grid .c-human__item:nth-child(4n+1) {
+  clear: left;
+}
+.c-human.is-grid .c-human__item .c-human__thumbnail {
+  border: 6px solid #f7941e;
+}
+.c-human.is-grid .c-human__item .c-human__title {
+  margin-top: 16px;
+}
+
 .l-human__thumbnail {
   width: 33.33333%;
   float: left;
