@@ -9,13 +9,19 @@
     //margin-bottom: $padding_base * 2;
     .is-content {
         @include span(9);
+        @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            @include span(12);
+        }
     }
     .is-sidebar {
         @include span(3);
         .l-message {
             margin-top: $padding_base * 3;
             margin-bottom: $padding_base * 2;
-        }        
+        }  
+        @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            @include span(12);
+        }
     }
 }
 

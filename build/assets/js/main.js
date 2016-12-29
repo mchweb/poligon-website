@@ -362,13 +362,20 @@ if(document.querySelector('#map-program-big')) {
 }
 /* Reviews */
 /* Set height for block */
-var blockReviews =  document.querySelectorAll('.c-reviews__item');
-if(blockReviews.length){ 
-    for (var i = 0; i < blockReviews.length; i++) {
-        var blockThumbnail = blockReviews[i].querySelector('.c-human__thumbnail');
-        blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
-    }
-}
+var blockHeightReviews = function () {
+    var blockReviews =  document.querySelectorAll('.c-reviews__item');
+    if(blockReviews.length){ 
+        for (var i = 0; i < blockReviews.length; i++) {
+            var blockThumbnail = blockReviews[i].querySelector('.c-human__thumbnail');
+            blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
+        }
+    }    
+};
+blockHeightReviews();
+window.addEventListener('resize', function(eventResize){
+    blockHeightReviews();
+});
+
 /* Set a background image */
 funcBackgroundImageBlocks('.c-reviews__item','img','center','center','.c-human__thumbnail');
 
@@ -404,13 +411,19 @@ window.addEventListener('resize', function(eventResize){
  });
 /* Speakers */
 /* Set height for block */
-var blockSpeakers =  document.querySelectorAll('.c-human__item');
-if(blockSpeakers.length){ 
-    for (var i = 0; i < blockSpeakers.length; i++) {
-        var blockThumbnail = blockSpeakers[i].querySelector('.c-human__thumbnail');
-        blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
-    }
-}
+var blockHeightSpeakers = function() {
+    var blockSpeakers =  document.querySelectorAll('.c-human__item');
+    if(blockSpeakers.length){ 
+        for (var i = 0; i < blockSpeakers.length; i++) {
+            var blockThumbnail = blockSpeakers[i].querySelector('.c-human__thumbnail');
+            blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
+        }
+    }   
+};
+blockHeightSpeakers();
+window.addEventListener('resize', function(eventResize){
+    blockHeightSpeakers();
+});
 /* Set a background image */
 funcBackgroundImageBlocks('.c-human__item','img','top','center','.c-human__thumbnail');
 
