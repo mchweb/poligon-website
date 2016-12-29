@@ -6,6 +6,7 @@ var classActive = 'is-active';
 var classNotActive = 'is-notactive';
 var classDropdown = 'is-dropdown';
 var classError= 'is-error';
+var classNoError= 'is-no-error';
 var classValidate = 'is-validate';
 var imgDirectory = 'assets/img/';
 
@@ -91,7 +92,50 @@ var funcValidateFormResetError = function (blockName) {
 };
 /* Add class error for elements form */ 
 var funcValidateFormShowError = function(blockName){
-    blockName.classList.add(classError);
+    if(!blockName.classList.contains(classError)){
+        blockName.classList.remove(classNoError);
+        blockName.classList.add(classError);
+    }      
+    var icon = blockName.parentNode.querySelector('.c-form__icon');
+    if (icon){        
+        icon.classList.remove(classNoError);
+        if(!icon.classList.contains(classError)){
+            icon.classList.add(classError);
+        }
+    }else {
+        var divError = document.createElement('div');
+        divError.className = 'c-form__icon '+classError;
+        blockName.parentNode.appendChild(divError);          
+    } 
+    var messageError = blockName.parentNode.querySelector('.c-form__error-message');
+    if (!messageError){
+        var divErrorMessage = document.createElement('div');
+        divErrorMessage.className = 'c-form__error-message';
+        divErrorMessage.innerHTML = 'Пожалуйста, заполните поле';
+        blockName.parentNode.appendChild(divErrorMessage);            
+    }  
+};
+/* Add class no error for elements form */ 
+var funcValidateFormShowNoError = function(blockName){  
+    var messageError = blockName.parentNode.querySelector('.c-form__error-message');
+    if (messageError){
+        blockName.parentNode.removeChild(messageError);
+    }
+    if(!blockName.classList.contains(classNoError)){
+        blockName.classList.remove(classError);
+        blockName.classList.add(classNoError);
+    }    
+    var icon = blockName.parentNode.querySelector('.c-form__icon');
+    if (icon){        
+        icon.classList.remove(classError);
+        if(!icon.classList.contains(classError)){
+            icon.classList.add(classNoError);
+        }        
+    }else {
+        var divNoError = document.createElement('div');
+        divNoError.className = 'c-form__icon '+classNoError;
+        blockName.parentNode.appendChild(divNoError);           
+    }    
 };
 /* Validate elements form */ 
 var funcValidateForm = function(form, formItemClass, checkType){
@@ -101,6 +145,8 @@ var funcValidateForm = function(form, formItemClass, checkType){
          if (checkType == 'is-value'){         
              if (!formElements[i].value) {
                 funcValidateFormShowError(formElements[i]);
+             }else {
+                 funcValidateFormShowNoError(formElements[i]);
              }                
          }        
      }  
@@ -155,7 +201,6 @@ var funcTabs = function (blockName, blockNameNavTabs, blockNameTextTabs){
                     }                    
                 }
                 for (var k = 0; k < textElements.length; k++){
-                    console.log(navIndex);
                     textElements[k].classList.remove(classActive); 
                     if(k === navIndex){
                         textElements[k].classList.add(classActive);   
@@ -311,9 +356,7 @@ var sliderImagesHeightElements = function () {
         var blockSLidersItems =  document.querySelectorAll('.c-slider__image');
         if(blockSLidersItems.length){ 
             for (var i = 0; i < blockSLidersItems.length; i++) {
-
                 blockSLidersItems[i].style.height = blockSLidersItems[i].offsetWidth/1.5+'px';
-                console.log(blockSLidersItems[i].offsetWidth/1.3+'----'+blockSLidersItems[i].offsetWidth);
             }
         }
     }    

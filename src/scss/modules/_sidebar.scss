@@ -6,7 +6,7 @@
     @extend .container;
     padding-left: 0px;
     margin-top: $padding_base * 3;
-    margin-bottom: $padding_base * 2;
+    //margin-bottom: $padding_base * 2;
     .is-content {
         @include span(9);
     }
