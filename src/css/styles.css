@@ -1149,6 +1149,12 @@ a.c-nav__link:focus {
     display: none;
   }
 }
+.c-slider.is-not-content .flickity-prev-next-button.next, .c-slider.is-not-content .flickity-prev-next-button.previous {
+  border: 4px solid #f0f0f0;
+}
+.c-slider.is-not-content .flickity-prev-next-button .arrow {
+  fill: #f0f0f0;
+}
 .c-slider.is-not-content .c-slider__item {
   padding: 0px;
 }

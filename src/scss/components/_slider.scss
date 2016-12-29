@@ -19,7 +19,7 @@
         height: 50px;
     }
     .flickity-prev-next-button .arrow {
-        fill: $color_gray_light3;;
+        fill: $color_gray_light3;
     }
     @media screen and (max-width: $screen_md) {
         .flickity-prev-next-button.next, .flickity-prev-next-button.previous {
@@ -32,6 +32,12 @@
         } 
     }
     &.is-not-content {
+        .flickity-prev-next-button.next, .flickity-prev-next-button.previous {
+            border: 4px solid $color_white_dark4;
+        }
+        .flickity-prev-next-button .arrow {
+            fill: $color_white_dark4;
+        }        
         .c-slider__item {
             padding: 0px;
         }
