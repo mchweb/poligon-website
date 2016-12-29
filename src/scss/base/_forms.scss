@@ -204,11 +204,11 @@
     }
 }
 .c-form__checkbox {
-    margin-top: $padding_base / 2; 
+    //margin-top: $padding_base / 2; 
     width: 20px;
     position: relative;
     float: left;
-    margin-right: $padding_base / 3;
+    margin-right: $padding_base / 2;
     input[type='checkbox'] {
         visibility: hidden;
         &:checked + label {
@@ -260,5 +260,12 @@
 }
 
 .c-form__label {
-
+    float: left;
+    width: 90%;
+    margin-bottom: $padding_base / 2;
+}
+.c-form__item-block:last-child {
+    .c-form__label {
+        margin-bottom: 0px;
+    }
 }

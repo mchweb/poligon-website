@@ -551,11 +551,10 @@ table {
 }
 
 .c-form__checkbox {
-  margin-top: 12px;
   width: 20px;
   position: relative;
   float: left;
-  margin-right: 8px;
+  margin-right: 12px;
 }
 .c-form__checkbox input[type='checkbox'] {
   visibility: hidden;
@@ -604,6 +603,16 @@ table {
 }
 .c-form__checkbox label:hover:after {
   opacity: 0;
+}
+
+.c-form__label {
+  float: left;
+  width: 90%;
+  margin-bottom: 12px;
+}
+
+.c-form__item-block:last-child .c-form__label {
+  margin-bottom: 0px;
 }
 
 /* Lists *******************/
