@@ -1754,6 +1754,25 @@ a.c-nav__link:focus {
   }
 }
 
+.c-program__box {
+  margin-top: 48px;
+}
+.c-program__box.is-background--green {
+  background-color: #80bf44;
+}
+.c-program__box.is-background--green .c-content__title {
+  color: #ffffff;
+}
+.c-program__box.is-background--green .c-program__item .c-program__title, .c-program__box.is-background--green .c-program__item .c-program__info, .c-program__box.is-background--green .c-program__item .c-program__description {
+  color: #ffffff;
+}
+.c-program__box.is-background--green .c-program__item .c-program__title a, .c-program__box.is-background--green .c-program__item .c-program__info a, .c-program__box.is-background--green .c-program__item .c-program__description a {
+  color: #ffffff;
+}
+.c-program__box.is-background--green .c-program__item a {
+  border-bottom-color: #ffffff;
+}
+
 /* Banner ******************/
 .c-banner__text {
   font-size: 14px;
@@ -2062,6 +2081,18 @@ a.c-nav__link:focus {
 }
 
 /* Map *********************/
+.c-map.is-big {
+  padding: 0px 15px;
+}
+.c-map.is-big .l-content__col {
+  padding: 0px;
+  padding-top: 24px;
+  margin-bottom: 0px;
+}
+.c-map.is-big .c-map__address {
+  margin: 0px;
+}
+
 .c-map__container {
   width: 100%;
   height: 305px;

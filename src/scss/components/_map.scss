@@ -3,14 +3,22 @@
 // ----------------------- //
 
 .c-map {
-    
+    &.is-big {
+        padding: 0px 15px;
+        .l-content__col {
+            padding: 0px;
+            padding-top: $padding_base; 
+            margin-bottom: 0px;
+        }
+        .c-map__address {
+            margin: 0px;
+            
+        }
+    }    
 }
 .c-map__container {
     width: 100%;
     height: 305px;
-}
-.c-map__content {
-    
 }
 .c-map__contact {
     color: $color_gray_dark;

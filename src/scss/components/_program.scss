@@ -56,3 +56,23 @@
         
     } 
 }
+.c-program__box {
+    margin-top: $padding_base * 2;
+    &.is-background--green {
+        background-color: $color_green;
+        .c-content__title {
+            color: $color_white; 
+        }
+        .c-program__item {
+            .c-program__title, .c-program__info, .c-program__description {
+                color: $color_white;
+                a {
+                  color: $color_white;  
+                }
+            }
+            a {
+                border-bottom-color: $color_white;
+            }            
+        }
+    }    
+}

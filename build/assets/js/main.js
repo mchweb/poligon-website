@@ -322,6 +322,7 @@ headerLogoLink.onmouseout = function(){
  *  Pages
  */ 
 /* Map */
+/* Generation map using 2GIS */
 if(document.querySelector('#map-program')) {
     var map;
     DG.then(function () {
@@ -340,7 +341,25 @@ if(document.querySelector('#map-program')) {
         DG.marker([56.463601, 84.957292]).addTo(map);
     });    
 }
-
+/* Generation map using 2GIS */
+if(document.querySelector('#map-program-big')) {
+    var map;
+    DG.then(function () {
+        map = DG.map('map-program-big', {
+            center: [56.46377080170267, 84.95729684829713],
+            zoom: 16,
+            dragging : false,
+            touchZoom: false,
+            scrollWheelZoom: false,
+            doubleClickZoom: false,
+            boxZoom: false,
+            geoclicker: false,
+            zoomControl: false,
+            fullscreenControl: false        
+        });
+        DG.marker([56.463601, 84.957292]).addTo(map);
+    });    
+}
 /* Reviews */
 /* Set height for block */
 var blockReviews =  document.querySelectorAll('.c-reviews__item');
