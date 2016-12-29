@@ -25,6 +25,19 @@
             border-bottom-color: rgba($color_gray_light,0.5); 
         }
     }
+    &.is-active {
+        .c-program__title, .c-program__info, .c-program__description {
+            color: $color_green; 
+            a {
+              color: $color_green;   
+            }
+        }
+        a {
+            pointer-events: none;
+            cursor: default;
+            border-bottom-color: rgba($color_green,0.5); 
+        }        
+    }
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         margin-bottom: $padding_base;
     }
@@ -71,7 +84,7 @@
                 }
             }
             a {
-                border-bottom-color: $color_white;
+                border-bottom-color: rgba($color_white,0.5); 
             }            
         }
     }    

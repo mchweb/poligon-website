@@ -1717,6 +1717,17 @@ a.c-nav__link:focus {
   cursor: default;
   border-bottom-color: rgba(156, 156, 156, 0.5);
 }
+.c-program__item.is-active .c-program__title, .c-program__item.is-active .c-program__info, .c-program__item.is-active .c-program__description {
+  color: #80bf44;
+}
+.c-program__item.is-active .c-program__title a, .c-program__item.is-active .c-program__info a, .c-program__item.is-active .c-program__description a {
+  color: #80bf44;
+}
+.c-program__item.is-active a {
+  pointer-events: none;
+  cursor: default;
+  border-bottom-color: rgba(128, 191, 68, 0.5);
+}
 @media (min-width: 320px) and (max-width: 900px) {
   .c-program__item {
     margin-bottom: 24px;
@@ -1770,7 +1781,7 @@ a.c-nav__link:focus {
   color: #ffffff;
 }
 .c-program__box.is-background--green .c-program__item a {
-  border-bottom-color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Banner ******************/
