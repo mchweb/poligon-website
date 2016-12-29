@@ -321,6 +321,26 @@ headerLogoLink.onmouseout = function(){
 /*
  *  Pages
  */ 
+/* Map */
+if(document.querySelector('#map-program')) {
+    var map;
+    DG.then(function () {
+        map = DG.map('map-program', {
+            center: [56.46377080170267, 84.95729684829713],
+            zoom: 16,
+            dragging : false,
+            touchZoom: false,
+            scrollWheelZoom: false,
+            doubleClickZoom: false,
+            boxZoom: false,
+            geoclicker: false,
+            zoomControl: false,
+            fullscreenControl: false        
+        });
+        DG.marker([56.463601, 84.957292]).addTo(map);
+    });    
+}
+
 /* Reviews */
 /* Set height for block */
 var blockReviews =  document.querySelectorAll('.c-reviews__item');
@@ -332,6 +352,13 @@ if(blockReviews.length){
 }
 /* Set a background image */
 funcBackgroundImageBlocks('.c-reviews__item','img','center','center','.c-human__thumbnail');
+
+/* Features */
+/* Set a background image for features */
+funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
+/* Finding the maximum height among the elements features */
+funcMaxHeightElementOnlyDesktop('.c-feature__content'); 
+funcMaxHeightElementResize('.c-feature__content');
 
 /* Program */
 /* Deactivating the default behavior of links and adding "notactive" class for prgramms block */
@@ -385,17 +412,7 @@ sliderImagesHeightElements();
 window.addEventListener('resize', function(eventResize){
     sliderImagesHeightElements();
 });
-/*
- *  Forms
- */
-var formButon = document.querySelectorAll('.c-form__btn');
-for (var i = 0; i < formButon.length; i++) {
-    formButon[i].addEventListener('click', function(event) {
-        if (this.form.classList.contains(classValidate)){
-            funcValidateForm(this.form, '.c-form__input','is-value');
-        }
-    });    
-}
+
 
 /*var formItems =  document.querySelectorAll('.c-form');
 for (var i = 0; i < formItems.length; i++) { 
@@ -477,13 +494,18 @@ if(buttonGroup){
         navItems[flkty.selectedIndex].classList.add('is-selected');
     });
 }
-/* Features */
-/* Set a background image for features */
-funcBackgroundImageBlocks('.c-feature','.c-feature__thumbnail','center','top');
-/* Finding the maximum height among the elements features */
-funcMaxHeightElementOnlyDesktop('.c-feature__content'); 
-funcMaxHeightElementResize('.c-feature__content');
-                
+
+ /*
+ *  Forms
+ */
+var formButon = document.querySelectorAll('.c-form__btn');
+for (var i = 0; i < formButon.length; i++) {
+    formButon[i].addEventListener('click', function(event) {
+        if (this.form.classList.contains(classValidate)){
+            funcValidateForm(this.form, '.c-form__input','is-value');
+        }
+    });    
+}               
 /*
  *  Animations 
  */

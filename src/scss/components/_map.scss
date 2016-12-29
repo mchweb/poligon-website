@@ -1,0 +1,30 @@
+// ----------------------- //
+// Map style ------------- //
+// ----------------------- //
+
+.c-map {
+    
+}
+.c-map__container {
+    width: 100%;
+    height: 305px;
+}
+.c-map__content {
+    
+}
+.c-map__contact {
+    color: $color_gray_dark;
+    strong {
+        font-weight: bold;
+    }
+}
+.c-map__address {
+    @extend h4;
+    margin-top: $padding_base * 1.5;
+    margin-bottom: $padding_base;
+}
+.c-map__phone, .c-map__email {
+    text-decoration: none;
+    color: $color_gray;
+    border-bottom: none;
+}
