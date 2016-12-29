@@ -13,7 +13,7 @@
                 
             }
             &:nth-child(4n+1){
-                clear:left;
+                clear: left;
             }
             .c-human__thumbnail {
                 border: 6px solid $color_orange;
@@ -21,13 +21,37 @@
             .c-human__title {
                 margin-top: $padding_base / 1.5;
             }
+            @media (min-width: $screen_sm) and (max-width: $screen_md) {
+                @include span(3 of 9);
+                &:nth-child(4n+1){
+                    clear: none;
+                }                 
+                &:nth-child(3n+1){
+                    clear: left;
+                }                    
+            }
+            @media (min-width: 450px) and (max-width: $screen_sm) {
+                @include span(4 of 9);
+                &:nth-child(3n+1){
+                    clear: none;
+                }     
+                &:nth-child(4n+1){
+                    clear: none;
+                }                  
+                &:nth-child(2n+1){
+                    clear: left;
+                }                                    
+            }
+            @media (min-width: $screen_xs) and (max-width: 450px) {
+                @include span(9 of 9);
+            }
         }
     }
 }
 .l-human__thumbnail {
     @include span(3 of 9);
     padding-bottom: 30px;
-    padding-left: 0px;
+    padding-none: 0px;
 }
 .l-human__text {
     //@include span(9);
