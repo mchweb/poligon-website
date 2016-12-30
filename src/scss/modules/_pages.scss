@@ -19,7 +19,9 @@
                 &:last-child {
                     padding-right: 0px;   
                 }
-                               
+                @media (min-width: $screen_xs) and (max-width: $screen_md) {
+                    padding: 0px;                     
+                }               
             }
         }
     }

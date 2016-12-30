@@ -3000,6 +3000,11 @@ a.c-nav__link:focus {
 .l-content__text.is-no-padding .l-content__grid--three .l-content__col:last-child {
   padding-right: 0px;
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .l-content__text.is-no-padding .l-content__grid--three .l-content__col {
+    padding: 0px;
+  }
+}
 
 .l-content__text .l-content__col {
   margin-bottom: 48px;
