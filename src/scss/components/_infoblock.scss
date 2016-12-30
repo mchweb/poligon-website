@@ -23,6 +23,17 @@
             background-color: $color_green;
         }
     }
+    &.is-contact {
+        &:before {
+            width: 50%;
+        }
+        .c-infoblock__background {
+            left: 50%;
+        }
+        .c-infoblock__image {
+            width: 50%;
+        }
+    }
 }
 .c-infoblock__background {
     content: '';
@@ -37,6 +48,17 @@
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         display: none;     
     }
+}
+.l-infoblock_back-map {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;   
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        display: block;
+        width: 100%; 
+        position: relative;
+    }  
 }
 .c-infoblock__image {
     position: absolute;
@@ -53,7 +75,7 @@
     z-index: 2;
     position: relative;
     @media screen and (max-width: $screen_md) {
-      @include span(12);  
+        @include span(12);  
     }    
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         padding-top: $padding_base * 2;
@@ -62,6 +84,14 @@
     .c-infoblock__footer {
         margin-top: 0px;
     }
+    &.is-contact {
+        @include span(6);
+    }
+    @media screen and (max-width: $screen_md) {
+        &.is-contact {
+            @include span(12);  
+        }      
+    }      
 }
 .c-infoblock__title {
     @extend h1; 
@@ -108,7 +138,29 @@
         &.is-small {
             margin-bottom: $padding_base * 1.25;
         }        
-    }    
+    }  
+    &.is-contact {
+        color: $color_white;
+        font-size: $font_size_h4;
+        line-height: 24px;
+        font-weight: bold;
+        a {
+            font-weight: normal;
+            font-size: $font_size_base;
+            color: $color_white;
+            border-bottom-color: rgba($color_white, 0.5);  
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            color: $color_white;
+            font-size: $font_size_h4;
+            line-height: 24px;
+            font-weight: bold;
+            a {
+                font-weight: normal;
+                font-size: $font_size_base;
+            }
+        }        
+    }
 }
 .c-infoblock__image {
     &.is-display--mobile {

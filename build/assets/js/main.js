@@ -432,21 +432,50 @@ funcDisableLink('.c-program__item');
 /* Set a background image */
 funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
 /* calculation of the background triangle height */
-var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
-if(window.innerWidth >= screen_md){ 
+var blockInfoblocksBackgrund = function () {
+    var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
     for (var i = 0; i < blockInfoblocks.length; i++) {
         var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
-        blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
-    }
+        blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+100)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
+        var blockInfoBlockMap = blockInfoblocks[i].querySelector('.l-infoblock_back-map');
+        if(blockInfoBlockMap){
+            blockInfoBlockMap.querySelector('.c-map__container').style.height = blockInfoblocks[i].offsetHeight+'px';
+            console.log(blockInfoBlockMap.querySelector('.c-map__container'));
+        }        
+    }   
 }
+if(window.innerWidth >= screen_md){ 
+    blockInfoblocksBackgrund();
+}
+
 window.addEventListener('resize', function(eventResize){ 
     if(eventResize.target.innerWidth >= screen_md){ 
-        for (var i = 0; i < blockInfoblocks.length; i++) {
-            var blockInfoblockBack = blockInfoblocks[i].querySelector('.c-infoblock__background');
-            blockInfoblockBack.style.borderWidth = (blockInfoblocks[i].offsetHeight+5)+'px 0 0 '+(blockInfoblocks[i].offsetHeight-300)+'px';
-        }
+        blockInfoblocksBackgrund();
     }
- });
+});
+/* Generation map using 2GIS */
+if(document.querySelector('#map-background')) {
+    var map;
+    DG.then(function () {
+        map = DG.map('map-background', {
+            center: [56.463712, 84.947255],
+            zoom: 16,
+            dragging : false,
+            touchZoom: false,
+            scrollWheelZoom: false,
+            doubleClickZoom: false,
+            boxZoom: false,
+            geoclicker: false,
+            zoomControl: false,
+            fullscreenControl: false        
+        });
+       // DG.marker([56.463601, 84.957292]).addTo(map);
+        DG.popup([56.463601, 84.957292])
+                    .setLatLng([56.463601, 84.957292])
+                    .setContent('Контент здесь')
+                    .openOn(map);
+    });    
+}
 /* Speakers */
 /* Set height for block */
 var blockHeightSpeakers = function() {
