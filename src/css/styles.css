@@ -2178,6 +2178,15 @@ a.c-nav__link:focus {
   padding-right: 15px;
   padding: 0px;
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-tabs-nav {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 0px;
+  }
+}
 
 .c-tabs-nav__item {
   color: #80bf44;
@@ -2211,6 +2220,25 @@ a.c-nav__link:focus {
   background-color: #ffffff;
   z-index: 2;
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-tabs-nav__item {
+    background-color: transparent;
+    color: #373737;
+    border: none;
+    padding-left: 0px;
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .c-tabs-nav__item.is-active {
+    background-color: transparent;
+  }
+  .c-tabs-nav__item.is-active:after {
+    display: none;
+  }
+  .c-tabs-nav__item:last-child {
+    border-bottom: none;
+  }
+}
 
 .c-tabs-text {
   width: 88.88889%;
@@ -2237,6 +2265,20 @@ a.c-nav__link:focus {
   top: 12px;
   left: 150px;
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-tabs-text {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+  }
+  .c-tabs-text:before {
+    display: none;
+  }
+}
 
 .c-tabs-text__item {
   display: none;
@@ -2244,6 +2286,11 @@ a.c-nav__link:focus {
 }
 .c-tabs-text__item.is-active {
   display: block;
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-tabs-text__item {
+    display: block;
+  }
 }
 
 /* Shedule *****************/
@@ -2262,6 +2309,12 @@ a.c-nav__link:focus {
   float: left;
   min-height: 30px;
   clear: both;
+}
+@media (min-width: 320px) and (max-width: 600px) {
+  .c-schedule.is-table .c-schedule__day {
+    width: 100%;
+    margin-bottom: 8px;
+  }
 }
 .c-schedule.is-table .c-schedule__time {
   display: inline-block;

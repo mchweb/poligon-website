@@ -18,6 +18,10 @@
             float: left;
             min-height: $line_height_h4;
             clear: both;
+            @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+                width: 100%;
+                margin-bottom: $padding_base / 3;
+            }
         }
         .c-schedule__time {
             display: inline-block;

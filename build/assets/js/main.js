@@ -28,6 +28,8 @@ var classDropdown = 'is-dropdown';
 var classError= 'is-error';
 var classNoError= 'is-no-error';
 var classValidate = 'is-validate';
+var classHidden = 'is--hidden';
+var classBuiltIn = 'is-built-in';
 var imgDirectory = 'assets/img/';
 
 /*
@@ -203,6 +205,7 @@ var funcTraverseChildren = function (bloclObject){
     return children;
 };
 /* Tabs */ 
+/* Switching tabs */
 var funcTabs = function (blockName, blockNameNavTabs, blockNameTextTabs){
     var blockParent = document.querySelector(blockName);
     if (blockParent){
@@ -228,10 +231,45 @@ var funcTabs = function (blockName, blockNameNavTabs, blockNameTextTabs){
                 }
                 
             });  
+            if(window.innerWidth <= screen_md){
+                     
+                var navElemnt = navElements[i].cloneNode(true);          
+                var temmpDiv = document.createElement('div');
+                temmpDiv.className = navElemnt.className+' '+classBuiltIn;
+                temmpDiv.innerHTML = navElemnt.textContent;              
+                for (var k = 0; k < textElements.length; k++){
+                    
+                    if(k === i){
+                        if(!textElements[k].querySelectorAll('.c-tabs-nav__item').length){
+                            textElements[k].insertBefore(temmpDiv, textElements[k].children[0]);
+                        }else {
+                            textElements[k].querySelector('.c-tabs-nav__item').classList.remove(classHidden);
+                        }
+                        
+                    }
+
+                }
+               
+                if(!navElements[i].classList.contains(classBuiltIn)){
+                    navElements[i].classList.add(classHidden);
+                }
+            }else {
+                if(navElements[i].classList.contains(classHidden)){
+                    navElements[i].classList.remove(classHidden);                              
+                }
+                if(navElements[i].classList.contains(classBuiltIn)){
+                    navElements[i].classList.add(classHidden);
+                }
+            }
+         
         }           
     }
 };
 funcTabs('.c-tabs','.c-tabs-nav__item','.c-tabs-text__item');
+window.addEventListener('resize', function(eventResize){
+    funcTabs('.c-tabs','.c-tabs-nav__item','.c-tabs-text__item');
+});
+
 /*
  *  Navigation menu 
  */
