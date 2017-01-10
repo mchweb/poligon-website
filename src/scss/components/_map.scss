@@ -25,6 +25,15 @@
     strong {
         font-weight: bold;
     }
+    .l-content__grid--two {
+        .l-content__col {
+            padding-top: $padding_base * 1.25;
+            padding-left: 0px;
+        }
+        .c-map__address {
+            margin-top: 0px;            
+        }
+    }
 }
 .c-map__address {
     @extend h4;
