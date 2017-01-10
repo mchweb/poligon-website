@@ -2394,10 +2394,12 @@ a.c-nav__link:focus {
 .c-schedule__time {
   display: inline-block;
   margin-right: 24px;
+  color: #373737;
 }
 
 .c-schedule__content {
   display: inline-block;
+  color: #373737;
 }
 .c-schedule__content strong {
   font-weight: bold;

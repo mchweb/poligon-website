@@ -48,7 +48,12 @@
 .c-schedule__time {
     display: inline-block;
     margin-right: $padding_base;
+    color: $color_gray_dark;
 }
 .c-schedule__content {
     display: inline-block;
+    color: $color_gray_dark;
+    strong {
+        font-weight: bold;
+    }
 }
