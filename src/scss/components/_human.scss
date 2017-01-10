@@ -51,7 +51,8 @@
 .l-human__thumbnail {
     @include span(3 of 9);
     padding-bottom: 30px;
-    padding-none: 0px;
+    padding-left: 0px;
+    padding-right: 30px;
     @media (min-width: $screen_xs) and (max-width: 700px) {
         @include span(9 of 9);
     }    

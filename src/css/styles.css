@@ -2020,7 +2020,8 @@ a.c-nav__link:focus {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 30px;
-  padding-none: 0px;
+  padding-left: 0px;
+  padding-right: 30px;
 }
 @media (min-width: 320px) and (max-width: 700px) {
   .l-human__thumbnail {
