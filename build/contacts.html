@@ -169,36 +169,45 @@
 
       </article> 
       <div class="container">
-          <div class="l-content__text is-contact">
-              <header>
-                  <h2 class="c-content__title c-content__title--block">Регистрация</h2>
-              </header>                  
-              <form action="" class="c-form c-form--vertical is-background is-validate" accept-charset="utf-8" method="" name="form--reg" target="">
-                  <div class="l-form__col">
-                      <div class="c-form__item-block">
-                          <label for="form--reg__name" class="c-form__label">ФИО</label>
-                          <input type="text" class="c-form__item c-form__input" name="form--reg__name" id="form--reg__name" placeholder="Введите свое имя" required>
+         <div class="l-content__text is-contact">
+             <header>
+               <h2 class="c-content__title c-content__title--block">Задайте вопрос — мы поможем</h2>
+             </header>       
+             <h4 class="c-content__subtitle">Возьмем на&nbsp;себя госпошлину за&nbsp;регистрацию юр.лица, расскажем, с&nbsp;чего начать свой бизнес и&nbsp;почему деньги&nbsp;&mdash; это не&nbsp;самое необходимое на&nbsp;старте.</h4>
+         </div>
+          <div class="l-content__grid--two">
+              <div class="l-content__col l-form--no-padding">                                           
+                  <form action="" class="c-form c-form--vertical is-background is-validate is-contact" accept-charset="utf-8" method="" name="form--contact" target="">
+                      <div class="l-form__col">
+                          <div class="c-form__item-block">
+                              <label for="form--contact__name" class="c-form__label">ФИО</label>
+                              <input type="text" class="c-form__item c-form__input" name="form--contact__name" id="form--reg__name" placeholder="Введите свое имя" required>
+                          </div>
+                          <div class="c-form__item-block">
+                              <label for="form--contact__phone" class="c-form__label">Телефон</label>
+                              <input type="text" class="c-form__item c-form__input" name="form--contact__phone" id="form--reg__phone" placeholder="+7 987 654-32-10" required>
+                          </div>
+                          <div class="c-form__item-block">
+                              <label for="form--contact__mail" class="c-form__label">E-mail</label>
+                              <input type="mail" class="c-form__item c-form__input" name="form--contact__mail" id="form--reg__mail" placeholder="Введите свой e-mail" required>
+                          </div>
+                          <div class="c-form__item-block">
+                              <div class="c-form__item c-form__checkbox">
+                                  <input type="checkbox" name="form--reg__subscribe" id="form--reg__subscribe"> 
+                                  <label for="form--reg__subscribe"></label>                     
+                              </div> 
+                              <label for="form--reg__subscribe" class="c-form__label is-checkbox">Я&nbsp;хочу подписаться на&nbsp;дайджест мероприятий Полигона ТПУ</label>   
+                          </div>    
+                          <div class="c-form__item-block">
+                              <label for="form--contact__text" class="c-form__label">Ваш вопрос</label>
+                              <textarea name="form--contact__text" id="form--contact__text" cols="30" rows="6" class="c-form__item c-form__textarea"></textarea>
+                          </div>                                               
                       </div>
-                      <div class="c-form__item-block">
-                          <label for="form--reg__phone" class="c-form__label">Телефон</label>
-                          <input type="text" class="c-form__item c-form__input" name="form--reg__phone" id="form--reg__phone" placeholder="+7 987 654-32-10" required>
+                      <div class="l-form__col">
+                          <button class="c-btn bg--green c-form__item c-form__btn">Отправить</button>
                       </div>
-                      <div class="c-form__item-block">
-                          <label for="form--reg__mail" class="c-form__label">E-mail</label>
-                          <input type="mail" class="c-form__item c-form__input" name="form--reg__mail" id="form--reg__mail" placeholder="Введите свой e-mail" required>
-                      </div>
-                      <div class="c-form__item-block">
-                          <div class="c-form__item c-form__checkbox">
-                              <input type="checkbox" name="form--reg__subscribe" id="form--reg__subscribe"> 
-                              <label for="form--reg__subscribe"></label>                     
-                          </div> 
-                          <label for="form--reg__subscribe" class="c-form__label">Я&nbsp;хочу подписаться на&nbsp;дайджест мероприятий Полигона ТПУ</label>   
-                      </div>                                                   
-                  </div>
-                  <div class="l-form__col">
-                      <button class="c-btn bg--green c-form__item c-form__btn">Отправить</button>
-                  </div>
-              </form>               
+                  </form>                               
+              </div>             
           </div>
       </div>       
   </main>

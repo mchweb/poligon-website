@@ -107,7 +107,11 @@
         padding: $padding_base 0px;
         @include border-radius(3px, 3px); 
     }
+    &.is-contact {
+        margin-bottom: $padding_base * 3;
+    }
 }
+
 .l-content__col.l-form--no-padding {
     padding: 0px;
     .c-form.is-background {
@@ -124,7 +128,7 @@
     width: 100%;
     font-size: $font_size_base;
 }
-.c-form__input {
+.c-form__element-style {
     @include border-radius(4px, 4px); 
     border-width: 1px;
     border-style: solid;
@@ -152,8 +156,14 @@
            color: $color_green;
         }  
         border: 1px solid $color_green;        
-    }
+    }    
+}
+.c-form__input {
+    @extend .c-form__element-style;
 }  
+.c-form__textarea {
+    @extend .c-form__element-style;
+}
 .c-form__icon {
     position: absolute;
     right: 12px;
@@ -262,7 +272,9 @@
 .c-form__label {
     float: left;
     width: 90%;
-    margin-bottom: $padding_base / 2;
+    &.is-checkbox {
+       margin-bottom: $padding_base / 2; 
+    }    
 }
 .c-form__item-block:last-child {
     .c-form__label {

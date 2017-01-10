@@ -39,6 +39,7 @@ p {
 strong {
     font-family: $font_clear_sans;
 }
+
 a {
     text-decoration: none;
     border-bottom: 1px solid;
@@ -85,7 +86,9 @@ a {
        line-height: $line_height_base !important;
     }
 }
-
+.c-content__subtitle {
+    margin-bottom: $padding_base / 1.5;
+}
 .c-content__text {
     color: $color_gray_dark;
     ul {

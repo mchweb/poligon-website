@@ -57,7 +57,6 @@
                     padding: 0px;
                 }  
                 @media (min-width: $screen_xs) and (max-width: $screen_md) {
-                    padding: 0px;
                     font-size: $font_size_base - 2;
                     line-height: $line_height_base - 2;
                 }
@@ -70,22 +69,11 @@
                 padding-top: $padding_base;
                 padding-bottom: $padding_base;
             }
-            @media (min-width: 451px) and (max-width: 780px) {
+            @media (min-width: $screen_xs) and (max-width: 780px) {
                 @include span(6); 
-                &:first-child {
-                    padding-top: $padding_base;
-                }                
                 padding-top: $padding_base;
                 padding-bottom: $padding_base;                
-            }  
-            @media (min-width: $screen_xs) and (max-width: 450px) {
-                @include span(12);
-                &:first-child {
-                    padding-top: $padding_base;
-                }                
-                padding-top: $padding_base;
-                padding-bottom: $padding_base;                  
-            }
+            }            
         }
         &.is-three {
            .c-feature__item {
@@ -94,14 +82,11 @@
                         @include push(1.5);
                    }
                }
-               @media (min-width: 451px) and (max-width: 780px) {
+               @media (min-width: $screen_xs) and (max-width: 780px) {
                    &:nth-child(3) {
                        @include push(3);
                    }
-               }  
-               @media (min-width: $screen_xs) and (max-width: 450px) {
-                   @include span(12);
-               }
+               }               
             } 
         }        
     }

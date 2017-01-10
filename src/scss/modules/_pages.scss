@@ -37,7 +37,17 @@
         @media (min-width: $screen_xs) and (max-width: $screen_sm) {
             margin-bottom: $padding_base;
         }
-    }    
+    } 
+    &.is-contact {
+        @include span(8);
+        .c-content__title--block {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+           @include span(12);
+        }        
+    }
 }
 
 .c-content__title {
@@ -85,3 +95,4 @@
         }
     }
 }
+
