@@ -367,13 +367,13 @@ if(document.querySelector('#map-program')) {
         map = DG.map('map-program', {
             center: [56.46377080170267, 84.95729684829713],
             zoom: 16,
-            dragging : false,
+            dragging : true,
             touchZoom: false,
             scrollWheelZoom: false,
             doubleClickZoom: false,
             boxZoom: false,
             geoclicker: false,
-            zoomControl: false,
+            zoomControl: true,
             fullscreenControl: false        
         });
         DG.marker([56.463601, 84.957292]).addTo(map);
@@ -386,13 +386,13 @@ if(document.querySelector('#map-program-big')) {
         map = DG.map('map-program-big', {
             center: [56.46377080170267, 84.95729684829713],
             zoom: 16,
-            dragging : false,
+            dragging : true,
             touchZoom: false,
             scrollWheelZoom: false,
             doubleClickZoom: false,
             boxZoom: false,
             geoclicker: false,
-            zoomControl: false,
+            zoomControl: true,
             fullscreenControl: false        
         });
         DG.marker([56.463601, 84.957292]).addTo(map);

@@ -2399,6 +2399,9 @@ a.c-nav__link:focus {
 .c-schedule__content {
   display: inline-block;
 }
+.c-schedule__content strong {
+  font-weight: bold;
+}
 
 /* Map *********************/
 .c-map.is-big {
