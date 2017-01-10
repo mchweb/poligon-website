@@ -2766,15 +2766,6 @@ a.c-nav__link:focus {
   padding-right: 15px;
   position: relative;
 }
-.l-content__col.l-contact__follow:before {
-  content: '';
-  width: 1px;
-  height: 115px;
-  position: absolute;
-  left: -3px;
-  top: 9px;
-  background-color: #838383;
-}
 @media (min-width: 320px) and (max-width: 600px) {
   .l-content__col.l-contact__follow {
     width: 100%;
@@ -2801,15 +2792,6 @@ a.c-nav__link:focus {
   padding-right: 15px;
   position: relative;
   z-index: 2;
-}
-.l-content__col.l-contact__sign:before {
-  content: '';
-  width: 1px;
-  height: 115px;
-  position: absolute;
-  left: -3px;
-  top: 9px;
-  background-color: #838383;
 }
 @media (min-width: 320px) and (max-width: 600px) {
   .l-content__col.l-contact__sign {

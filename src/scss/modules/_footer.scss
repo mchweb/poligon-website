@@ -69,15 +69,15 @@
 .l-content__col.l-contact__follow {
     @include span(3);
     position: relative;
-    &:before {
-        content: '';
-        width: 1px;
-        height: 115px;
-        position: absolute;
-        left: -3px;
-        top: 9px;        
-        background-color: $color_gray_light4;
-    }
+//    &:before {
+//        content: '';
+//        width: 1px;
+//        height: 115px;
+//        position: absolute;
+//        left: -3px;
+//        top: 9px;        
+//        background-color: $color_gray_light4;
+//    }
     @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         @include span(12);
         margin-bottom: $padding_base;
@@ -91,15 +91,15 @@
     @include span(6);
     position: relative;
     z-index: 2;
-    &:before {
-        content: '';
-        width: 1px;
-        height: 115px;
-        position: absolute;
-        left: -3px;
-        top: 9px;        
-        background-color: $color_gray_light4;
-    }    
+//    &:before {
+//        content: '';
+//        width: 1px;
+//        height: 115px;
+//        position: absolute;
+//        left: -3px;
+//        top: 9px;        
+//        background-color: $color_gray_light4;
+//    }    
     @media (min-width: $screen_xs) and (max-width: $screen_sm) {
         @include span(12);
         margin-bottom: $padding_base;
