@@ -1705,6 +1705,7 @@ a.c-nav__link:focus {
   .c-feature.is-vertical .c-feature__item .c-feature__text {
     font-size: 14px;
     line-height: 22px;
+    padding: 0px;
   }
 }
 @media (min-width: 780px) and (max-width: 900px) {
@@ -1720,7 +1721,7 @@ a.c-nav__link:focus {
     padding-top: 24px;
   }
 }
-@media (min-width: 320px) and (max-width: 780px) {
+@media (min-width: 400px) and (max-width: 780px) {
   .c-feature.is-vertical .c-feature__item {
     width: 50%;
     float: left;
@@ -1729,15 +1730,34 @@ a.c-nav__link:focus {
     padding-top: 24px;
     padding-bottom: 24px;
   }
+  .c-feature.is-vertical .c-feature__item:first-child {
+    padding-top: 24px;
+  }
+  .c-feature.is-vertical .c-feature__item:nth-child(2n+1) {
+    clear: both;
+  }
+}
+@media (min-width: 320px) and (max-width: 400px) {
+  .c-feature.is-vertical .c-feature__item {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 @media (min-width: 780px) and (max-width: 900px) {
   .c-feature.is-vertical.is-three .c-feature__item:first-child {
     margin-left: 12.5%;
   }
 }
-@media (min-width: 320px) and (max-width: 780px) {
+@media (min-width: 400px) and (max-width: 780px) {
   .c-feature.is-vertical.is-three .c-feature__item:nth-child(3) {
     margin-left: 25%;
+  }
+}
+@media (min-width: 320px) and (max-width: 400px) {
+  .c-feature.is-vertical.is-three .c-feature__item:nth-child(3) {
+    margin-left: 0%;
   }
 }
 

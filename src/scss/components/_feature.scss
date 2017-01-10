@@ -59,6 +59,7 @@
                 @media (min-width: $screen_xs) and (max-width: $screen_md) {
                     font-size: $font_size_base - 2;
                     line-height: $line_height_base - 2;
+                    padding: 0px;
                 }
             }
             @media (min-width: 780px) and (max-width: $screen_md) {
@@ -69,10 +70,19 @@
                 padding-top: $padding_base;
                 padding-bottom: $padding_base;
             }
-            @media (min-width: $screen_xs) and (max-width: 780px) {
+            @media (min-width: 400px) and (max-width: 780px) {
                 @include span(6); 
                 padding-top: $padding_base;
-                padding-bottom: $padding_base;                
+                padding-bottom: $padding_base;  
+                &:first-child {
+                    padding-top: $padding_base;
+                }
+                &:nth-child(2n+1) {
+                    clear: both;
+                }
+            }     
+            @media (min-width: $screen_xs) and (max-width: 400px) {
+                @include span(12); 
             }            
         }
         &.is-three {
@@ -82,11 +92,16 @@
                         @include push(1.5);
                    }
                }
-               @media (min-width: $screen_xs) and (max-width: 780px) {
+               @media (min-width: 400px) and (max-width: 780px) {
                    &:nth-child(3) {
                        @include push(3);
                    }
-               }               
+               } 
+               @media (min-width: $screen_xs) and (max-width: 400px) {
+                   &:nth-child(3) {
+                       @include push(0);
+                   }
+               }                  
             } 
         }        
     }
