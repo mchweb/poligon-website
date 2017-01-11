@@ -685,8 +685,8 @@ a:focus {
 }
 
 .c-content__title--block {
-  padding-top: 72px;
-  padding-bottom: 24px;
+  padding-top: 66px;
+  padding-bottom: 18px;
   width: 100%;
   float: left;
   padding-left: 15px;
@@ -695,18 +695,18 @@ a:focus {
 }
 @media (min-width: 900px) and (max-width: 1200px) {
   .c-content__title--block {
-    padding-top: 48px;
+    padding-top: 42px;
   }
 }
 @media (min-width: 600px) and (max-width: 900px) {
   .c-content__title--block {
-    padding-top: 36px;
+    padding-top: 30px;
   }
 }
 @media (min-width: 320px) and (max-width: 600px) {
   .c-content__title--block {
-    padding-top: 24px;
-    padding-bottom: 12px;
+    padding-top: 18px;
+    padding-bottom: 6px;
   }
 }
 
@@ -756,6 +756,10 @@ a:focus {
   display: inline-block;
 }
 
+.c-video {
+  margin-top: 24px;
+  display: inline-block;
+}
 .c-video.is-adaptive {
   float: none;
   clear: both;
@@ -802,10 +806,10 @@ a:focus {
 .c-icon__telegram {
   background-image: url("../img/icons-sprite.png");
   background-repeat: no-repeat;
-  background-position: -32px 0px;
+  background-position: -30px 0px;
   background-size: cover;
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
   float: left;
   margin-top: 12px;
 }
@@ -1199,7 +1203,7 @@ a.c-nav__link:focus {
 }
 
 .c-infoblock__text {
-  padding-top: 96px;
+  padding-top: 90px;
   padding-bottom: 96px;
   width: 58.33333%;
   float: left;
@@ -3083,7 +3087,7 @@ a.c-nav__link:focus {
 }
 
 .l-content__text .l-content__col {
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 .l-content__text .l-content__col .c-content__text {
   margin-top: 15px;

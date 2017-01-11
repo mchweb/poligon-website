@@ -70,7 +70,7 @@
     z-index: -1;
 }
 .c-infoblock__text {
-    padding-top: $padding_base * 4;
+    padding-top: ($padding_base * 4)-6;
     padding-bottom: $padding_base * 4;
     @include span(7);
     z-index: 2;
