@@ -33,6 +33,16 @@
         .c-map__address {
             margin-top: 0px;            
         }
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            .c-map__address {
+                margin-bottom: 0px;
+            }
+            .l-content__col {
+                &:last-child {
+                    padding-top: 0px;
+                }
+            }
+        }
     }
 }
 .c-map__address {
