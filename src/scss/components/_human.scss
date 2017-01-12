@@ -7,13 +7,16 @@
     &.is-grid {
         margin-left: -15px;
         .c-human__item {
-            margin-bottom: $padding_base * 1.25;
+            margin-top: $padding_base * 1.25;
             @include span(2 of 9);
             &:first-child {
                 
             }
             &:nth-child(4n+1){
                 clear: left;
+            }
+            &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4){
+                margin-top: 0px;
             }
             .c-human__thumbnail {
                 border: 6px solid $color_orange;
@@ -23,6 +26,9 @@
             }
             @media (min-width: $screen_sm) and (max-width: $screen_md) {
                 @include span(3 of 9);
+                &:nth-child(4) {
+                    margin-top: $padding_base * 1.25;
+                }
                 &:nth-child(4n+1){
                     clear: none;
                 }                 
@@ -31,7 +37,10 @@
                 }                    
             }
             @media (min-width: 450px) and (max-width: $screen_sm) {
-                @include span(4 of 9);
+                @include span(6);
+                &:nth-child(3), &:nth-child(4){
+                    margin-top: $padding_base * 1.25;
+                }                
                 &:nth-child(3n+1){
                     clear: none;
                 }     
@@ -44,6 +53,9 @@
             }
             @media (min-width: $screen_xs) and (max-width: 450px) {
                 @include span(9 of 9);
+                &:nth-child(2), &:nth-child(3), &:nth-child(4){
+                    margin-top: $padding_base;
+                }                
             }
         }
     }

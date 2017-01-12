@@ -16,7 +16,8 @@
             @extend h4;
             margin-right: $padding_base * 3.25;
             float: left;
-            min-height: $line_height_h4;
+            min-height: $font_size_h4;
+            line-height: $font_size_h4;
             clear: both;
             @media (min-width: $screen_xs) and (max-width: $screen_sm) {
                 width: 100%;

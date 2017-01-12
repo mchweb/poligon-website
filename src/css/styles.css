@@ -729,7 +729,7 @@ a:focus {
 .c-content__text {
   color: #373737;
 }
-.c-content__text ul {
+.c-content__text.l-human__text ul {
   padding-bottom: 24px;
 }
 
@@ -1571,7 +1571,7 @@ a.c-nav__link:focus {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 120px;
+  min-height: 96px;
 }
 .c-slider-nav__background:hover, .c-slider-nav__background.is-selected {
   cursor: pointer;
@@ -1604,12 +1604,11 @@ a.c-nav__link:focus {
   position: relative;
   color: #ffffff;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 18px;
   z-index: 2;
   margin-top: 12px;
   margin-bottom: 12px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 4px 8px;
 }
 .c-slider-nav__title:before {
   content: '';
@@ -1636,6 +1635,7 @@ a.c-nav__link:focus {
   padding-right: 10px;
   color: #ffffff;
   font-size: 14px;
+  line-height: 14px;
   margin-bottom: 24px;
   z-index: 2;
 }
@@ -1983,7 +1983,7 @@ a.c-nav__link:focus {
   margin-left: -15px;
 }
 .c-human.is-grid .c-human__item {
-  margin-bottom: 30px;
+  margin-top: 30px;
   width: 22.22222%;
   float: left;
   padding-left: 15px;
@@ -1991,6 +1991,9 @@ a.c-nav__link:focus {
 }
 .c-human.is-grid .c-human__item:nth-child(4n+1) {
   clear: left;
+}
+.c-human.is-grid .c-human__item:nth-child(1), .c-human.is-grid .c-human__item:nth-child(2), .c-human.is-grid .c-human__item:nth-child(3), .c-human.is-grid .c-human__item:nth-child(4) {
+  margin-top: 0px;
 }
 .c-human.is-grid .c-human__item .c-human__thumbnail {
   border: 6px solid #f7941e;
@@ -2005,6 +2008,9 @@ a.c-nav__link:focus {
     padding-left: 15px;
     padding-right: 15px;
   }
+  .c-human.is-grid .c-human__item:nth-child(4) {
+    margin-top: 30px;
+  }
   .c-human.is-grid .c-human__item:nth-child(4n+1) {
     clear: none;
   }
@@ -2014,10 +2020,13 @@ a.c-nav__link:focus {
 }
 @media (min-width: 450px) and (max-width: 600px) {
   .c-human.is-grid .c-human__item {
-    width: 44.44444%;
+    width: 50%;
     float: left;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .c-human.is-grid .c-human__item:nth-child(3), .c-human.is-grid .c-human__item:nth-child(4) {
+    margin-top: 30px;
   }
   .c-human.is-grid .c-human__item:nth-child(3n+1) {
     clear: none;
@@ -2035,6 +2044,9 @@ a.c-nav__link:focus {
     float: left;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .c-human.is-grid .c-human__item:nth-child(2), .c-human.is-grid .c-human__item:nth-child(3), .c-human.is-grid .c-human__item:nth-child(4) {
+    margin-top: 24px;
   }
 }
 
@@ -2384,7 +2396,8 @@ a.c-nav__link:focus {
   min-width: 70px;
   margin-right: 78px;
   float: left;
-  min-height: 30px;
+  min-height: 22px;
+  line-height: 22px;
   clear: both;
 }
 @media (min-width: 320px) and (max-width: 600px) {
