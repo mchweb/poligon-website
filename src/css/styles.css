@@ -892,6 +892,13 @@ a:focus {
   background-repeat: no-repeat;
 }
 
+.c-icon__arrow-top {
+  background-image: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MC44MzUgMjQwLjgzNSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQwLjgzNSAyNDAuODM1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnPgoJPHBhdGggaWQ9IkV4cGFuZF9MZXNzIiBkPSJNMTI5LjAwNyw1Ny44MTljLTQuNjgtNC42OC0xMi40OTktNC42OC0xNy4xOTEsMEwzLjU1NSwxNjUuODAzYy00Ljc0LDQuNzQtNC43NCwxMi40MjcsMCwxNy4xNTUgICBjNC43NCw0Ljc0LDEyLjQzOSw0Ljc0LDE3LjE3OSwwbDk5LjY4My05OS40MDZsOTkuNjcxLDk5LjQxOGM0Ljc1Miw0Ljc0LDEyLjQzOSw0Ljc0LDE3LjE5MSwwYzQuNzQtNC43NCw0Ljc0LTEyLjQyNywwLTE3LjE1NSAgIEwxMjkuMDA3LDU3LjgxOXoiIGZpbGw9IiMwMDAwMDAiLz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K");
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+
 /* Messages ****************/
 .c-message {
   display: inline-block;
@@ -1078,6 +1085,30 @@ a.c-nav__link:focus {
   top: 30px;
 }
 
+.l-nav__close {
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.c-nav__close {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+.c-nav__close p {
+  line-height: 16px;
+  font-size: 16px;
+  color: #000000;
+}
+.c-nav__close .c-icon__arrow-top {
+  display: block;
+  margin: 0 auto;
+}
+
 /* Nav mobile -----*/
 @media (min-width: 320px) and (max-width: 900px) {
   .l-header__nav.is-responsive {
@@ -1113,6 +1144,9 @@ a.c-nav__link:focus {
     float: left;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .l-header__nav.is-responsive .l-nav__close {
+    display: none;
   }
 }
 @media (min-width: 320px) and (max-width: 600px) {

@@ -318,7 +318,11 @@ document.addEventListener('click', function(event) {
         blockNav.classList.remove(classActive); 
     }
 }); 
-
+/* Close-button navigation */
+var btnCloseNavigation =  document.querySelector('.c-nav__close');
+btnCloseNavigation.onclick = function(event){
+    this.parentNode.parentNode.parentNode.classList.remove(classActive);
+};
 
 /*
  *  Home page 
