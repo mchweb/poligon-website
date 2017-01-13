@@ -25,7 +25,7 @@ var path = {
         cssDirectory: 'src/css',
         img: 'src/img/**/*.*', 
         imgTemp: 'src/temp/images/**/*.*',
-        imgDirectory: 'src/images',
+        imgDirectory: 'src/img',
         fonts: 'src/fonts/**/*.*'
     },
     watch: { 

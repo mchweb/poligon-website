@@ -102,7 +102,9 @@ $btn_height_small: 24px;
 $btn_border_radius_small: 12px;
 $btn_padding_small: 18px;
 $btn_font_size_small: 14px;
-/* Forms ----------*/
+/* Icons ----------*/
+$icons-png-spacing: 5px;
+@import "icons-png/*.png";
 /* Breadcrumbs ----*/
 /* Modals ---------*/
 /* Breakpoints ----*/

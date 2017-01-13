@@ -24,16 +24,6 @@
     float: left;  
     margin-right: $padding_base / 2;
 }
-.c-icon__telegram {
-    background-image: url('#{$url_images}/icons-sprite.png');
-    background-repeat: no-repeat;
-    background-position: -30px 0px;
-    background-size: cover;
-    width: 34px; 
-	height: 34px;  
-    float: left;  
-    margin-top: $padding_base / 2;    
-}
 .c-icon__vk {
 //base64 version background
 //    background-image: url('data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4yLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1NS45IDU1LjkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU1LjkgNTUuOTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6IzI2MjYyNjt9DQo8L3N0eWxlPg0KPGc+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTExLDBoMzRjNiwwLDExLDQuOSwxMSwxMC45djM0YzAsNi00LjksMTAuOS0xMSwxMC45SDExYy02LDAtMTEtNC45LTExLTEwLjl2LTM0QzAsNC45LDQuOSwwLDExLDBMMTEsMHoNCgkJIE00MS41LDMzLjhjMC0yLjEtMC42LTMuNy0xLjctNC45Yy0xLjEtMS4yLTIuNi0yLTQuNS0yLjR2LTAuMmMxLjMtMC41LDIuMy0xLjQsMy4xLTIuNmMwLjctMS4yLDEuMS0yLjUsMS4xLTMuOQ0KCQljMC0xLjMtMC4zLTIuNC0wLjgtMy40Yy0wLjUtMS0xLjMtMS44LTIuNC0yLjNjLTEtMC41LTIuMS0wLjktMy4yLTEuMWMtMS4xLTAuMi0yLjgtMC4zLTUuMS0wLjNIMTcuMXYzMC4zaDEyLjMNCgkJYzIuMSwwLDMuOC0wLjIsNS4yLTAuNmMxLjQtMC40LDIuNi0xLDMuOC0xLjljMS0wLjgsMS43LTEuNywyLjMtMi44QzQxLjIsMzYuNyw0MS41LDM1LjMsNDEuNSwzMy44TDQxLjUsMzMuOHogTTMxLjcsMjEuNA0KCQljMC0wLjUtMC4xLTEtMC40LTEuNWMtMC4zLTAuNS0wLjYtMC45LTEuMi0xLjFjLTAuNS0wLjItMS4xLTAuMy0xLjgtMC40Yy0wLjcsMC0xLjcsMC0zLjEsMGgtMC41djYuNGgxYzEuMywwLDIuMiwwLDIuNywwDQoJCWMwLjUsMCwxLjEtMC4yLDEuNi0wLjRjMC42LTAuMywxLTAuNywxLjItMS4yQzMxLjYsMjIuNiwzMS43LDIyLDMxLjcsMjEuNEwzMS43LDIxLjR6IE0zMy42LDMzLjdjMC0wLjktMC4yLTEuNy0wLjYtMi4yDQoJCWMtMC40LTAuNS0wLjktMC45LTEuNy0xLjJjLTAuNS0wLjItMS4xLTAuMy0xLjktMC4zYy0wLjgsMC0xLjksMC0zLjIsMGgtMS40djcuNmgwLjRjMiwwLDMuNCwwLDQuMSwwYzAuOCwwLDEuNS0wLjIsMi4zLTAuNQ0KCQljMC43LTAuMywxLjItMC43LDEuNS0xLjNDMzMuNSwzNS4xLDMzLjYsMzQuNCwzMy42LDMzLjdMMzMuNiwzMy43eiBNMzMuNiwzMy43Ii8+DQo8L2c+DQo8L3N2Zz4NCg==');  
@@ -68,28 +58,29 @@
         }           
     }
 }
-
-.c-icon__viber {
-    background-image: url('#{$url_images}/icons-sprite.png');
-    background-repeat: no-repeat;
-    background-position: -64px 0px;
-    background-size: cover;
-    width: 35px; 
-	height: 35px;  
+.c-icon__viber, .c-icon__phone, .c-icon__telegram {
+    @extend .icons-png-sprite;
     float: left;  
-    margin-top: $padding_base / 2;
+    background-size: cover;    
+    margin-top: $padding_base / 2;    
 }
 .c-icon__phone {
-    background-image: url('#{$url_images}/icons-sprite.png');
-    background-repeat: no-repeat;
-    background-position: 1px 0px;
-    background-size: cover;
-    width: 35px; 
-	height: 35px;
-    float: left;  
-    margin-top: $padding_base / 2;
+    @include icons-png-sprite(phone);    
+    width: 34px; 
+	height: 35px;   
 }
-
+.c-icon__viber {
+    @include icons-png-sprite(viber);
+    width: 34px; 
+	height: 35px;
+    background-position-y: -76px;
+}
+.c-icon__telegram {
+    @include icons-png-sprite(telegram);      
+    width: 33px; 
+	height: 33px;       
+    background-position-y: -38px;
+}
 .c-icon__arrow {
     width: 12px;
     height: 12px;
