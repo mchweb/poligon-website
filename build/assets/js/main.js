@@ -568,35 +568,48 @@ for (var i = 0; i < navSliderItems.length; i++) {
   } 
 } 
 /* Set the active slide navigation on click */
-var buttonGroup = document.querySelector('.c-slider-nav');
-if(buttonGroup){
-    var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
-    buttons = fizzyUIUtils.makeArray( buttons );
-    buttonGroup.addEventListener( 'click', function( eventClick ) {
-      if ( !matchesSelector( eventClick.target, '.c-slider-nav__link' ) ) {
-        return;
-      }
-      var index = buttons.indexOf( eventClick.target );
-      flkty.select( index ); 
-      var navItems =  document.querySelectorAll('.c-slider-nav__background');
-      for (var i = 0; i < navItems.length; i++) {
-          navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
-          navItems[i].classList.remove('is-selected');
-      }  
-      eventClick.srcElement.parentNode.querySelector('.c-slider-nav__title').style.position = 'static';
-      eventClick.srcElement.parentNode.classList.add('is-selected');
-    });    
-    /* Set the active slide navigation on click next/prev buttons */
-    flkty.on( 'select', function() {
-        var navItems =  document.querySelectorAll('.c-slider-nav__background');
-        for (var i = 0; i < navItems.length; i++) {      
-          navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
-          navItems[i].classList.remove('is-selected');
-        } 
-        navItems[flkty.selectedIndex].querySelector('.c-slider-nav__title').style.position = 'static';
-        navItems[flkty.selectedIndex].classList.add('is-selected');
-    });
-}
+var buttonGroupSlider = function (){
+    var buttonGroup = document.querySelector('.c-slider-nav');
+    var flkty = new Flickity( elemSlider, paramsSlider);
+    if(buttonGroup){
+        var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
+        buttons = fizzyUIUtils.makeArray( buttons );
+        if(window.innerWidth >= screen_md){   
+            var flkty = new Flickity( elemSlider, paramsSlider);
+        }else {
+            flkty.destroy();
+        }
+        buttonGroup.addEventListener( 'click', function( eventClick ) {
+          if ( !matchesSelector( eventClick.target, '.c-slider-nav__link' ) ) {
+            return;
+          }
+          
+          var index = buttons.indexOf( eventClick.target );
+          flkty.select( index ); 
+          var navItems =  document.querySelectorAll('.c-slider-nav__background');
+          for (var i = 0; i < navItems.length; i++) {
+              navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
+              navItems[i].classList.remove('is-selected');
+          }  
+          eventClick.srcElement.parentNode.querySelector('.c-slider-nav__title').style.position = 'static';
+          eventClick.srcElement.parentNode.classList.add('is-selected');
+        });    
+        /* Set the active slide navigation on click next/prev buttons */
+        flkty.on( 'select', function() {
+            var navItems =  document.querySelectorAll('.c-slider-nav__background');
+            for (var i = 0; i < navItems.length; i++) {      
+              navItems[i].querySelector('.c-slider-nav__title').style.position = 'relative';
+              navItems[i].classList.remove('is-selected');
+            } 
+            navItems[flkty.selectedIndex].querySelector('.c-slider-nav__title').style.position = 'static';
+            navItems[flkty.selectedIndex].classList.add('is-selected');
+        });
+    }    
+};
+buttonGroupSlider();
+window.addEventListener('resize', function(eventResize){
+    buttonGroupSlider();
+});
 
  /*
  *  Forms
