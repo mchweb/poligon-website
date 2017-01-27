@@ -41,6 +41,11 @@
         .c-slider__item {
             padding: 0px;
         }
+        @media screen and (max-width: $screen_md) {
+            .flickity-prev-next-button.next, .flickity-prev-next-button.previous {
+                display: block;
+            }               
+        }
     }
     
 }

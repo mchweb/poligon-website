@@ -537,7 +537,7 @@ funcBackgroundImageBlocks('.c-slider__item','.c-slider__thumbnail','right','cent
 funcBackgroundImageBlocks('.c-slider-nav__item','.c-slider-nav__thumbnail','right','center','.c-slider-nav__background');
 /* Connecting flickity.js for slider */
 var elemSlider = document.querySelector('.c-slider');
-var paramsSlider = { wrapAround: 'true', draggable: true};
+var paramsSlider = { wrapAround: 'true', draggable: true, pageDots: false};
 
 if(elemSlider){
     /* Disable flickity.js on mobile */

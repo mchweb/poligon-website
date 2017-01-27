@@ -1404,6 +1404,11 @@ a.c-nav__link:focus {
 .c-slider.is-not-content .c-slider__item {
   padding: 0px;
 }
+@media screen and (max-width: 900px) {
+  .c-slider.is-not-content .flickity-prev-next-button.next, .c-slider.is-not-content .flickity-prev-next-button.previous {
+    display: block;
+  }
+}
 
 .c-slider__item {
   width: 100%;
@@ -2097,6 +2102,8 @@ a.c-nav__link:focus {
     float: left;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 15px;
+    padding: 0px;
   }
 }
 
@@ -2419,10 +2426,6 @@ a.c-nav__link:focus {
   margin: 24px 0;
   display: inline-block;
 }
-.c-schedule.is-table .c-schedule__item {
-  display: inline-block;
-  width: 100%;
-}
 .c-schedule.is-table .c-schedule__day {
   display: inline-block;
   min-width: 70px;
@@ -2438,20 +2441,24 @@ a.c-nav__link:focus {
     margin-bottom: 8px;
   }
 }
-.c-schedule.is-table .c-schedule__time {
-  display: inline-block;
-  margin-right: 24px;
-  float: left;
-  min-width: 115px;
-}
 .c-schedule.is-table .c-schedule__content {
-  display: inline-block;
-  float: left;
-  width: 65%;
+  width: 49%;
+}
+@media (min-width: 320px) and (max-width: 600px) {
+  .c-schedule.is-table .c-schedule__content {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .c-schedule.is-table .c-schedule__content {
+    width: 65%;
+  }
 }
 
 .c-schedule__item {
   margin-bottom: 24px;
+  display: inline-block;
+  width: 100%;
 }
 .c-schedule__item:last-child {
   margin-bottom: 0px;
@@ -2465,14 +2472,23 @@ a.c-nav__link:focus {
   display: inline-block;
   margin-right: 24px;
   color: #373737;
+  min-width: 115px;
+  float: left;
 }
 
 .c-schedule__content {
   display: inline-block;
   color: #373737;
+  float: left;
+  width: 72%;
 }
 .c-schedule__content strong {
   font-weight: bold;
+}
+@media (min-width: 320px) and (max-width: 600px) {
+  .c-schedule__content {
+    width: 100%;
+  }
 }
 
 /* Map *********************/
@@ -3129,6 +3145,9 @@ a.c-nav__link:focus {
   .l-content__text.is-no-padding .l-content__grid--three .l-content__col {
     padding: 0px;
   }
+}
+.l-content__text.is-no-padding.is-padding-mobile {
+  padding: 0 15px;
 }
 
 .l-content__text .l-content__col {

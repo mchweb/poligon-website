@@ -67,6 +67,8 @@
     padding-right: 30px;
     @media (min-width: $screen_xs) and (max-width: 700px) {
         @include span(9 of 9);
+        margin-bottom: 15px;
+        padding: 0px;
     }    
 }
 .l-human__text {
