@@ -83,6 +83,19 @@
             padding: $padding_base $padding_base * 2.25 $padding_base $padding_base * 3.5;  
         }
     }
+    @media (min-width: 701px) and (max-width: 720px) {
+        .l-human__blockquote {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }        
+    }
+    @media (min-width: 706px) and (max-width: 720px) {
+        .l-human__blockquote {
+            padding-bottom: 20px;
+        }
+    }
 }
 
 .c-human__thumbnail {

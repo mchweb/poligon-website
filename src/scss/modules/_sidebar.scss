@@ -21,6 +21,11 @@
         }  
         @media (min-width: $screen_xs) and (max-width: $screen_md) {
             @include span(12);
+            padding: 0px;
+            .l-features, .l-message, .c-content__title--block {
+                margin-left: 15px;
+                margin-right: 15px;                
+            }
         }
     }
 }

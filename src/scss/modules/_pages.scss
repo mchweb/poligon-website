@@ -25,10 +25,13 @@
             }
         }
         &.is-padding-mobile {
-            padding: 0 15px;
+            @media (max-width: $screen_lg) {
+                padding: 0 15px;
+            }            
         }
     }
 }
+
 
 .l-content__text {
     .l-content__col {

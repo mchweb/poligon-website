@@ -75,12 +75,20 @@
     @include span(7);
     z-index: 2;
     position: relative;
+    &.is-nofound {
+        padding-top: (($padding_base * 4)-6)+87 ;
+        padding-bottom: ($padding_base * 4)+87;        
+    }    
     @media screen and (max-width: $screen_md) {
         @include span(12);  
     }    
     @media (min-width: $screen_xs) and (max-width: $screen_md) {
         padding-top: $padding_base * 2;
         padding-bottom: $padding_base * 2;
+        &.is-nofound {
+            padding-top: $padding_base * 2;
+            padding-bottom: $padding_base * 2;            
+        }
     }
     .c-infoblock__footer {
         margin-top: 0px;
