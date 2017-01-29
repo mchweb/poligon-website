@@ -550,12 +550,16 @@ for (var i = 0; i < navSliderItems.length; i++) {
 /* Set the active slide navigation on click */
 var buttonGroupSlider = function (){
     var buttonGroup = document.querySelector('.c-slider-nav');
-    var flkty = new Flickity( elemSlider, paramsSlider);
+    if(elemSlider){
+        var flkty = new Flickity( elemSlider, paramsSlider);
+    }
     if(buttonGroup){
         var buttons = buttonGroup.querySelectorAll('.c-slider-nav__link');
         buttons = fizzyUIUtils.makeArray( buttons );
         if(window.innerWidth >= screen_md){   
-            var flkty = new Flickity( elemSlider, paramsSlider);
+            if(elemSlider){
+                var flkty = new Flickity( elemSlider, paramsSlider);
+            }
         }else {
             flkty.destroy();
         }
