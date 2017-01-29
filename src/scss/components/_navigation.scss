@@ -168,6 +168,9 @@ a.c-nav__link {
             visibility: hidden;
             &.is-active {
                 visibility: visible;
+                .c-nav__dropdown {
+                    visibility: visible;
+                }
             }            
             position: absolute;
             left: 0;

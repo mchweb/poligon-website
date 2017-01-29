@@ -320,9 +320,12 @@ document.addEventListener('click', function(event) {
 }); 
 /* Close-button navigation */
 var btnCloseNavigation =  document.querySelector('.c-nav__close');
-btnCloseNavigation.onclick = function(event){
-    this.parentNode.parentNode.parentNode.classList.remove(classActive);
-};
+if(btnCloseNavigation){
+    btnCloseNavigation.onclick = function(event){
+        this.parentNode.parentNode.parentNode.classList.remove(classActive);
+    };   
+}
+
 
 /*
  *  Home page 
