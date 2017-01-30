@@ -1,6 +1,7 @@
 // ----------------------- //
 // Forms style ----------- //
 // ----------------------- //
+
 .c-form--horizontal {
     @include span(10);
     padding: 0px;
@@ -41,6 +42,12 @@
         margin-right: 5px;
         float: left;
         margin-top: 20px;        
+    }
+    &.c-form--test {
+        margin-top: $padding_base; 
+        .c-form__item-block {
+            margin-bottom: $padding_base / 4; 
+        }
     }
     &.is-input-no-background {
         .c-form__item {
@@ -280,4 +287,59 @@
     .c-form__label {
         margin-bottom: 0px;
     }
+}
+
+.c-form__radio {
+    vertical-align: top;
+    width: 13px;
+    height: 13px;
+    margin: 0 0px 0 0;
+}
+.c-form__radio + label {
+    cursor: pointer;
+    &:hover {
+        &:before {
+           border-color: $color_green; 
+        }
+    }
+}
+.c-form__radio:not(checked) {
+    position: absolute;
+    opacity: 0;
+}
+.c-form__radio:not(checked) + label {
+    position: relative;
+    padding: 0 0 0 24px;
+}
+.c-form__radio:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border: 1px solid $color_gray;
+    border-radius: 50%;
+    background: $color_white;
+}
+.c-form__radio:not(checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $color_green;
+    opacity: 0;
+}
+
+.c-form__radio:checked + label:after {
+    opacity: 1;
+}
+.c-form__radio:checked + label:before {
+    border-color: $color_green;
+}
+.c-form__radio:focus + label:before {
+    border-collapse: $color_green;
 }

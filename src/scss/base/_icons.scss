@@ -73,13 +73,31 @@
     @include icons-png-sprite(viber);
     width: 34px; 
 	height: 35px;
-    background-position-y: -76px;
+    background-position-y: -116px;
 }
 .c-icon__telegram {
     @include icons-png-sprite(telegram);      
     width: 33px; 
 	height: 33px;       
-    background-position-y: -38px;
+    background-position-y: -75px;
+}
+.c-icon__vk {
+    &.is-color {
+        @include icons-png-sprite(vk);
+        width: 23px; 
+        height: 23px;
+        background-size: 100%; 
+        background-position: 0 -104px;
+    }
+}
+.c-icon__fb {
+    &.is-color {
+        @include icons-png-sprite(fb);      
+        width: 23px; 
+        height: 23px;    
+        background-position: 0px 0px;
+        background-size: 100%; 
+    }     
 }
 .c-icon__arrow {
     width: 12px;

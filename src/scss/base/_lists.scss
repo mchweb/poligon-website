@@ -9,3 +9,21 @@
     display: inline-block;
     margin-right: $padding_base / 3;
 }
+
+.c-list-share {
+    list-style: none;
+}
+.c-list-share__item {
+    display: block;
+    margin-right: $padding_base / 2;
+    .c-icon {
+        &.is-text {
+            width: auto;
+            background-size: 23px; 
+            padding-left: 32px;
+            color: $color_gray_dark;
+            margin: 0px;
+            float: left;            
+        }        
+    }
+}

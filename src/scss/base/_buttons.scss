@@ -26,6 +26,10 @@
             background-color: $color_blue_accent;
         }        
     }
+    &.is-padding-big {
+        padding-left: $btn_padding * 1.5;
+        padding-right: $btn_padding * 1.5;
+    }
 }
 .c-btn--small {
     height: $btn_height_small;

@@ -105,8 +105,8 @@ table {
 /* Typography -----*/
 /* Buttons --------*/
 /* Icons ----------*/
-.icons-png-sprite, .c-icon__viber, .c-icon__phone, .c-icon__telegram {
-  background-image: url('../img/icons-png-s3c4b3ec217.png');
+.icons-png-sprite, .c-icon__viber, .c-icon__phone, .c-icon__telegram, .c-icon__vk.is-color, .c-icon__fb.is-color {
+  background-image: url('../img/icons-png-s6518e7cb7a.png');
   background-repeat: no-repeat;
 }
 
@@ -124,12 +124,12 @@ table {
   box-sizing: border-box;
 }
 
-.container, .l-content__slider, .c-program, .l-content__col--sidebar, .l-content__text.is-container {
+.container, .l-content__slider, .c-program, .c-test, .l-content__col--sidebar, .l-content__text.is-container {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
-.container:after, .l-content__slider:after, .c-program:after, .l-content__col--sidebar:after, .l-content__text.is-container:after {
+.container:after, .l-content__slider:after, .c-program:after, .c-test:after, .l-content__col--sidebar:after, .l-content__text.is-container:after {
   content: " ";
   display: block;
   clear: both;
@@ -238,6 +238,10 @@ table {
   text-decoration: none;
   background-color: #0067a9;
 }
+.c-btn.is-padding-big {
+  padding-left: 36px;
+  padding-right: 36px;
+}
 
 .c-btn--small {
   height: 24px;
@@ -322,6 +326,12 @@ table {
   margin-right: 5px;
   float: left;
   margin-top: 20px;
+}
+.c-form.c-form--test {
+  margin-top: 24px;
+}
+.c-form.c-form--test .c-form__item-block {
+  margin-bottom: 6px;
 }
 .c-form.is-input-no-background .c-form__item {
   margin-top: 24px;
@@ -615,6 +625,66 @@ table {
   margin-bottom: 0px;
 }
 
+.c-form__radio {
+  vertical-align: top;
+  width: 13px;
+  height: 13px;
+  margin: 0 0px 0 0;
+}
+
+.c-form__radio + label {
+  cursor: pointer;
+}
+.c-form__radio + label:hover:before {
+  border-color: #80bf44;
+}
+
+.c-form__radio:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+
+.c-form__radio:not(checked) + label {
+  position: relative;
+  padding: 0 0 0 24px;
+}
+
+.c-form__radio:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #6e6e6e;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.c-form__radio:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #80bf44;
+  opacity: 0;
+}
+
+.c-form__radio:checked + label:after {
+  opacity: 1;
+}
+
+.c-form__radio:checked + label:before {
+  border-color: #80bf44;
+}
+
+.c-form__radio:focus + label:before {
+  border-collapse: #80bf44;
+}
+
 /* Lists *******************/
 .c-list-contact {
   list-style: none;
@@ -623,6 +693,23 @@ table {
 .c-list-contact__item {
   display: inline-block;
   margin-right: 8px;
+}
+
+.c-list-share {
+  list-style: none;
+}
+
+.c-list-share__item {
+  display: block;
+  margin-right: 12px;
+}
+.c-list-share__item .c-icon.is-text {
+  width: auto;
+  background-size: 23px;
+  padding-left: 32px;
+  color: #373737;
+  margin: 0px;
+  float: left;
 }
 
 /* Typography **************/
@@ -841,23 +928,39 @@ a:focus {
 }
 
 .c-icon__phone {
-  background-position: 0 0;
+  background-position: 0 -40px;
   width: 34px;
   height: 35px;
 }
 
 .c-icon__viber {
-  background-position: 0 -80px;
+  background-position: 0 -120px;
   width: 34px;
   height: 35px;
-  background-position-y: -76px;
+  background-position-y: -116px;
 }
 
 .c-icon__telegram {
-  background-position: 0 -40px;
+  background-position: 0 -80px;
   width: 33px;
   height: 33px;
-  background-position-y: -38px;
+  background-position-y: -75px;
+}
+
+.c-icon__vk.is-color {
+  background-position: 0 -160px;
+  width: 23px;
+  height: 23px;
+  background-size: 100%;
+  background-position: 0 -104px;
+}
+
+.c-icon__fb.is-color {
+  background-position: 0 0;
+  width: 23px;
+  height: 23px;
+  background-position: 0px 0px;
+  background-size: 100%;
 }
 
 .c-icon__arrow {
@@ -1183,7 +1286,7 @@ a.c-nav__link:focus {
   }
 }
 @media (min-width: 320px) and (max-width: 900px) {
-  .c-infoblock .container, .c-infoblock .l-content__slider, .c-infoblock .c-program, .c-infoblock .l-content__col--sidebar, .c-infoblock .l-content__text.is-container {
+  .c-infoblock .container, .c-infoblock .l-content__slider, .c-infoblock .c-program, .c-infoblock .c-test, .c-infoblock .l-content__col--sidebar, .c-infoblock .l-content__text.is-container {
     background-color: #80bf44;
   }
 }
@@ -2584,6 +2687,47 @@ a.c-nav__link:focus {
   border-bottom: none;
 }
 
+/* Test ********************/
+.c-test {
+  padding-top: 108px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.c-test .c-list-share {
+  margin-top: 156px;
+  margin-bottom: 60px;
+  display: inline-block;
+}
+.c-test .c-list-share .c-list-share__item {
+  display: inline-block;
+}
+
+.c-test__block {
+  width: 66.66667%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 0px;
+}
+
+.c-test__title.c-content__title.bg--green {
+  line-height: 40px;
+  padding: 0.1rem 0.8rem;
+}
+
+.c-test__info {
+  color: #373737;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+.c-test__info .c-test__type, .c-test__info .c-test__name, .c-test__info .c-test__number, .c-test__info .c-test__question {
+  display: inline-block;
+  color: #373737;
+}
+.c-test__info .c-test__numbers {
+  display: block;
+}
+
 /****************************
  Modules styles
 ****************************/
@@ -3134,6 +3278,31 @@ a.c-nav__link:focus {
   }
 }
 
+#footer.is-min .l-content__col.l-contact__address .c-content__text {
+  margin-top: 5px;
+}
+#footer.is-min .l-content__col.l-contact__phone {
+  margin-top: 0px;
+}
+#footer.is-min .l-content__col.l-contact__dev {
+  margin-top: 0px;
+}
+@media (min-width: 320px) and (max-width: 600px) {
+  #footer.is-min .l-contact__logo {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 0px;
+  }
+}
+@media (min-width: 320px) and (max-width: 1200px) {
+  #footer.is-min .l-contact__logo {
+    display: block;
+    padding-top: 10px;
+  }
+}
+
 /* Sidebar *****************/
 .l-content__col--sidebar {
   padding-left: 0px;
@@ -3231,7 +3400,7 @@ a.c-nav__link:focus {
 }
 
 .c-content__title.bg--green {
-  padding: 0.3rem 1rem;
+  padding: 0.25rem 1rem;
   color: #ffffff;
   background: #80bf44;
   display: inline;

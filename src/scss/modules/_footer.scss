@@ -236,3 +236,31 @@
         }        
     }
 }  
+
+#footer {
+    &.is-min {
+        .l-content__col.l-contact__address {
+            .c-content__text {
+                margin-top: 5px;
+            }
+        }
+        .l-content__col.l-contact__phone {
+            margin-top: 0px;
+        }
+        .l-content__col.l-contact__dev {
+            margin-top: 0px;
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            .l-contact__logo {
+                @include span(12);
+                padding: 0px;
+            }
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_lg) {
+            .l-contact__logo {
+                display: block;
+                padding-top: 10px;
+            } 
+        }
+    }
+}
