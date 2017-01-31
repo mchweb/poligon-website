@@ -24,6 +24,13 @@
         padding-left: 0px;
         padding-right: 0px;
     }
+    &.is-center-mobile {
+        @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
+        }
+    }
 }
 /* Banner ---------*/
 .l-header__banner {

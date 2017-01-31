@@ -327,11 +327,14 @@ if(window.innerWidth < screen_md){
 /* Open mobile navigation */
 var blockNav = document.querySelector('.l-header__nav');
 var btnNav = document.querySelector('.c-nav-button');
-btnNav.onclick = function(event){
-    if(!this.classList.contains(classActive)){
-        blockNav.classList.add(classActive);
-    }
-};
+if(btnNav){
+    btnNav.onclick = function(event){
+        if(!this.classList.contains(classActive)){
+            blockNav.classList.add(classActive);
+        }
+    };    
+}
+
 document.addEventListener('click', function(event) {
     var isClickInside = blockNav.contains(event.target);
     if (!isClickInside && !btnNav.contains(event.target)) {

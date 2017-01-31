@@ -11,15 +11,15 @@
     .c-list-share {
         margin-top: $padding_base * 6.5;
         margin-bottom: $padding_base * 2.5;
-        display: inline-block;
-        .c-list-share__item {
-            display: inline-block;
-        }
     }
 }
 .c-test__block {
     @include span(8);
     padding: 0px;
+    @media (max-width: $screen_md) {
+       @include span(12); 
+       padding: 0px
+    }
 }
 .c-test__title.c-content__title.bg--green {
     line-height: 40px;
@@ -36,5 +36,55 @@
     }
     .c-test__numbers {
         display: block;
+    }
+}
+.l-test__share {
+    font-size: $btn_font_size;
+    color: $color_white;    
+    width: 100%;
+    display: inline-block;
+    .c-list-share {
+        width: 100%;
+        display: inline-block;         
+    }
+}
+.c-infoblock {
+    &.is-test {
+        margin-top: 24px;
+        .c-infoblock__description {            
+            margin-bottom: $padding_base / 2;    
+        }
+        .c-infoblock__content {
+            margin-bottom: $padding_base * 4.5;
+        }
+        .c-infoblock__text {
+            padding-top: $padding_base * 8;
+            padding-bottom: 0px;
+        }
+        .l-test__share {
+            .c-list-share {
+                margin-top: 0px;
+                &.is-inline {
+                    margin-top: $padding_base / 2;
+                }                
+            }            
+        }
+        .c-list-share {
+            margin-top: $padding_base * 5.75;
+        }
+    }
+}
+.c-test__replay {
+    margin-top: $padding_base;
+    .c-icon {
+        &.is-text {
+            width: auto;
+            background-size: 30px; 
+            padding-left: 54px;
+            color: $color_white;
+            margin: 0px;
+            float: left;   
+            line-height: 30px;
+        }
     }
 }

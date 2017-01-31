@@ -12,11 +12,15 @@
 
 .c-list-share {
     list-style: none;
+    display: inline-block;
 }
 .c-list-share__item {
-    display: block;
+    display: inline-block;
     margin-right: $padding_base / 2;
+    height: 26px;
+    vertical-align: middle;
     .c-icon {
+        margin: 0px;
         &.is-text {
             width: auto;
             background-size: 23px; 
@@ -26,4 +30,9 @@
             float: left;            
         }        
     }
+}
+.c-list-share__text {
+    color: $color_white;
+    border-bottom: none;
+    line-height: 25px;
 }
