@@ -1,5 +1,5 @@
 // ----------------------- //
-// Test ------------------ //
+// Test style ------------ //
 // ----------------------- //
 
 .c-test {
@@ -17,7 +17,7 @@
     @include span(8);
     padding: 0px;
     @media (max-width: $screen_md) {
-       @include span(12); 
+       @include span(11); 
        padding: 0px
     }
 }
@@ -71,6 +71,17 @@
         }
         .c-list-share {
             margin-top: $padding_base * 5.75;
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_md) {
+            .c-infoblock__text {
+                padding-top: $padding_base * 2;
+            }
+            .c-infoblock__content {
+                margin-bottom: $padding_base * 2;
+            }
+            .c-list-share {
+                margin-top: $padding_base * 2;
+            }
         }
     }
 }

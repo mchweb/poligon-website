@@ -30,6 +30,12 @@
         padding-left: $btn_padding * 1.5;
         padding-right: $btn_padding * 1.5;
     }
+    &.is-notactive {
+        background-color: $color_gray;
+        color: $color_gray_light;
+        pointer-events: none;
+        cursor: default;        
+    }
 }
 .c-btn--small {
     height: $btn_height_small;

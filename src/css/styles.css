@@ -246,6 +246,12 @@ table {
   padding-left: 36px;
   padding-right: 36px;
 }
+.c-btn.is-notactive {
+  background-color: #6e6e6e;
+  color: #9c9c9c;
+  pointer-events: none;
+  cursor: default;
+}
 
 .c-btn--small {
   height: 24px;
@@ -2755,7 +2761,7 @@ a.c-nav__link:focus {
 }
 @media (max-width: 900px) {
   .c-test__block {
-    width: 100%;
+    width: 91.66667%;
     float: left;
     padding-left: 15px;
     padding-right: 15px;
@@ -2814,6 +2820,17 @@ a.c-nav__link:focus {
 .c-infoblock.is-test .c-list-share {
   margin-top: 138px;
 }
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-infoblock.is-test .c-infoblock__text {
+    padding-top: 48px;
+  }
+  .c-infoblock.is-test .c-infoblock__content {
+    margin-bottom: 48px;
+  }
+  .c-infoblock.is-test .c-list-share {
+    margin-top: 48px;
+  }
+}
 
 .c-test__replay {
   margin-top: 24px;
@@ -2826,6 +2843,129 @@ a.c-nav__link:focus {
   margin: 0px;
   float: left;
   line-height: 30px;
+}
+
+/* Modal *******************/
+.c-modal {
+  display: none;
+}
+.c-modal.is-open {
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 13000;
+}
+.c-modal .container, .c-modal .l-content__slider, .c-modal .c-program, .c-modal .c-test, .c-modal .l-content__col--sidebar, .c-modal .l-content__text.is-container {
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.c-modal__background {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.c-modal__block {
+  width: 83.33333%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 500px;
+  background-color: #d3c5b0;
+}
+@media (max-width: 900px) {
+  .c-modal__block {
+    width: 33.33333%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 320px;
+    height: 220px;
+    background-image: none;
+  }
+}
+
+.c-modal__content {
+  width: 50%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+}
+@media (max-width: 900px) {
+  .c-modal__content {
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.c-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #f04e23;
+  font-size: 22px;
+  line-height: 22px;
+  border-bottom: 1px dashed;
+  border-bottom-color: #f04e23;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .c-modal__close {
+    border-bottom: none;
+    font-size: 36px;
+    line-height: 19px;
+    color: #ed7c5d;
+  }
+}
+
+.c-modal__title {
+  font-size: 40px;
+  line-height: 48px;
+  margin-top: 108px;
+  margin-bottom: 16px;
+  color: #373737;
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-modal__title {
+    font-size: 22px;
+    line-height: 30px;
+    margin-top: 36px;
+  }
+}
+
+.c-modal__description {
+  font-size: 30px;
+  line-height: 36px;
+  color: #373737;
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  .c-modal__description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.c-modal__thumbnail {
+  display: none;
 }
 
 /****************************
@@ -3447,7 +3587,7 @@ a.c-nav__link:focus {
     padding-right: 15px;
     padding: 0px;
   }
-  .l-content__col--sidebar .is-sidebar .l-features, .l-content__col--sidebar .is-sidebar .l-message, .l-content__col--sidebar .is-sidebar .c-content__title--block {
+  .l-content__col--sidebar .is-sidebar .l-features__block, .l-content__col--sidebar .is-sidebar .l-message__block, .l-content__col--sidebar .is-sidebar .l-reviews__block-title {
     margin-left: 15px;
     margin-right: 15px;
   }

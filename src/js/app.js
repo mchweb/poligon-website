@@ -3,6 +3,7 @@
  */
 var screen_md = 900;
 var classActive = 'is-active';
+var classOpen = 'is-open';
 var classNotActive = 'is-notactive';
 var classDropdown = 'is-dropdown';
 var classError= 'is-error';
@@ -611,7 +612,60 @@ for (var i = 0; i < formButon.length; i++) {
             funcValidateForm(this.form, '.c-form__input','is-value');
         }
     });    
-}               
+}  
+/* Modal */
+/* Set a background image for modals */
+var modalFuncInit = function (eventResize) {
+    var windowWidth = 0;
+    if (eventResize) {
+        windowWidth = eventResize.target.innerWidth;
+    }else {
+        windowWidth = window.innerWidth;
+    }
+    var btnClose = document.querySelector('.c-modal__close');
+    if(windowWidth >= screen_md){ 
+        funcBackgroundImageBlocks('.c-modal','.c-modal__thumbnail','left','center','.c-modal__block');       
+        if (btnClose){
+            btnClose.innerHTML = 'Закрыть';
+        }
+    }else {
+        var modalBlock = document.querySelector('.c-modal__block');
+        if (modalBlock){
+          modalBlock.style.backgroundImage = '';  
+        }        
+        if (btnClose){
+            btnClose.innerHTML = '&times';
+        }        
+    }    
+    var modalBtnElements = document.querySelectorAll('.modal--open');
+    for (var i = 0; i < modalBtnElements.length; i++) {
+        if(modalBtnElements[i]){
+            modalBtnElements[i].onclick = function(event){
+                var dataBtn = this.dataset;
+                var modalBlock = document.querySelector('.c-modal');
+                var dataModal = modalBlock.dataset;
+                if (dataBtn.modalName == dataModal.modalName){
+                    modalBlock.classList.add(classOpen);
+                }
+                
+            }; 
+        }
+    }  
+};
+modalFuncInit();
+window.addEventListener('resize', function(eventResize){
+    modalFuncInit(eventResize);
+});
+var modalBtnClose = document.querySelector('.c-modal__close');
+if(modalBtnClose){
+    modalBtnClose.onclick = function(event){
+        var parentBlock = this.parentNode.parentNode.parentNode.parentNode;
+        if (parentBlock.classList.contains(classOpen)) {
+            parentBlock.classList.remove(classOpen);  
+        }
+        console.log();
+    };    
+}
 /*
  *  Animations 
  */                

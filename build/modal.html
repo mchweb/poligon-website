@@ -165,8 +165,8 @@
                              Белинского&nbsp;51, 309
                          </div>
                       </a>
-                  </footer>                                    
-                  <a href="#" class="c-btn bg--blue">Зарегистрироваться на программу</a>
+                  </footer>    
+                  <a href="#" class="c-btn bg--blue is-notactive modal--open" data-modal-name="register-close">Регистрация закрыта</a>
               </div>
               <figure>
                   <img src="assets/content/img/pred-visov.jpg" alt="" class="c-infoblock__thumbnail" width="1280" height="853">
@@ -894,7 +894,7 @@
                           </header>
                           <p class="c-program__description">Для управления всем бизнесом как проектом</p>
                       </article>     
-                      <article class="c-program__item">                      
+                      <article class="c-program__item">        s              
                           <p class="c-program__info">Двухдневный конкурс</p>    
                           <header>                     
                               <h4 class="c-program__title"><a href="#">Конкурс 10К</a></h4>
@@ -907,7 +907,24 @@
       </section>    
   </main>
   
-  
+  <div class="c-modal is-open" data-modal-name="register-close">
+      <div class="c-modal__background">
+          <div class="container">
+              <section class="c-modal__block">
+                  <div class="c-modal__content">
+                      <header>
+                          <h2 class="c-modal__title">Регистрация сейчас закрыта</h2>
+                      </header>
+                      <div class="c-modal__description">Мы&nbsp;напомним вам, когда станут известны даты программы&nbsp;&mdash; вышлем уведомление на&nbsp;почту.</div>              
+                  </div>
+                  <div class="c-modal__close"></div>
+                  <figure>
+                      <img src="assets/content/img/background-modal.jpg" alt="" class="c-modal__thumbnail" width="939" height="493">
+                  </figure>
+              </section>
+          </div>
+      </div>
+  </div>
 
     <footer id="footer">
         <div class="container">

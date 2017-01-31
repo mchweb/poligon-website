@@ -1,0 +1,96 @@
+// ----------------------- //
+// Modal style ----------- //
+// ----------------------- //
+
+.c-modal {
+    display: none;
+    &.is-open {
+        display: block;
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 13000;
+    }
+    .container {
+        display: block;
+        position: absolute;
+        margin: auto;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;        
+    }
+}
+.c-modal__background {
+    background: rgba($color_black, 0.5);  
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.c-modal__block {
+    @include span(10 of 12);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 500px;
+    background-color: $color_beige;
+    @media (max-width: $screen_md) {
+        @include span(4 of 12);
+        min-width: $screen_xs;
+        height: 220px;
+        background-image: none;
+    }
+}
+.c-modal__content {
+    @include span(5 of 10);
+    margin-left: 10px;
+    @media (max-width: $screen_md) {
+        @include span(10 of 10);
+    }    
+}
+.c-modal__close {
+    position: absolute;
+    top: $padding_base / 2;
+    right: $padding_base / 2;
+    color: $color_red;
+    font-size: 22px;
+    line-height: 22px;
+    border-bottom: 1px dashed;
+    border-bottom-color: rgba($color_red, 1);   
+    cursor: pointer;
+    @media (max-width: $screen_md) {
+        border-bottom: none;
+        font-size: 36px;
+        line-height: 19px;
+        color: $color_red_light;
+    }
+}
+.c-modal__title {
+    font-size: $font_size_h1;
+    line-height: $line_height_h1;
+    margin-top: $padding_base * 4.5;
+    margin-bottom: $padding_base / 1.5;
+    color: $color_gray_dark;
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        font-size: 22px;
+        line-height: 30px;
+        margin-top: $padding_base * 1.5;
+    }
+}
+.c-modal__description {
+    font-size: $font_size_h3;
+    line-height: $line_height_h3;
+    color: $color_gray_dark;
+    @media (min-width: $screen_xs) and (max-width: $screen_md) {
+        font-size: 16px;
+        line-height: 24px;
+    }    
+}
+.c-modal__thumbnail {
+    display: none;
+}
