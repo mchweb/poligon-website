@@ -1301,6 +1301,12 @@ a.c-nav__link:focus {
   .l-header__nav.is-responsive .l-nav__close {
     display: none;
   }
+  .l-header__nav.is-responsive .c-program__item .c-program__info, .l-header__nav.is-responsive .c-program__item .c-program__description {
+    font-size: 14px !important;
+  }
+  .l-header__nav.is-responsive .c-program__item .c-program__title {
+    font-size: 16px !important;
+  }
 }
 @media (min-width: 320px) and (max-width: 600px) {
   .l-header__nav.is-responsive {

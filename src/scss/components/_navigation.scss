@@ -196,6 +196,14 @@ a.c-nav__link {
             .l-nav__close {
                 display: none;
             }
+            .c-program__item {
+                .c-program__info, .c-program__description {
+                    font-size: $font_size_base - 2 !important; 
+                }
+                .c-program__title {
+                    font-size: $font_size_base !important; 
+                }
+            }            
         } 
         @media (min-width: $screen_xs) and (max-width: $screen_sm) {
             right: 0;
