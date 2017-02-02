@@ -442,6 +442,7 @@ funcDisableLink('.c-program__item');
 /* Infoblock */
 /* Set a background image */
 funcBackgroundImageBlocks('.c-infoblock','.c-infoblock__thumbnail','right','center','.c-infoblock__image');
+funcBackgroundImageBlocks('.c-infoblock.is-back-center','.c-infoblock__thumbnail','center','center','.c-infoblock__image');
 /* calculation of the background triangle height */
 var blockInfoblocksBackgrund = function () {
     var blockInfoblocks =  document.querySelectorAll('.c-infoblock');
@@ -676,6 +677,13 @@ modalFuncInit();
 window.addEventListener('resize', function(eventResize){
     modalFuncInit(eventResize);
 });
+document.addEventListener('click', function(event) {
+    var modaBlockElement = document.querySelector('.c-modal__block');
+    var isClickInside = modaBlockElement.contains(event.target);
+    if (!isClickInside) {
+        modaBlockElement.parentNode.parentNode.parentNode.classList.remove(classOpen); 
+    }
+}); 
 var modalBtnClose = document.querySelector('.c-modal__close');
 if(modalBtnClose){
     modalBtnClose.onclick = function(event){
