@@ -353,40 +353,45 @@ headerLogoLink.onmouseout = function(){
 /* Map */
 /* Generation map using 2GIS */
 if(document.querySelector('#map-program')) {
-    var map;
+    var mapProgram;
     DG.then(function () {
-        map = DG.map('map-program', {
-            center: [56.46377080170267, 84.95729684829713],
-            zoom: 16,
-            dragging : true,
-            touchZoom: false,
-            scrollWheelZoom: false,
-            doubleClickZoom: false,
-            boxZoom: false,
-            geoclicker: false,
-            zoomControl: true,
-            fullscreenControl: false        
-        });
-        DG.marker([56.463601, 84.957292]).addTo(map);
+        if (mapProgram == null){
+            mapProgram = DG.map('map-program', {
+                center: [56.46377080170267, 84.95729684829713],
+                zoom: 16,
+                dragging : true,
+                touchZoom: false,
+                scrollWheelZoom: false,
+                doubleClickZoom: false,
+                boxZoom: false,
+                geoclicker: false,
+                zoomControl: true,
+                fullscreenControl: false        
+            });
+            DG.marker([56.463601, 84.957292]).addTo(mapProgram);            
+        }
+
     });    
 }
 /* Generation map using 2GIS */
 if(document.querySelector('#map-program-big')) {
-    var map;
+    var mapProgramBig;
     DG.then(function () {
-        map = DG.map('map-program-big', {
-            center: [56.46377080170267, 84.95729684829713],
-            zoom: 16,
-            dragging : true,
-            touchZoom: false,
-            scrollWheelZoom: false,
-            doubleClickZoom: false,
-            boxZoom: false,
-            geoclicker: false,
-            zoomControl: true,
-            fullscreenControl: false        
-        });
-        DG.marker([56.463601, 84.957292]).addTo(map);
+        if (mapProgramBig == null){
+            mapProgramBig = DG.map('map-program-big', {
+                center: [56.46377080170267, 84.95729684829713],
+                zoom: 16,
+                dragging : true,
+                touchZoom: false,
+                scrollWheelZoom: false,
+                doubleClickZoom: false,
+                boxZoom: false,
+                geoclicker: false,
+                zoomControl: true,
+                fullscreenControl: false        
+            });
+            DG.marker([56.463601, 84.957292]).addTo(mapProgramBig);
+        }
     });    
 }
 /* Reviews */
@@ -432,7 +437,6 @@ var blockInfoblocksBackgrund = function () {
         var blockInfoBlockMap = blockInfoblocks[i].querySelector('.l-infoblock_back-map');
         if(blockInfoBlockMap){
             blockInfoBlockMap.querySelector('.c-map__container').style.height = blockInfoblocks[i].offsetHeight+'px';
-            console.log(blockInfoBlockMap.querySelector('.c-map__container'));
         }        
     }   
 }
@@ -447,25 +451,27 @@ window.addEventListener('resize', function(eventResize){
 });
 /* Generation map using 2GIS */
 if(document.querySelector('#map-background')) {
-    var map;
+    var mapBackground;
     DG.then(function () {
-        map = DG.map('map-background', {
-            center: [56.463712, 84.947255],
-            zoom: 16,
-            dragging : false,
-            touchZoom: false,
-            scrollWheelZoom: false,
-            doubleClickZoom: false,
-            boxZoom: false,
-            geoclicker: false,
-            zoomControl: false,
-            fullscreenControl: false        
-        });
-       // DG.marker([56.463601, 84.957292]).addTo(map);
-        DG.popup([56.463601, 84.957292])
-                    .setLatLng([56.463601, 84.957292])
-                    .setContent('Контент здесь')
-                    .openOn(map);
+        if (mapBackground == null){
+            mapBackground = DG.map('map-background', {
+                center: [56.463712, 84.947255],
+                zoom: 16,
+                dragging : false,
+                touchZoom: false,
+                scrollWheelZoom: false,
+                doubleClickZoom: false,
+                boxZoom: false,
+                geoclicker: false,
+                zoomControl: false,
+                fullscreenControl: false        
+            });
+           // DG.marker([56.463601, 84.957292]).addTo(map);
+            DG.popup([56.463601, 84.957292])
+                        .setLatLng([56.463601, 84.957292])
+                        .setContent('Контент здесь')
+                        .openOn(mapBackground);
+        }
     });    
 }
 /* Speakers */
@@ -659,9 +665,11 @@ window.addEventListener('resize', function(eventResize){
 });
 document.addEventListener('click', function(event) {
     var modaBlockElement = document.querySelector('.c-modal__block');
-    var isClickInside = modaBlockElement.contains(event.target);
-    if (!isClickInside) {
-        modaBlockElement.parentNode.parentNode.parentNode.classList.remove(classOpen); 
+    if(modaBlockElement){
+        var isClickInside = modaBlockElement.contains(event.target);
+        if (!isClickInside) {
+            modaBlockElement.parentNode.parentNode.parentNode.classList.remove(classOpen); 
+        }        
     }
 }); 
 var modalBtnClose = document.querySelector('.c-modal__close');
@@ -671,7 +679,6 @@ if(modalBtnClose){
         if (parentBlock.classList.contains(classOpen)) {
             parentBlock.classList.remove(classOpen);  
         }
-        console.log();
     };    
 }
 /*
