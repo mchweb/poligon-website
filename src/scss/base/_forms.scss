@@ -2,6 +2,19 @@
 // Forms style ----------- //
 // ----------------------- //
 
+.c-form__block {
+    &.is-sent-ok {
+        .c-form__title, .c-form__subtitle {
+            display: none;
+        }
+        .c-form {
+            display: none;
+        }
+        .c-form__result {
+            display: block;
+        }
+    }
+}
 .c-form--horizontal {
     @include span(10);
     padding: 0px;
@@ -369,4 +382,23 @@
 }
 .c-form__radio:focus + label:before {
     border-collapse: $color_green;
+}
+
+.c-form__result {
+    margin-top: $padding_base * 5.25;
+    display: none;
+    .c-form__message {
+        color: $color_gray_dark;
+        font-weight: normal;
+        font-size: $font_size_base;
+        line-height: $line_height_base;
+    }
+    .c-icon {
+        width: 70px;
+        height: 40px;
+        border-width: 10px;
+        border-color: $color_green_dark2;
+        margin-top: 4px;
+        margin-left: 4px;
+    }
 }

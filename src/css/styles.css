@@ -264,6 +264,16 @@ table {
 }
 
 /* Forms *******************/
+.c-form__block.is-sent-ok .c-form__title, .c-form__block.is-sent-ok .c-form__subtitle {
+  display: none;
+}
+.c-form__block.is-sent-ok .c-form {
+  display: none;
+}
+.c-form__block.is-sent-ok .c-form__result {
+  display: block;
+}
+
 .c-form--horizontal {
   width: 83.33333%;
   float: left;
@@ -709,6 +719,25 @@ table {
 
 .c-form__radio:focus + label:before {
   border-collapse: #80bf44;
+}
+
+.c-form__result {
+  margin-top: 126px;
+  display: none;
+}
+.c-form__result .c-form__message {
+  color: #373737;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+.c-form__result .c-icon {
+  width: 70px;
+  height: 40px;
+  border-width: 10px;
+  border-color: #71bd44;
+  margin-top: 4px;
+  margin-left: 4px;
 }
 
 /* Lists *******************/
@@ -3242,6 +3271,12 @@ a:focus {
   color: #f1f1f1;
   font-weight: bold;
 }
+#footer .c-form__block .c-form__result {
+  margin-top: 0px;
+}
+#footer .c-form__block .c-form__result .c-form__message {
+  color: #ffffff;
+}
 #footer .c-form.c-form--horizontal {
   width: 100%;
   float: left;
@@ -3305,6 +3340,10 @@ a:focus {
   #footer .c-btn {
     margin-top: 24px;
   }
+}
+#footer .l-content__grid--three {
+  display: inline-block;
+  width: 100%;
 }
 
 .l-content__col.l-contact__register {

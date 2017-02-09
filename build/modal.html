@@ -942,11 +942,14 @@
                     <header>
                         <h4 class="c-content__title">Регистрируйтесь</h4>
                     </header>     
-                    <p class="c-content__text">
+                    <div class="c-content__text">
                         на&nbsp;ближайшие программы:<br>
-                        <a href="#">Кафе предпринимателей</a><br>
-                        <a href="#">Предпринимательский вызов</a><br>
-                    </p>             
+                        <ul>
+                            <li><a href="#">Кафе предпринимателей</a></li>
+                            <li><a href="#">Предпринимательский вызов</a></li>
+                        </ul>
+                        <br>
+                    </div>             
                 </article>
                 <article class="l-contact__follow l-content__col">
                     <header>
@@ -957,11 +960,11 @@
                         <a href="#" class="c-icon c-icon__telegram"></a>
                     </p>             
                 </article>   
-                <article class="l-contact__sign l-content__col">
+                <article class="l-contact__sign l-content__col c-form__block is-sent-ok">
                     <header>
-                        <h4 class="c-content__title">Подписывайтесь</h4>
+                        <h4 class="c-content__title c-form__title">Подписывайтесь</h4>
                     </header>     
-                    <p class="c-content__text">на&nbsp;дайджест самых интересных программ Полигона&nbsp;ИП</p> 
+                    <p class="c-content__text c-form__subtitle">на&nbsp;дайджест самых интересных программ Полигона&nbsp;ИП</p> 
                     <form action="" class="c-form c-form--horizontal is-input-no-background" accept-charset="utf-8" method="" name="form--sign" target="">
                         <div class="l-form__col">
                             <input type="text" class="c-form__item c-form__input" name="form--sign__name" placeholder="Введите свое имя" required>
@@ -972,7 +975,12 @@
                         <div class="l-form__col">
                             <button class="c-btn bg--orange c-form__item c-form__btn">Подписаться</button>
                         </div>
-                    </form>                                             
+                    </form>
+                    <div class="c-form__result">
+                        <div class="c-form__message"><h4 class="c-content__title">Вы&nbsp;успешно подписались</h4></div>
+                        <div class="c-form__message">на&nbsp;дайджест самых интересных программ Полигона&nbsp;ИП</div>
+                        <div class="c-icon c-icon__check"></div>                          
+                    </div>                                                                  
                 </article> 
             </section>
             <section class="l-content__grid--three">              
@@ -1034,13 +1042,13 @@
                     <p class="c-content__text l-content__phone color--gray__light"><a href="tel:79234223922">+7 923 422-39-22</a></p>  
                     <ul class="c-list-contact">
                         <li class="c-list-contact__item">
-                            <a href="#" class="c-icon c-icon__phone"></a>
+                            <div class="c-icon c-icon__phone"></div>
                         </li>
                         <li class="c-list-contact__item">
-                            <a href="#" class="c-icon c-icon__viber"></a>
+                            <div class="c-icon c-icon__viber"></div>
                         </li>  
                         <li class="c-list-contact__item">
-                            <a href="#" class="c-icon c-icon__telegram"></a>
+                            <div class="c-icon c-icon__telegram"></div>
                         </li>                                           
                     </ul>                             
                 </section>  

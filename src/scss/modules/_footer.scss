@@ -11,6 +11,14 @@
         color: $color_white_dark;
         font-weight: bold;
     }
+    .c-form__block {
+        .c-form__result {
+            margin-top: 0px;
+            .c-form__message {
+                color: $color_white;
+            }            
+        }        
+    }
     .c-form.c-form--horizontal {
         @include span(12); 
         margin-top: $padding_base / 1.5;
@@ -53,6 +61,10 @@
         .c-btn {
             margin-top: $padding_base;
         }          
+    }
+    .l-content__grid--three {
+        display: inline-block;
+        width: 100%;
     }
 }
 .l-content__col.l-contact__register {
