@@ -631,6 +631,21 @@ table {
   margin-bottom: 12px;
 }
 
+.c-form__item-block.is-agreement .c-form__item {
+  margin-bottom: 0px;
+}
+.c-form__item-block.is-agreement .c-icon__check {
+  margin-top: 12px;
+  border-color: #6e6e6e;
+  margin-left: 4px;
+}
+.c-form__item-block.is-agreement .c-form__label.is-agreement {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  margin-top: 6px;
+}
+
 .c-form__item-block:last-child .c-form__label {
   margin-bottom: 0px;
 }
