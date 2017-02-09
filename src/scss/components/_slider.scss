@@ -11,6 +11,7 @@
 .c-slider {
     @include span(12);
     padding: 0px;
+    margin-bottom: $padding_base * 1.5;
     .flickity-prev-next-button.next, .flickity-prev-next-button.previous {
         opacity: 1;
         background: transparent;
@@ -155,18 +156,15 @@
 }
 
 .c-slider-nav {
-    display: inline-block;
     width: 100%;
-    margin-top: $padding_base * 1.5;
     @media screen and (max-width: $screen_md) {
         display: none;
-    }       
+    }   
+    @include display-flex;
+    @include justify-content(center);
 }
 .c-slider-nav__item {    
     @include span(2);  
-    &:first-child {
-        @include push(3);
-    }
     @media (min-width: $screen_md) and (max-width: $screen_lg) {
         @include span(2.6); 
         &:first-child {

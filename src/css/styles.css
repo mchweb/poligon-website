@@ -1564,6 +1564,7 @@ a.c-nav__link:focus {
   padding-left: 15px;
   padding-right: 15px;
   padding: 0px;
+  margin-bottom: 36px;
 }
 .c-slider .flickity-prev-next-button.next, .c-slider .flickity-prev-next-button.previous {
   opacity: 1;
@@ -1763,9 +1764,11 @@ a.c-nav__link:focus {
 }
 
 .c-slider-nav {
-  display: inline-block;
   width: 100%;
-  margin-top: 36px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 @media screen and (max-width: 900px) {
   .c-slider-nav {
@@ -1778,9 +1781,6 @@ a.c-nav__link:focus {
   float: left;
   padding-left: 15px;
   padding-right: 15px;
-}
-.c-slider-nav__item:first-child {
-  margin-left: 25%;
 }
 @media (min-width: 900px) and (max-width: 1200px) {
   .c-slider-nav__item {
