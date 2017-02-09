@@ -1160,38 +1160,40 @@ a:focus {
   }
 }
 
-a.c-nav__link {
+.c-nav__link {
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: 1px solid;
   border-bottom-color: rgba(55, 55, 55, 0.5);
   color: #373737;
+  cursor: pointer;
+  display: inline-block;
 }
-a.c-nav__link:visited {
+.c-nav__link:visited {
   color: #373737;
 }
-a.c-nav__link:focus {
+.c-nav__link:focus {
   color: #80bf44;
 }
-a.c-nav__link:hover {
+.c-nav__link:hover {
   color: #80bf44;
 }
-a.c-nav__link:active {
+.c-nav__link:active {
   color: #80bf44;
 }
-a.c-nav__link:hover {
+.c-nav__link:hover {
   border-bottom-color: rgba(128, 191, 68, 0.5);
 }
-a.c-nav__link:active, a.c-nav__link.is-active {
+.c-nav__link:active, .c-nav__link.is-active {
   border-bottom-color: rgba(128, 191, 68, 0.5);
 }
-a.c-nav__link:visited {
+.c-nav__link:visited {
   border-bottom-color: rgba(55, 55, 55, 0.5);
 }
-a.c-nav__link:visited:hover {
+.c-nav__link:visited:hover {
   border-bottom-color: rgba(128, 191, 68, 0.5);
 }
-a.c-nav__link:focus {
+.c-nav__link:focus {
   border-bottom-color: rgba(128, 191, 68, 0.5);
 }
 
