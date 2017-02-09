@@ -56,11 +56,13 @@
         float: left;
         margin-top: 20px;        
     }
-    &.c-form--test {
-        margin-top: $padding_base; 
+    &.c-form--test {        
         .c-form__item-block {
             margin-bottom: $padding_base / 4; 
-        }
+            &.is-title {
+                margin-bottom: $padding_base; 
+            }
+        }        
     }
     &.is-input-no-background {
         .c-form__item {

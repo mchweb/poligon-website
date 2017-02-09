@@ -2,6 +2,16 @@
 // Test style ------------ //
 // ----------------------- //
 
+.c-test__main {
+    &.is-sent-ok {
+        .c-test {
+            display: none;
+        }
+        .c-test__result {
+            display: block;
+        }
+    }    
+}
 .c-test {
     @extend .container;
     padding-top: $padding_base * 4.5;
@@ -98,4 +108,8 @@
             line-height: 30px;
         }
     }
+}
+
+.c-test__result {
+    display: none;
 }

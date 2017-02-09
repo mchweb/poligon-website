@@ -347,11 +347,11 @@ table {
   float: left;
   margin-top: 20px;
 }
-.c-form.c-form--test {
-  margin-top: 24px;
-}
 .c-form.c-form--test .c-form__item-block {
   margin-bottom: 6px;
+}
+.c-form.c-form--test .c-form__item-block.is-title {
+  margin-bottom: 24px;
 }
 .c-form.is-input-no-background .c-form__item {
   margin-top: 24px;
@@ -2805,6 +2805,13 @@ a:focus {
 }
 
 /* Test ********************/
+.c-test__main.is-sent-ok .c-test {
+  display: none;
+}
+.c-test__main.is-sent-ok .c-test__result {
+  display: block;
+}
+
 .c-test {
   padding-top: 108px;
   padding-right: 15px;
@@ -2906,6 +2913,10 @@ a:focus {
   margin: 0px;
   float: left;
   line-height: 30px;
+}
+
+.c-test__result {
+  display: none;
 }
 
 /* Modal *******************/

@@ -26,7 +26,8 @@
   </header>
   
   <main id="content">
-      <article class="c-test">
+      <div class="c-test__main is-sent-ok">
+         <article class="c-test">
          <div class="c-test__block">
              <div class="c-test__info">
                  <div class="c-test__type">Тест:</div>
@@ -35,11 +36,13 @@
                      <div class="c-test__question">Вопрос</div> <div class="c-test__number is-curent">1</div>/<div class="c-test__number is-total">8</div>
                  </div>
              </div>
-             <header>
-                 <h3 class="c-test__title c-content__title bg--green is-decoration-break">Ваш знакомый&nbsp;&mdash; начинающий предприниматель&nbsp;&mdash; написал у&nbsp;себя в&nbsp;Инстаграме, что собирается на&nbsp;финал премии &laquo;Бизнес Триумф&raquo;. А&nbsp;вы&nbsp;пойдете?</h3>
-             </header>
              <div class="c-test__form">
                  <form action="" class="c-form c-form--vertical c-form--test is-validate" accept-charset="utf-8" method="" name="form--test" target="">
+                      <div class="c-form__item-block is-title">
+                          <header>
+                             <h3 class="c-test__title c-content__title bg--green is-decoration-break">Ваш знакомый&nbsp;&mdash; начинающий предприниматель&nbsp;&mdash; написал у&nbsp;себя в&nbsp;Инстаграме, что собирается на&nbsp;финал премии &laquo;Бизнес Триумф&raquo;. А&nbsp;вы&nbsp;пойдете?</h3>
+                          </header>        
+                      </div>             
                       <div class="c-form__item-block">
                           <input type="radio" name="form--test__option" id="form--test__option1" value="variable1" class="c-form__item c-form__radio" checked>
                           <label for="form--test__option1" class="c-form__label">Не пойду, у меня нет времени на такую ерунду: занят своим проектом </label>     
@@ -55,8 +58,8 @@
                       <div class="c-form__item-block">
                           <input type="radio" name="form--test__option" id="form--test__option4" value="variable4" class="c-form__item c-form__radio">
                           <label for="form--test__option4" class="c-form__label">Пойду, потому что я должен стать частью этой тусовки</label>     
-                      </div>                                                         
-                      <button class="c-btn bg--blue c-form__item c-form__btn is-padding-big">Дальше</button>              
+                      </div>                                                                                
+                      <button class="c-btn bg--blue c-form__item c-form__btn is-padding-big">Дальше</button>           
                  </form>
              </div>
               <ul class="c-list-share">
@@ -68,7 +71,57 @@
                   </li>                                           
               </ul>
           </div>
-      </article>               
+          </article>
+          <article class="c-infoblock is-test c-test__result">
+              <div class="c-infoblock__image is-display--mobile"></div>   
+              <div class="container">
+                  <div class="c-infoblock__text">
+                      <hgroup>
+                          <h4 class="c-infoblock__description">
+                              Кажется, мир еще не&nbsp;готов к&nbsp;вашей предпринимательской гениальности
+                          </h4>
+                      </hgroup>     
+                      <div class="c-infoblock__content">
+                          Вашим амбициям нет предела. Остается надеяться, что предпринимательский талант будет направлен в&nbsp;мирное русло. Выступите у&nbsp;нас экспертом на&nbsp;&laquo;Кафе предпринимателей&raquo;?
+                      </div>   
+                      <div class="l-test__share">
+                          Поделиться результатом:
+                          <ul class="c-list-share is-inline">
+                              <li class="c-list-share__item">
+                                  <a href="#" class="c-icon c-icon__fb"></a>
+                              </li>                           
+                              <li class="c-list-share__item">
+                                  <a href="#" class="c-icon c-icon__vk is-small"></a>
+                              </li> 
+                              <li class="c-list-share__item">
+                                  <a href="#" class="c-icon c-icon__twiiter"></a>
+                              </li> 
+                              <li class="c-list-share__item">
+                                  <a href="" class="c-list-share__text">https://meduza.io/quiz/....</a>
+                              </li>                                                                 
+                          </ul>                       
+                      </div>
+                      <div class="c-test__replay">
+                          <a href="#" class="c-icon c-icon__replay is-text">Пройти еще раз</a>
+                      </div>
+                      <footer class="c-infoblock__footer">
+                          <ul class="c-list-share">
+                              <li class="c-list-share__item">
+                                  <a href="#" class="c-icon c-icon__vk is-small is-text color--white">23</a>
+                              </li>
+                              <li class="c-list-share__item">
+                                  <a href="#" class="c-icon c-icon__fb is-text color--white">589</a>
+                              </li>                                           
+                          </ul> 
+                      </footer>                                                                       
+                  </div>
+                  <figure>
+                      <img src="assets/content/img/index_test-result.jpg" alt="" class="c-infoblock__thumbnail" width="1280" height="853">
+                  </figure>
+              </div>
+              <div class="c-infoblock__background"></div>
+          </article>          
+      </div>               
   </main>
 
   <footer id="footer" class="is-min">
