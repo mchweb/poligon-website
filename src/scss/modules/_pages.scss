@@ -6,6 +6,13 @@
     &.is-container {
        @extend .container; 
     }
+    &.is-padding {
+        padding: 0 15px;
+        .c-content__title--block {
+            padding-left: 0px;
+            padding-right: 0px;                 
+        }        
+    }
     &.is-no-padding {
         .c-content__title--block {
             padding-left: 0px;

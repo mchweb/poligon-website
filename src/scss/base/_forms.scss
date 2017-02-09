@@ -120,9 +120,13 @@
 }
 
 .l-content__col.l-form--no-padding {
-    padding: 0px;
+    //padding: 0px;
     .c-form.is-background {
         padding: $padding_base / 1.2 15px $padding_base 15px;
+    }
+    .c-content__title--block {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 .c-form__item-block {

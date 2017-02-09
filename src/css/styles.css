@@ -432,11 +432,12 @@ table {
   margin-bottom: 72px;
 }
 
-.l-content__col.l-form--no-padding {
-  padding: 0px;
-}
 .l-content__col.l-form--no-padding .c-form.is-background {
   padding: 20px 15px 24px 15px;
+}
+.l-content__col.l-form--no-padding .c-content__title--block {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .c-form__item-block {
@@ -3621,6 +3622,13 @@ a.c-nav__link:focus {
 }
 
 /* Page ********************/
+.l-content__text.is-padding {
+  padding: 0 15px;
+}
+.l-content__text.is-padding .c-content__title--block {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .l-content__text.is-no-padding .c-content__title--block {
   padding-left: 0px;
   padding-right: 0px;
