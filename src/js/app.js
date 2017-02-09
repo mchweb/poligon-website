@@ -322,6 +322,15 @@ document.addEventListener('click', function(event) {
         blockNav.classList.remove(classActive); 
     }
 }); 
+if(window.innerWidth <= screen_md) {
+    document.addEventListener('touchstart', function(event) {
+        var isClickInside = blockNav.contains(event.target);
+        if (!isClickInside && !btnNav.contains(event.target)) {
+            blockNav.classList.remove(classActive); 
+        }
+    });     
+}
+
 /* Close-button navigation */
 var btnCloseNavigation =  document.querySelector('.c-nav__close');
 if(btnCloseNavigation){
