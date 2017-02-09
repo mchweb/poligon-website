@@ -2410,8 +2410,12 @@ a.c-nav__link:focus {
 
 .c-reviews__item {
   break-inside: avoid;
-  padding: 0 15px;
   padding-bottom: 48px;
+}
+@media (max-width: 900px) {
+  .c-reviews__item {
+    padding: 0 15px;
+  }
 }
 .c-reviews__item .c-human__thumbnail {
   width: 33.33333%;

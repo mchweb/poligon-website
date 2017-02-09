@@ -24,8 +24,10 @@
 }
 .c-reviews__item {
     break-inside: avoid;  
-    padding: 0 15px;
     padding-bottom: $padding_base * 2;
+    @media (max-width: $screen_md) {
+        padding: 0 15px;
+    }
     .c-human__thumbnail {
         @include span(1 of 3);
         padding: 0px;
