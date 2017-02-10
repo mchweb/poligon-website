@@ -763,8 +763,8 @@ table {
   border-radius: 100%;
   display: inline-block;
   vertical-align: middle;
-  -webkit-animation: spiner-bouncedelay 1.4s infinite ease-in-out both;
-  animation: spiner-bouncedelay 1.4s infinite ease-in-out both;
+  -webkit-animation: spiner-bouncedelay 0.7s infinite ease-in-out both;
+  animation: spiner-bouncedelay 0.7s infinite ease-in-out both;
 }
 .c-spin .c-spin__item:nth-child(1) {
   -webkit-animation-delay: -0.32s;
