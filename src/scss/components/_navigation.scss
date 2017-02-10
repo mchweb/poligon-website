@@ -195,6 +195,9 @@
             .l-content__col {
                 @include span(12);
             }
+            .l-content__programs.is-four {
+                @include content-cols(1); 
+            }
             .l-nav__close {
                 display: none;
             }

@@ -89,3 +89,33 @@
         }
     }    
 }
+
+.l-content__programs {
+    padding: 0 15px;
+    width: 100%; /* Ширина блока со всеми новостями */
+    .c-program__item {
+        display: inline-table; 
+        width: 100%;
+    }
+    &.is-four {
+        @include content-cols(4);
+        @media (min-width: $screen_md) and (max-width: $screen_lg) {
+            @include content-cols(4);        
+        }
+        @media (min-width: $screen_sm) and (max-width: $screen_md) {
+            @include content-cols(2);
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            @include content-cols(1);     
+        }           
+    }
+    &.is-two {             
+        @include content-cols(2);
+        @media (min-width: $screen_sm) and (max-width: $screen_md) {
+            @include content-cols(2);          
+        }
+        @media (min-width: $screen_xs) and (max-width: $screen_sm) {
+            @include content-cols(1); 
+        }         
+    }
+}

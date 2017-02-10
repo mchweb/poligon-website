@@ -24,6 +24,19 @@ $susy: (
 .container {
     @include container;
 }
+/* Content cols ---*/
+@mixin content-cols($cols, $padding:30px) {
+    -moz-column-gap: $padding;
+    -webkit-column-gap: $padding; 
+    column-gap: $padding;        
+    $width: 100%/$cols;            
+    -moz-column-count: $cols;
+    -moz-column-width: $width;        
+    -webkit-column-count: $cols;
+    -webkit-column-width: $width;         
+    column-count: $cols;
+    column-width: $width;   
+}
 
 .l-content__grid--four {
     .l-content__col {
