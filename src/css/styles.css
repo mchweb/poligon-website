@@ -273,6 +273,15 @@ table {
 .c-form__block.is-sent-ok .c-form__result {
   display: block;
 }
+.c-form__block.is-sent-ok.is-contact .c-form__result {
+  margin-bottom: 72px;
+}
+.c-form__block.is-load .c-spin {
+  display: inline-block;
+}
+.c-form__block.is-load .c-btn span {
+  display: none;
+}
 
 .c-form--horizontal {
   width: 83.33333%;
@@ -738,8 +747,52 @@ table {
   border-color: #71bd44;
   margin-top: 4px;
   margin-left: 4px;
+  margin-bottom: 14px;
 }
 
+.c-spin {
+  text-align: center;
+  display: none;
+  padding: 0 24px;
+}
+.c-spin .c-spin__item {
+  width: 6px;
+  height: 6px;
+  margin: 0 2px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: spiner-bouncedelay 1.4s infinite ease-in-out both;
+  animation: spiner-bouncedelay 1.4s infinite ease-in-out both;
+}
+.c-spin .c-spin__item:nth-child(1) {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.c-spin .c-spin__item:nth-child(2) {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes spiner-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes spiner-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 /* Lists *******************/
 .c-list-contact {
   list-style: none;

@@ -13,6 +13,21 @@
         .c-form__result {
             display: block;
         }
+        &.is-contact {
+            .c-form__result {
+                margin-bottom: $padding_base * 3;
+            }
+        }
+    }
+    &.is-load {
+        .c-spin {
+            display: inline-block;
+        }
+        .c-btn {
+            span {
+                display: none;
+            }
+        }
     }
 }
 .c-form--horizontal {
@@ -402,5 +417,48 @@
         border-color: $color_green_dark2;
         margin-top: 4px;
         margin-left: 4px;
+        margin-bottom: 14px;
+    }
+}
+.c-spin {
+    text-align: center;
+    display: none;
+    padding: 0 24px;
+    .c-spin__item {
+        width: 6px;
+        height: 6px;
+        margin: 0 2px;
+        background-color: $color_white;
+        border-radius: 100%;
+        display: inline-block;
+        vertical-align: middle;       
+        -webkit-animation: spiner-bouncedelay 1.4s infinite ease-in-out both;
+        animation: spiner-bouncedelay 1.4s infinite ease-in-out both;   
+        &:nth-child(1) {
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+        }
+        &:nth-child(2) {
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+        }        
+    }
+}
+@-webkit-keyframes spiner-bouncedelay {
+    0%, 80%, 100% { 
+        -webkit-transform: scale(0); 
+    }
+    40% { 
+        -webkit-transform: scale(1.0); 
+    }
+}
+@keyframes spiner-bouncedelay {
+    0%, 80%, 100% { 
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 
+    40% { 
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
     }
 }
