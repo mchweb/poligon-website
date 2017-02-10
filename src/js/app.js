@@ -362,11 +362,18 @@ headerLogoLink.onmouseout = function(){
 /* Map */
 /* Generation map using 2GIS */
 if(document.querySelector('#map-program')) {
+    var mapProgramBlock = document.querySelector('#map-program');
+    var mapDataCenterLat = (mapProgramBlock.getAttribute('data-center-lat')) ? mapProgramBlock.getAttribute('data-center-lat') : 0;
+    var mapDataCenterLon = (mapProgramBlock.getAttribute('data-center-lon')) ? mapProgramBlock.getAttribute('data-center-lon') : 0;
+    var mapCenterArray = [parseFloat(mapDataCenterLat), parseFloat(mapDataCenterLon)];
+    var mapDataMarkerLat = (mapProgramBlock.getAttribute('data-marker-lat')) ? mapProgramBlock.getAttribute('data-marker-lat') : 0;
+    var mapDataMarkerLon = (mapProgramBlock.getAttribute('data-marker-lon')) ? mapProgramBlock.getAttribute('data-marker-lon') : 0;
+    var mapMarkerArray = [parseFloat(mapDataMarkerLat), parseFloat(mapDataMarkerLon)];    
     var mapProgram;
     DG.then(function () {
         if (mapProgram == null){
             mapProgram = DG.map('map-program', {
-                center: [56.46377080170267, 84.95729684829713],
+                center: mapCenterArray,
                 zoom: 16,
                 dragging : true,
                 touchZoom: false,
@@ -377,18 +384,25 @@ if(document.querySelector('#map-program')) {
                 zoomControl: true,
                 fullscreenControl: false        
             });
-            DG.marker([56.463601, 84.957292]).addTo(mapProgram);            
+            DG.marker(mapMarkerArray).addTo(mapProgram);            
         }
 
     });    
 }
 /* Generation map using 2GIS */
 if(document.querySelector('#map-program-big')) {
+    var mapProgramBlock = document.querySelector('#map-program');
+    var mapDataCenterLat = (mapProgramBlock.getAttribute('data-center-lat')) ? mapProgramBlock.getAttribute('data-center-lat') : 0;
+    var mapDataCenterLon = (mapProgramBlock.getAttribute('data-center-lon')) ? mapProgramBlock.getAttribute('data-center-lon') : 0;
+    var mapCenterArray = [parseFloat(mapDataCenterLat), parseFloat(mapDataCenterLon)];
+    var mapDataMarkerLat = (mapProgramBlock.getAttribute('data-marker-lat')) ? mapProgramBlock.getAttribute('data-marker-lat') : 0;
+    var mapDataMarkerLon = (mapProgramBlock.getAttribute('data-marker-lon')) ? mapProgramBlock.getAttribute('data-marker-lon') : 0;
+    var mapMarkerArray = [parseFloat(mapDataMarkerLat), parseFloat(mapDataMarkerLon)];       
     var mapProgramBig;
     DG.then(function () {
         if (mapProgramBig == null){
             mapProgramBig = DG.map('map-program-big', {
-                center: [56.46377080170267, 84.95729684829713],
+                center: mapCenterArray,
                 zoom: 16,
                 dragging : true,
                 touchZoom: false,
@@ -399,7 +413,7 @@ if(document.querySelector('#map-program-big')) {
                 zoomControl: true,
                 fullscreenControl: false        
             });
-            DG.marker([56.463601, 84.957292]).addTo(mapProgramBig);
+            DG.marker(mapMarkerArray).addTo(mapProgramBig);
         }
     });    
 }
@@ -460,11 +474,19 @@ window.addEventListener('resize', function(eventResize){
 });
 /* Generation map using 2GIS */
 if(document.querySelector('#map-background')) {
+    var mapBakcgroundBlock = document.querySelector('#map-background');
+    var mapDataContent = mapBakcgroundBlock.getAttribute('data-content');
+    var mapDataCenterLat = (mapBakcgroundBlock.getAttribute('data-center-lat')) ? mapBakcgroundBlock.getAttribute('data-center-lat') : 0;
+    var mapDataCenterLon = (mapBakcgroundBlock.getAttribute('data-center-lon')) ? mapBakcgroundBlock.getAttribute('data-center-lon') : 0;
+    var mapCenterArray = [parseFloat(mapDataCenterLat), parseFloat(mapDataCenterLon)];
+    var mapDataMarkerLat = (mapBakcgroundBlock.getAttribute('data-marker-lat')) ? mapBakcgroundBlock.getAttribute('data-marker-lat') : 0;
+    var mapDataMarkerLon = (mapBakcgroundBlock.getAttribute('data-marker-lon')) ? mapBakcgroundBlock.getAttribute('data-marker-lon') : 0;
+    var mapMarkerArray = [parseFloat(mapDataMarkerLat), parseFloat(mapDataMarkerLon)];
     var mapBackground;
     DG.then(function () {
         if (mapBackground == null){
             mapBackground = DG.map('map-background', {
-                center: [56.463712, 84.947255],
+                center: mapCenterArray,
                 zoom: 16,
                 dragging : false,
                 touchZoom: false,
@@ -476,9 +498,9 @@ if(document.querySelector('#map-background')) {
                 fullscreenControl: false        
             });
            // DG.marker([56.463601, 84.957292]).addTo(map);
-            DG.popup([56.463601, 84.957292])
-                        .setLatLng([56.463601, 84.957292])
-                        .setContent('Контент здесь')
+            DG.popup(mapMarkerArray)
+                        .setLatLng(mapMarkerArray)
+                        .setContent(mapDataContent)
                         .openOn(mapBackground);
         }
     });    
