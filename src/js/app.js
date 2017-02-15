@@ -207,7 +207,14 @@ var funcTabs = function (blockName, blockNameNavTabs, blockNameTextTabs){
                 for (var k = 0; k < textElements.length; k++){
                     textElements[k].classList.remove(classActive); 
                     if(k === navIndex){
-                        textElements[k].classList.add(classActive);   
+                        textElements[k].classList.add(classActive);  
+                        var textElemActiveLength = textElements[k].querySelectorAll('.c-schedule__item').length;
+                        var navElemActiveLength = blockParent.querySelectorAll('.c-tabs-nav .c-tabs-nav__item').length;
+                        if (textElemActiveLength <= navElemActiveLength) {
+                            blockParent.classList.add('is-little-content'); 
+                        }else {
+                            blockParent.classList.remove('is-little-content'); 
+                        }
                     }
                 }
                 

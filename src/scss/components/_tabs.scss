@@ -94,3 +94,24 @@
         display: block;
     }          
 }
+.c-tabs {
+    &.is-little-content {
+        .c-tabs-nav {
+            border-right: 1px solid $color_white_dark3;
+            .c-tabs-nav__item {
+                &.is-active {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .c-tabs-text {
+            border-left: 1px solid $color_white;
+            &:before {
+                top: 0px;
+                height: 100%;
+            }
+        }
+    }
+}

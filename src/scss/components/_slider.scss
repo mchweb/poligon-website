@@ -57,6 +57,14 @@
         margin-bottom: $padding_base / 2;
         padding: $padding_base * 1.5 0;
     }
+    position: relative;
+}
+.c-slider__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .c-slider__title {
     display: inline-block;
