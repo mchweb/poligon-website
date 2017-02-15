@@ -667,6 +667,15 @@ table {
   margin-bottom: 16px;
   margin-top: 6px;
 }
+.c-form__item-block.is-agreement .c-form__error-message {
+  bottom: 54px;
+}
+.c-form__item-block.is-agreement .c-form__icon.is-error {
+  bottom: 16px;
+}
+.c-form__item-block.is-agreement .c-form__icon.is-no-error {
+  bottom: 22px;
+}
 
 .c-form__item-block:last-child .c-form__label {
   margin-bottom: 0px;

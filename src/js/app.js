@@ -143,7 +143,7 @@ var funcValidateFormShowNoError = function(blockName){
 /* Validate elements form */ 
 var funcValidateForm = function(form, formItemClass, checkType){
      var formElements = form.querySelectorAll(formItemClass);
-     for (var i = 0; i < formElements.length; i++) {
+     for (var i = 0; i < formElements.length; i++) {       
          funcValidateFormResetError(formElements[i]);
          if (checkType == 'is-value'){         
              if (!formElements[i].value) {
@@ -154,6 +154,28 @@ var funcValidateForm = function(form, formItemClass, checkType){
          }        
      }  
 };
+var funcValidateFormOnChangeCheck = function () {
+    if(this.value.length >= 1){
+        funcValidateFormResetError(this);
+        funcValidateFormShowNoError(this); 
+    }else {
+        funcValidateFormShowError(this);    
+    }    
+};
+var funcValidateFormOnChange = function(form, formItemClass, checkType){
+     var formElements = form.querySelectorAll(formItemClass);
+     for (var i = 0; i < formElements.length; i++) {
+        formElements[i].onkeyup = formElements[i].oninput = funcValidateFormOnChangeCheck;
+        formElements[i].onpropertychange = function() {
+            if (event.propertyName == "value") funcValidateFormOnChangeCheck();
+        }
+        formElements[i].oncut = function() {            
+            setTimeout(funcValidateFormOnChangeCheck(), 0);
+        };             
+     }  
+};
+
+
 /* Bind MouseOut and delete active class menu */
 var submenuOutTimeoutID = '';
 var funcDeleteActiveClassMouseOut = function (bloclObject){
@@ -655,9 +677,11 @@ for (var i = 0; i < formButon.length; i++) {
     formButon[i].addEventListener('click', function(event) {
         if (this.form.classList.contains(classValidate)){
             funcValidateForm(this.form, '.c-form__input','is-value');
+            funcValidateFormOnChange(this.form, '.c-form__input','is-value');
         }
     });    
 }  
+    
 /* Modal */
 /* Set a background image for modals */
 var modalFuncInit = function (eventResize) {

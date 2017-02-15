@@ -337,6 +337,17 @@
                 margin-top: $padding_base / 4;
             }              
         }
+        .c-form__error-message {
+            bottom: 54px;
+        }
+        .c-form__icon {
+            &.is-error {
+                bottom: 16px;
+            }
+            &.is-no-error {
+                bottom: 22px;
+            }
+        }
     }
 }
 
