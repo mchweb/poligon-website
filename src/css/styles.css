@@ -955,6 +955,12 @@ a:focus {
 .c-content__text.l-human__text ul {
   padding-bottom: 24px;
 }
+.c-content__text strong, .c-content__text b {
+  font-weight: bold;
+}
+.c-content__text i, .c-content__text em {
+  font-style: italic;
+}
 
 .c-content__blockquote, .c-content__text blockquote {
   background-color: #f1f1f1;
