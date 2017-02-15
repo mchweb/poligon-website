@@ -344,22 +344,22 @@ if(btnNav){
         }
     };    
 }
-
-document.addEventListener('click', function(event) {
-    var isClickInside = blockNav.contains(event.target);
-    if (!isClickInside && !btnNav.contains(event.target)) {
-        blockNav.classList.remove(classActive); 
-    }
-}); 
-if(window.innerWidth <= screen_md) {
-    document.addEventListener('touchstart', function(event) {
+if(blockNav){
+    document.addEventListener('click', function(event) {
         var isClickInside = blockNav.contains(event.target);
         if (!isClickInside && !btnNav.contains(event.target)) {
             blockNav.classList.remove(classActive); 
         }
-    });     
+    }); 
+    if(window.innerWidth <= screen_md) {
+        document.addEventListener('touchstart', function(event) {
+            var isClickInside = blockNav.contains(event.target);
+            if (!isClickInside && !btnNav.contains(event.target)) {
+                blockNav.classList.remove(classActive); 
+            }
+        });     
+    }
 }
-
 /* Close-button navigation */
 var btnCloseNavigation =  document.querySelector('.c-nav__close');
 if(btnCloseNavigation){
@@ -747,22 +747,52 @@ if(modalBtnClose){
  /*
  *  Share buttons
  */
-//window.fbAsyncInit = function() {
-//FB.init({
-//  appId      : '1773695646283441',
-//  xfbml      : true,
-//  version    : 'v2.8'
-//});
-//FB.AppEvents.logPageView();
-//};
-//
-//(function(d, s, id){
-// var js, fjs = d.getElementsByTagName(s)[0];
-// if (d.getElementById(id)) {return;}
-// js = d.createElement(s); js.id = id;
-// js.src = "//connect.facebook.net/en_US/sdk.js";
-// fjs.parentNode.insertBefore(js, fjs);
-//}(document, 'script', 'facebook-jssdk'));
+var listShare = document.querySelectorAll('.c-list-share');
+if(listShare){
+    for (var i = 0; i < listShare.length; i++) {
+        var url = '';
+        var dataUrl = (listShare[i].getAttribute('data-share-url')) ? listShare[i].getAttribute('data-share-url') : 'url';
+        var dataTitle = (listShare[i].getAttribute('data-share-title')) ? listShare[i].getAttribute('data-share-title') : 'title';
+        var dataText = (listShare[i].getAttribute('data-share-text')) ? listShare[i].getAttribute('data-share-text') : 'text';
+        var dataImg = (listShare[i].getAttribute('data-share-img')) ? listShare[i].getAttribute('data-share-img') : 'text';        
+        var listShareElemnts = listShare[i].querySelectorAll('.c-list-share__item');
+        for (var k = 0; k < listShareElemnts.length; k++) {
+            if(listShareElemnts[k].classList.contains('is-count')){                
+				var vkCount = "https://vk.com/share.php?act=count&index="+k+"&url=";
+				var facebookCount = "https://graph.facebook.com/?callback=?&ids=";
+                var twitterCount = "https://urls.api.twitter.com/1/urls/count.json?callback=?&url=";
+            }
+            listShareElemnts[k].addEventListener('click', function(event) {  
+                var listShareLink = this.querySelector('div');
+                if(listShareLink.classList.contains('is-vk')){
+                        url  = 'http://vkontakte.ru/share.php?';
+                        url += 'url='          + encodeURIComponent(dataUrl);
+                        url += '&title='       + encodeURIComponent(dataTitle);
+                        url += '&description=' + encodeURIComponent(dataText);
+                        url += '&image='       + encodeURIComponent(dataImg);
+                        url += '&noparse=true'; 
+                }else if (listShareLink.classList.contains('is-fb')){
+                    
+                        url  = 'http://www.facebook.com/sharer.php?s=100';
+                        url += '&p[title]='     + encodeURIComponent(dataTitle);
+                        url += '&p[summary]='   + encodeURIComponent(dataText);
+                        url += '&p[url]='       + encodeURIComponent(dataUrl);
+                        url += '&p[images][0]=' + encodeURIComponent(dataImg); 
+                }else if (event.target.classList.contains('is-twitter')){
+                        url  = 'http://twitter.com/share?';
+                        url += 'text='      + encodeURIComponent(dataText);
+                        url += '&url='      + encodeURIComponent(dataUrl);
+                        url += '&hashtags=' + '';
+                        url += '&counturl=' + encodeURIComponent(dataUrl);
+                }
+                
+                window.open(url, "", "toolbar=0, status=0, width=626, height=436");
+                console.log(url);
+                return false;
+            });
+        }
+    }
+}
 
 
 /*

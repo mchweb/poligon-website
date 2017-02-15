@@ -824,6 +824,7 @@ table {
   margin-right: 12px;
   height: 26px;
   vertical-align: middle;
+  cursor: pointer;
 }
 .c-list-share__item .c-icon {
   margin: 0px;
