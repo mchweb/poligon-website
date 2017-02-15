@@ -3879,6 +3879,9 @@ a:focus {
 }
 
 /* Page ********************/
+.l-content__text {
+  display: inline-block;
+}
 .l-content__text.is-padding {
   padding: 0 15px;
 }

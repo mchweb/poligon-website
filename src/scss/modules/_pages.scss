@@ -2,7 +2,8 @@
 // Pages style ----------- //
 // ----------------------- //
 
-.l-content__text {    
+.l-content__text {  
+    display: inline-block;
     &.is-container {
        @extend .container; 
     }
