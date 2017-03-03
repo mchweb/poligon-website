@@ -6,6 +6,7 @@
     display: inline-block;
     &.is-container {
        @extend .container; 
+        display: block;
     }
     &.is-padding {
         padding: 0 15px;

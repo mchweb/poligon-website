@@ -14,7 +14,7 @@
 }
 .c-test {
     @extend .container;
-    padding-top: $padding_base * 4.5;
+    //padding-top: $padding_base * 4.5;
     //padding-bottom: $padding_base * 4.5;
     padding-right: 15px;
     padding-left: 15px;
@@ -38,7 +38,9 @@
 }  
 .c-test__info {
     color: $color_gray_dark;
-    margin-bottom: $padding_base;
+//    margin-bottom: $padding_base;
+    margin-top: $padding_base * 2.75;
+    margin-bottom: $padding_base - 6;
     display: inline-block;
     .c-test__type, .c-test__name, .c-test__number, .c-test__question {
         display: inline-block;
