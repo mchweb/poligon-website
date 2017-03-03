@@ -777,43 +777,38 @@ if(listShare){
         var dataImg = (listShare[i].getAttribute('data-share-img')) ? listShare[i].getAttribute('data-share-img') : 'text';        
         var listShareElemnts = listShare[i].querySelectorAll('.c-list-share__item');
         for (var k = 0; k < listShareElemnts.length; k++) {
-            if(listShareElemnts[k].classList.contains('is-count')){                
-				var vkCount = "https://vk.com/share.php?act=count&index="+k+"&url=";
-				var facebookCount = "https://graph.facebook.com/?callback=?&ids=";
-                var twitterCount = "https://urls.api.twitter.com/1/urls/count.json?callback=?&url=";
+                if(!listShareElemnts[k].classList.contains('is-link')){   
+                listShareElemnts[k].addEventListener('click', function(event) {  
+                    var listShareLink = this.querySelector('div');
+                    if(listShareLink.classList.contains('is-vk')){
+                            url  = 'http://vkontakte.ru/share.php?';
+                            url += 'url='          + encodeURIComponent(dataUrl);
+                            url += '&title='       + encodeURIComponent(dataTitle);
+                            url += '&description=' + encodeURIComponent(dataText);
+                            url += '&image='       + encodeURIComponent(dataImg);
+                            url += '&noparse=true'; 
+                    }else if (listShareLink.classList.contains('is-fb')){
+
+                            url  = 'http://www.facebook.com/sharer.php?s=100';
+                            url += '&p[title]='     + encodeURIComponent(dataTitle);
+                            url += '&p[summary]='   + encodeURIComponent(dataText);
+                            url += '&p[url]='       + encodeURIComponent(dataUrl);
+                            url += '&p[images][0]=' + encodeURIComponent(dataImg); 
+                    }else if (event.target.classList.contains('is-twitter')){
+                            url  = 'http://twitter.com/share?';
+                            url += 'text='      + encodeURIComponent(dataText);
+                            url += '&url='      + encodeURIComponent(dataUrl);
+                            url += '&hashtags=' + '';
+                            url += '&counturl=' + encodeURIComponent(dataUrl);
+                    }
+
+                    window.open(url, "", "toolbar=0, status=0, width=626, height=436");
+                    return false;
+                });
             }
-            listShareElemnts[k].addEventListener('click', function(event) {  
-                var listShareLink = this.querySelector('div');
-                if(listShareLink.classList.contains('is-vk')){
-                        url  = 'http://vkontakte.ru/share.php?';
-                        url += 'url='          + encodeURIComponent(dataUrl);
-                        url += '&title='       + encodeURIComponent(dataTitle);
-                        url += '&description=' + encodeURIComponent(dataText);
-                        url += '&image='       + encodeURIComponent(dataImg);
-                        url += '&noparse=true'; 
-                }else if (listShareLink.classList.contains('is-fb')){
-                    
-                        url  = 'http://www.facebook.com/sharer.php?s=100';
-                        url += '&p[title]='     + encodeURIComponent(dataTitle);
-                        url += '&p[summary]='   + encodeURIComponent(dataText);
-                        url += '&p[url]='       + encodeURIComponent(dataUrl);
-                        url += '&p[images][0]=' + encodeURIComponent(dataImg); 
-                }else if (event.target.classList.contains('is-twitter')){
-                        url  = 'http://twitter.com/share?';
-                        url += 'text='      + encodeURIComponent(dataText);
-                        url += '&url='      + encodeURIComponent(dataUrl);
-                        url += '&hashtags=' + '';
-                        url += '&counturl=' + encodeURIComponent(dataUrl);
-                }
-                
-                window.open(url, "", "toolbar=0, status=0, width=626, height=436");
-                console.log(url);
-                return false;
-            });
         }
     }
 }
-
 
 /*
  *  Animations 
