@@ -3,6 +3,7 @@
 // ----------------------- //
 
 .l-content__text {  
+    width: 100%;
     display: inline-block;
     &.is-container {
        @extend .container; 

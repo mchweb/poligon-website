@@ -3967,6 +3967,7 @@ a:focus {
 
 /* Page ********************/
 .l-content__text {
+  width: 100%;
   display: inline-block;
 }
 .l-content__text.is-container {
