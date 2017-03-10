@@ -1815,15 +1815,15 @@ a:focus {
   }
 }
 
-.c-slider .c-slider__item:nth-child(1) .c-slider__title {
+.c-slider .c-slider__item:nth-child(3n+1) .c-slider__title {
   background: #80bf44;
   color: #ffffff;
 }
-.c-slider .c-slider__item:nth-child(2) .c-slider__title {
+.c-slider .c-slider__item:nth-child(3n+2) .c-slider__title {
   background: #0072bc;
   color: #ffffff;
 }
-.c-slider .c-slider__item:nth-child(3) .c-slider__title {
+.c-slider .c-slider__item:nth-child(3n) .c-slider__title {
   background: #f7941e;
   color: #ffffff;
 }
@@ -2015,13 +2015,13 @@ a:focus {
   }
 }
 
-.c-slider-nav .c-slider-nav__item:nth-child(1) .c-slider-nav__title:before {
+.c-slider-nav .c-slider-nav__item:nth-child(3n+1) .c-slider-nav__title:before {
   background: #80bf44;
 }
-.c-slider-nav .c-slider-nav__item:nth-child(2) .c-slider-nav__title:before {
+.c-slider-nav .c-slider-nav__item:nth-child(3n+2) .c-slider-nav__title:before {
   background: #0072bc;
 }
-.c-slider-nav .c-slider-nav__item:nth-child(3) .c-slider-nav__title:before {
+.c-slider-nav .c-slider-nav__item:nth-child(3n) .c-slider-nav__title:before {
   background: #f7941e;
 }
 

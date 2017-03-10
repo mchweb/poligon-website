@@ -61,19 +61,19 @@
 }
 
 .c-slider .c-slider__item {
-    &:nth-child(1) {
+    &:nth-child(3n+1) {
         .c-slider__title {
             background: $color_green;
             color: $color_white;
         }
     }
-    &:nth-child(2) {
+    &:nth-child(3n+2) {
         .c-slider__title {
             background: $color_blue;
             color: $color_white;
         }
     }
-    &:nth-child(3) {
+    &:nth-child(3n) {
         .c-slider__title {
             background: $color_orange;
             color: $color_white;
@@ -203,21 +203,21 @@
     }
 }
 .c-slider-nav .c-slider-nav__item {
-    &:nth-child(1) {
+    &:nth-child(3n+1) {
         .c-slider-nav__title {
             &:before {
                background: $color_green; 
             }            
         }
     }
-    &:nth-child(2) {
+    &:nth-child(3n+2) {
         .c-slider-nav__title {
             &:before {
                 background: $color_blue;
             }            
         }
     }
-    &:nth-child(3) {
+    &:nth-child(3n) {
         .c-slider-nav__title {
             &:before {
                background: $color_orange; 
