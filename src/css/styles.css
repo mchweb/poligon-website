@@ -1748,6 +1748,10 @@ a:focus {
   font-size: 16px;
   color: #ffffff;
 }
+.c-infoblock__content a {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
 
 /* Slider ******************/
 .l-content__slider .l-content__box {

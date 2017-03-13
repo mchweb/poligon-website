@@ -185,4 +185,8 @@
 .c-infoblock__content {
     font-size: $btn_font_size;
     color: $color_white; 
+    a {
+        color: $color_white; 
+        border-bottom-color: rgba($color_white, 0.5);  
+    }
 }
