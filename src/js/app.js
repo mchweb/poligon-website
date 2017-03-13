@@ -681,7 +681,9 @@ for (var i = 0; i < formButon.length; i++) {
         }
     });    
 }  
-    
+/* Set mask for phone input */    
+$('input[type="tel"]').inputmask({"mask": "+9 (999) 999-99-99"});
+
 /* Modal */
 /* Set a background image for modals */
 var modalFuncInit = function (eventResize) {
