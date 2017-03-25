@@ -10391,26 +10391,82 @@ var funcValidateFormShowNoError = function(blockName){
     }    
 };
 /* Validate elements form */ 
+var valuePhoneClear = '';
 var funcValidateForm = function(form, formItemClass, checkType){
      var formElements = form.querySelectorAll(formItemClass);
      for (var i = 0; i < formElements.length; i++) {       
          funcValidateFormResetError(formElements[i]);
          if (checkType == 'is-value'){         
-             if (!formElements[i].value) {
-                funcValidateFormShowError(formElements[i]);
-             }else {
-                 funcValidateFormShowNoError(formElements[i]);
-             }                
+//             if (!formElements[i].value) {
+//                funcValidateFormShowError(formElements[i]);
+//             }else {
+//                 funcValidateFormShowNoError(formElements[i]);
+//             }  
+             if(formElements[i].type == 'text'){
+                 if(formElements[i].value.length >= 1){
+                     funcValidateFormShowNoError(formElements[i]);
+                 }else {
+                     funcValidateFormShowError(formElements[i]);
+                 }
+             }else if(formElements[i].type == 'tel') {
+                    valuePhoneClear = String(formElements[i].value);
+                    valuePhoneClear = valuePhoneClear.replace(/\+/g,'')
+                                                     .replace(/\_/g,'')
+                                                     .replace(/\)/g,'')
+                                                     .replace(/\(/g,'')
+                                                     .replace(/\-/g,'')
+                                                     .replace(/ /g,'');                 
+                 if(valuePhoneClear.length == 11){
+                     funcValidateFormShowNoError(formElements[i]);
+                 }else {
+                     funcValidateFormShowError(formElements[i]);
+                 }                 
+             }else if(formElements[i].type == 'email'){
+                 var regEmail = /^[a-z][a-zA-Z0-9_.]*(\.[a-zA-Z][a-zA-Z0-9_.]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?$/;
+                 var resultTest = regEmail.test(formElements[i].value);
+                 if(resultTest){
+                     funcValidateFormShowNoError(formElements[i]);
+                 }else {
+                     funcValidateFormShowError(formElements[i]);
+                 }                  
+             }
          }        
      }  
 };
 var funcValidateFormOnChangeCheck = function () {
-    if(this.value.length >= 1){
-        funcValidateFormResetError(this);
-        funcValidateFormShowNoError(this); 
-    }else {
-        funcValidateFormShowError(this);    
-    }    
+    
+    if(this.type == 'text'){
+        if(this.value.length >= 1){
+            funcValidateFormResetError(this);
+            funcValidateFormShowNoError(this); 
+        }else {
+            funcValidateFormShowError(this);    
+        }          
+    }else if(this.type == 'tel') {        
+        valuePhoneClear = String(this.value);
+        valuePhoneClear = valuePhoneClear.replace(/\+/g,'')
+                                         .replace(/\_/g,'')
+                                         .replace(/\)/g,'')
+                                         .replace(/\(/g,'')
+                                         .replace(/\-/g,'')
+                                         .replace(/ /g,'');
+        if(valuePhoneClear.length == 11){
+            funcValidateFormResetError(this);
+            funcValidateFormShowNoError(this); 
+        }else {
+            funcValidateFormShowError(this);    
+        }           
+    }else if(this.type == 'email'){
+        var regEmail = /^[a-z][a-zA-Z0-9_.]*(\.[a-zA-Z][a-zA-Z0-9_.]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?$/;
+        var resultTest = regEmail.test(this.value);  
+        if(resultTest){
+            funcValidateFormResetError(this);
+            funcValidateFormShowNoError(this); 
+        }else {
+            funcValidateFormShowError(this);    
+        }         
+    }
+  
 };
 var funcValidateFormOnChange = function(form, formItemClass, checkType){
      var formElements = form.querySelectorAll(formItemClass);
@@ -10933,7 +10989,6 @@ for (var i = 0; i < formButon.length; i++) {
 }  
 /* Set mask for phone input */    
 $('input[type="tel"]').inputmask({"mask": "+9 (999) 999-99-99"});
-
 /* Modal */
 /* Set a background image for modals */
 var modalFuncInit = function (eventResize) {
