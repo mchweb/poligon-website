@@ -504,19 +504,25 @@ if(document.querySelector('#map-program-big')) {
 }
 /* Reviews */
 /* Set height for block */
-var blockHeightReviews = function () {
-    var blockReviews =  document.querySelectorAll('.c-reviews__item');
-    if(blockReviews.length){ 
-        for (var i = 0; i < blockReviews.length; i++) {
-            var blockThumbnail = blockReviews[i].querySelector('.c-human__thumbnail');
-            blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
-        }
-    }    
-};
-blockHeightReviews();
-window.addEventListener('resize', function(eventResize){
+var blockReviews =  document.querySelectorAll('.c-reviews__item');
+if(blockReviews){
+    var blockHeightReviews = function () {
+        var blockReviews =  document.querySelectorAll('.c-reviews__item');
+        if(blockReviews.length){ 
+            for (var i = 0; i < blockReviews.length; i++) {
+                var blockThumbnail = blockReviews[i].querySelector('.c-human__thumbnail');
+                if(blockThumbnail){
+                    blockThumbnail.style.height = blockThumbnail.offsetWidth+'px';
+                }            
+            }
+        }    
+    };
     blockHeightReviews();
-});
+    window.addEventListener('resize', function(eventResize){
+        blockHeightReviews();
+    });    
+}
+
 
 /* Set a background image */
 funcBackgroundImageBlocks('.c-reviews__item','img','center','center','.c-human__thumbnail');
