@@ -367,7 +367,7 @@ table {
 .c-form.is-input-no-background .c-form__item {
   margin-top: 24px;
 }
-.c-form.is-input-no-background .c-form__input {
+.c-form.is-input-no-background .c-form__input, .c-form.is-input-no-background .c-form__file + label span, .c-form__file + label .c-form.is-input-no-background span {
   -moz-border-radius: 0px / 0px;
   -webkit-border-radius: 0px 0px;
   border-radius: 0px / 0px;
@@ -382,23 +382,23 @@ table {
   font-size: 16px;
   margin-bottom: 0px;
 }
-.c-form.is-input-no-background .c-form__input:-moz-placeholder {
+.c-form.is-input-no-background .c-form__input:-moz-placeholder, .c-form.is-input-no-background .c-form__file + label span:-moz-placeholder, .c-form__file + label .c-form.is-input-no-background span:-moz-placeholder {
   color: #d3d4d4;
   font-size: 16px;
 }
-.c-form.is-input-no-background .c-form__input::-moz-placeholder {
+.c-form.is-input-no-background .c-form__input::-moz-placeholder, .c-form.is-input-no-background .c-form__file + label span::-moz-placeholder, .c-form__file + label .c-form.is-input-no-background span::-moz-placeholder {
   color: #d3d4d4;
   font-size: 16px;
 }
-.c-form.is-input-no-background .c-form__input:-ms-input-placeholder {
+.c-form.is-input-no-background .c-form__input:-ms-input-placeholder, .c-form.is-input-no-background .c-form__file + label span:-ms-input-placeholder, .c-form__file + label .c-form.is-input-no-background span:-ms-input-placeholder {
   color: #d3d4d4;
   font-size: 16px;
 }
-.c-form.is-input-no-background .c-form__input::-webkit-input-placeholder {
+.c-form.is-input-no-background .c-form__input::-webkit-input-placeholder, .c-form.is-input-no-background .c-form__file + label span::-webkit-input-placeholder, .c-form__file + label .c-form.is-input-no-background span::-webkit-input-placeholder {
   color: #d3d4d4;
   font-size: 16px;
 }
-.c-form.is-input-no-background .c-form__input:focus {
+.c-form.is-input-no-background .c-form__input:focus, .c-form.is-input-no-background .c-form__file + label span:focus, .c-form__file + label .c-form.is-input-no-background span:focus {
   border: none;
   outline: none;
   border-bottom: 1px solid #cee6b7;
@@ -406,14 +406,14 @@ table {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.c-form.is-input-no-background .c-form__input:first-child {
+.c-form.is-input-no-background .c-form__input:first-child, .c-form.is-input-no-background .c-form__file + label span:first-child, .c-form__file + label .c-form.is-input-no-background span:first-child {
   margin-top: 0px;
 }
-.c-form.is-input-no-background .c-form__input.is-error {
+.c-form.is-input-no-background .c-form__input.is-error, .c-form.is-input-no-background .c-form__file + label span.is-error, .c-form__file + label .c-form.is-input-no-background span.is-error {
   border: none;
   border-bottom: 1px solid #f04e23;
 }
-.c-form.is-input-no-background .c-form__input.is-no-error {
+.c-form.is-input-no-background .c-form__input.is-no-error, .c-form.is-input-no-background .c-form__file + label span.is-no-error, .c-form__file + label .c-form.is-input-no-background span.is-no-error {
   border: none;
   outline: none;
   border-bottom: 1px solid #cee6b7;
@@ -473,7 +473,7 @@ table {
   font-size: 16px;
 }
 
-.c-form__element-style, .c-form__input, .c-form__textarea {
+.c-form__element-style, .c-form__input, .c-form__file + label span, .c-form__textarea {
   -moz-border-radius: 4px / 4px;
   -webkit-border-radius: 4px 4px;
   border-radius: 4px / 4px;
@@ -483,23 +483,23 @@ table {
   padding: 12px 20px;
   margin-bottom: 16px;
 }
-.c-form__element-style:-moz-placeholder, .c-form__input:-moz-placeholder, .c-form__textarea:-moz-placeholder {
+.c-form__element-style:-moz-placeholder, .c-form__input:-moz-placeholder, .c-form__file + label span:-moz-placeholder, .c-form__textarea:-moz-placeholder {
   color: #9c9c9c;
   font-size: 16px;
 }
-.c-form__element-style::-moz-placeholder, .c-form__input::-moz-placeholder, .c-form__textarea::-moz-placeholder {
+.c-form__element-style::-moz-placeholder, .c-form__input::-moz-placeholder, .c-form__file + label span::-moz-placeholder, .c-form__textarea::-moz-placeholder {
   color: #9c9c9c;
   font-size: 16px;
 }
-.c-form__element-style:-ms-input-placeholder, .c-form__input:-ms-input-placeholder, .c-form__textarea:-ms-input-placeholder {
+.c-form__element-style:-ms-input-placeholder, .c-form__input:-ms-input-placeholder, .c-form__file + label span:-ms-input-placeholder, .c-form__textarea:-ms-input-placeholder {
   color: #9c9c9c;
   font-size: 16px;
 }
-.c-form__element-style::-webkit-input-placeholder, .c-form__input::-webkit-input-placeholder, .c-form__textarea::-webkit-input-placeholder {
+.c-form__element-style::-webkit-input-placeholder, .c-form__input::-webkit-input-placeholder, .c-form__file + label span::-webkit-input-placeholder, .c-form__textarea::-webkit-input-placeholder {
   color: #9c9c9c;
   font-size: 16px;
 }
-.c-form__element-style:focus, .c-form__input:focus, .c-form__textarea:focus {
+.c-form__element-style:focus, .c-form__input:focus, .c-form__file + label span:focus, .c-form__textarea:focus {
   outline: none;
   -moz-box-shadow: rgba(157, 204, 113, 0.15) 0px 0px 7px;
   -webkit-box-shadow: rgba(157, 204, 113, 0.15) 0px 0px 7px;
@@ -507,34 +507,34 @@ table {
   border-color: #cee6b7;
   border-width: #9dcc71;
 }
-.c-form__element-style.is-error, .is-error.c-form__input, .is-error.c-form__textarea {
+.c-form__element-style.is-error, .is-error.c-form__input, .c-form__file + label span.is-error, .is-error.c-form__textarea {
   border: 1px solid #ed7c5d;
 }
-.c-form__element-style.is-error:-moz-placeholder, .is-error.c-form__input:-moz-placeholder, .is-error.c-form__textarea:-moz-placeholder {
+.c-form__element-style.is-error:-moz-placeholder, .is-error.c-form__input:-moz-placeholder, .c-form__file + label span.is-error:-moz-placeholder, .is-error.c-form__textarea:-moz-placeholder {
   color: #ed7c5d;
 }
-.c-form__element-style.is-error::-moz-placeholder, .is-error.c-form__input::-moz-placeholder, .is-error.c-form__textarea::-moz-placeholder {
+.c-form__element-style.is-error::-moz-placeholder, .is-error.c-form__input::-moz-placeholder, .c-form__file + label span.is-error::-moz-placeholder, .is-error.c-form__textarea::-moz-placeholder {
   color: #ed7c5d;
 }
-.c-form__element-style.is-error:-ms-input-placeholder, .is-error.c-form__input:-ms-input-placeholder, .is-error.c-form__textarea:-ms-input-placeholder {
+.c-form__element-style.is-error:-ms-input-placeholder, .is-error.c-form__input:-ms-input-placeholder, .c-form__file + label span.is-error:-ms-input-placeholder, .is-error.c-form__textarea:-ms-input-placeholder {
   color: #ed7c5d;
 }
-.c-form__element-style.is-error::-webkit-input-placeholder, .is-error.c-form__input::-webkit-input-placeholder, .is-error.c-form__textarea::-webkit-input-placeholder {
+.c-form__element-style.is-error::-webkit-input-placeholder, .is-error.c-form__input::-webkit-input-placeholder, .c-form__file + label span.is-error::-webkit-input-placeholder, .is-error.c-form__textarea::-webkit-input-placeholder {
   color: #ed7c5d;
 }
-.c-form__element-style.is-no-error, .is-no-error.c-form__input, .is-no-error.c-form__textarea {
+.c-form__element-style.is-no-error, .is-no-error.c-form__input, .c-form__file + label span.is-no-error, .is-no-error.c-form__textarea {
   border: 1px solid #80bf44;
 }
-.c-form__element-style.is-no-error:-moz-placeholder, .is-no-error.c-form__input:-moz-placeholder, .is-no-error.c-form__textarea:-moz-placeholder {
+.c-form__element-style.is-no-error:-moz-placeholder, .is-no-error.c-form__input:-moz-placeholder, .c-form__file + label span.is-no-error:-moz-placeholder, .is-no-error.c-form__textarea:-moz-placeholder {
   color: #80bf44;
 }
-.c-form__element-style.is-no-error::-moz-placeholder, .is-no-error.c-form__input::-moz-placeholder, .is-no-error.c-form__textarea::-moz-placeholder {
+.c-form__element-style.is-no-error::-moz-placeholder, .is-no-error.c-form__input::-moz-placeholder, .c-form__file + label span.is-no-error::-moz-placeholder, .is-no-error.c-form__textarea::-moz-placeholder {
   color: #80bf44;
 }
-.c-form__element-style.is-no-error:-ms-input-placeholder, .is-no-error.c-form__input:-ms-input-placeholder, .is-no-error.c-form__textarea:-ms-input-placeholder {
+.c-form__element-style.is-no-error:-ms-input-placeholder, .is-no-error.c-form__input:-ms-input-placeholder, .c-form__file + label span.is-no-error:-ms-input-placeholder, .is-no-error.c-form__textarea:-ms-input-placeholder {
   color: #80bf44;
 }
-.c-form__element-style.is-no-error::-webkit-input-placeholder, .is-no-error.c-form__input::-webkit-input-placeholder, .is-no-error.c-form__textarea::-webkit-input-placeholder {
+.c-form__element-style.is-no-error::-webkit-input-placeholder, .is-no-error.c-form__input::-webkit-input-placeholder, .c-form__file + label span.is-no-error::-webkit-input-placeholder, .is-no-error.c-form__textarea::-webkit-input-placeholder {
   color: #80bf44;
 }
 
@@ -804,6 +804,89 @@ table {
     transform: scale(1);
   }
 }
+.c-form__file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.c-form__file + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  /* 4px */
+  margin-right: 0.25em;
+  /* 4px */
+}
+
+.c-form__file + label {
+  font-size: 1.25rem;
+  /* 20px */
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0px;
+  /* 10px 20px */
+  color: #d3394c;
+  border: none;
+  background: none;
+  width: 100%;
+}
+
+.c-form__file + label span,
+.c-form__file + label strong {
+  padding: 0.625rem 1.25rem;
+  /* 10px 20px */
+}
+
+.c-form__file + label span {
+  width: 50%;
+  min-height: 45px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+  background-color: #ffffff;
+  color: #9c9c9c;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+
+.c-form__file + label strong {
+  height: 100%;
+  color: #f1e5e6;
+  background-color: #80bf44;
+  display: inline-block;
+  -moz-border-radius: 24px;
+  -webkit-border-radius: 24px;
+  border-radius: 24px;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 50em) {
+  .c-form__file + label strong {
+    display: block;
+  }
+}
+.c-form__description {
+  color: #9c9c9c;
+}
+.c-form__description a {
+  color: #0067a9;
+  border-bottom-color: #0067a9;
+}
+
 /* Lists *******************/
 .c-list-contact {
   list-style: none;
@@ -3641,20 +3724,20 @@ a:focus {
   color: #f1f1f1;
   border-bottom-color: rgba(241, 241, 241, 0.5);
 }
-#footer .c-form__input {
+#footer .c-form__input, #footer .c-form__file + label span, .c-form__file + label #footer span {
   color: #f1f1f1;
   border-bottom: 1px solid #9c9c9c;
 }
-#footer .c-form__input:-moz-placeholder {
+#footer .c-form__input:-moz-placeholder, #footer .c-form__file + label span:-moz-placeholder, .c-form__file + label #footer span:-moz-placeholder {
   color: #9c9c9c;
 }
-#footer .c-form__input::-moz-placeholder {
+#footer .c-form__input::-moz-placeholder, #footer .c-form__file + label span::-moz-placeholder, .c-form__file + label #footer span::-moz-placeholder {
   color: #9c9c9c;
 }
-#footer .c-form__input:-ms-input-placeholder {
+#footer .c-form__input:-ms-input-placeholder, #footer .c-form__file + label span:-ms-input-placeholder, .c-form__file + label #footer span:-ms-input-placeholder {
   color: #9c9c9c;
 }
-#footer .c-form__input::-webkit-input-placeholder {
+#footer .c-form__input::-webkit-input-placeholder, #footer .c-form__file + label span::-webkit-input-placeholder, .c-form__file + label #footer span::-webkit-input-placeholder {
   color: #9c9c9c;
 }
 @media screen and (min-width: 1200px) {
