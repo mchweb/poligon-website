@@ -542,7 +542,7 @@
 
 .c-form__file + label strong {
     height: 100%;
-    color: #f1e5e6;
+    color: $color_white;
     background-color: $color_green;
     display: inline-block;
     @include border-radius(24px); 
